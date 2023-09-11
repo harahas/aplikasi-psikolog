@@ -12,7 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//halaman home
 Route::get('/', function () {
     return view('front-end.index');
+});
+//akhlaqul karimah
+Route::get('/akhlaqul-karimah', function () {
+    return view('front-end.akhlaqul-karimah');
+});
+//bukit bintang
+Route::get('/bukit-bintang', function () {
+    return view('front-end.bukit-bintang');
 });
