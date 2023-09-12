@@ -96,7 +96,7 @@
 							<button class="search-btn"><i class="fal fa-search"></i></button>
 						</div>
 						<div class="in-header-cta-btn">
-							<a href="contact.html">Konsultasi</a>
+							<a href="/daftar_pelayanan">Jadwalkan Konsultasi</a>
 						</div>
 					</div>
 				</div>

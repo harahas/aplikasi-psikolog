@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PelayananController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,7 @@ Route::get('/akhlaqul-karimah', function () {
 Route::get('/bukit-bintang', function () {
     return view('front-end.bukit-bintang');
 });
+//pelayanan
+Route::resource('/pelayanan', PelayananController::class);
+
+Route::get('/daftar_pelayanan', [PelayananController::class, 'daftar_pelayanan']);
