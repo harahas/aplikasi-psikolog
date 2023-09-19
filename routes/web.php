@@ -27,5 +27,11 @@ Route::get('/bukit-bintang', function () {
 });
 //pelayanan
 Route::resource('/pelayanan', PelayananController::class);
-
+//pendaftaran
 Route::get('/daftar_pelayanan', [PelayananController::class, 'daftar_pelayanan']);
+//mengubah status
+Route::get('/changeStatus', [PelayananController::class, 'ubah_status']);
+
+
+//datatables
+Route::get('/datatablesKonsultasi', [PelayananController::class, 'dataTables']);

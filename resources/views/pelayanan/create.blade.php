@@ -315,11 +315,11 @@
                                     <div class="in-contact-form">
                                         <form action="/pelayanan" method="POST">
                                             @csrf
-                                            <input type="text" name="nama" id="nama" placeholder="Nama">
-                                            <textarea style="background-color:#F5F8F8" type="text" name="alamat" id="alamat" class="form-control mb-3 border-0" placeholder="Alamat"></textarea>
-                                            <input type="text" name="no_hp" id="no_hp" placeholder="No Telepon">
-                                            <input type="date" name="tanggal" id="tanggal" class="mb-0" placeholder="Tanggal Konsultasi">
-                                            <small class="text-success ms-2 fst-italic">*Tanggal Konsultasi</small>
+                                            <input type="text" name="nama" id="nama" placeholder="Nama" required>
+                                            <textarea style="background-color:#F5F8F8" type="text" name="alamat" id="alamat" class="form-control mb-3 border-0" placeholder="Alamat" required></textarea>
+                                            <input type="text" name="no_hp" id="no_hp" placeholder="No Telepon" required>
+                                            <input type="date" name="tanggal" id="tanggal" class="mb-0" placeholder="Tanggal Konsultasi" required>
+                                            <small class="text-success ms-2 fst-italic">Tanggal Konsultasi</small>
                                             <div class="in-insurance-type in-select position-relative mt-3">
                                                 <select name="jenispelayanan" id="jenispelayanan">
                                                     <option value="">Pilih Pelayanan</option>

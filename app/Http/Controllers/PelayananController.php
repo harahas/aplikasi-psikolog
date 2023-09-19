@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\pelayanan;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class PelayananController extends Controller
 {
@@ -15,7 +16,12 @@ class PelayananController extends Controller
      */
     public function index()
     {
-        //
+        $data = [
+            'title' => 'Pelayanan',
+            'query' => Pelayanan::all()
+
+        ];
+        return view('pelayanan.index', $data);
     }
 
     /**
@@ -43,6 +49,7 @@ class PelayananController extends Controller
             'no_hp' => $request->no_hp,
             'tanggal' => $request->tanggal,
             'jenispelayanan' => $request->jenispelayanan,
+            'status' => 'BELUM SELESAI',
             'keterangan' => $request->keterangan,
         ];
 
@@ -98,5 +105,26 @@ class PelayananController extends Controller
     public function daftar_pelayanan(Request $request)
     {
         return view('pelayanan.create');
+    }
+
+    public function dataTables(Request $request)
+    {
+        $query = Pelayanan::all();
+        return DataTables::of($query)->addColumn('action', function ($row) {
+            $actionBtn =
+                '
+    <button class="btn btn-rounded btn-sm btn-primary text-white selesai-button" title="Edit Data" data-unique="' . $row->unique . '">Selesai</button>
+    <a href="https://wa.me/+62' . $row->no_hp . '" class="btn btn-rounded btn-sm btn-info text-white selesai-button" title="Edit Data" data-unique="' . $row->unique . '">Hubungi</a>
+    ';
+
+            return $actionBtn;
+        })->make(true);
+    }
+
+    public function ubah_status(Request $request)
+    {
+        //update
+        Pelayanan::where('unique', $request->unique)->update(['status' => 'SELESAI']);
+        return response()->json(['succes' => 'Oke']);
     }
 }

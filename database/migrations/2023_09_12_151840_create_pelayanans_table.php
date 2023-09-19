@@ -21,6 +21,7 @@ class CreatePelayanansTable extends Migration
             $table->string('no_hp');
             $table->date('tanggal');
             $table->string('jenispelayanan');
+            $table->string('status');
             $table->string('keterangan');
             $table->timestamps();
         });
