@@ -62,7 +62,7 @@
                             </div>
                             <div class="inner-text headline">
                                 <h4>Whatsapp</h4>
-                                <span></span>
+                                <span>085-860-568-027</span>
                             </div>
                         </div>
                     </div>
