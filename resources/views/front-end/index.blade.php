@@ -328,7 +328,23 @@
                 </div>
 
                 <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:30vh;">
+                    <img src="/assets/img/about/keluarga.jpg" alt="" width="600vh">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+
+            <div class="row" style="margin-top:30px">
+                <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:20vh;">
                     <img src="/assets/img/about/keluarga.jpg" alt="" width="550vh">
+                </div>
+                <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:20vh;">
+                    <h3>Profile Psikolog</h3>
+                    <h1 class="text-dark fw-bold">Dewi Widiastuti M.Psi</h1>
+                    <a href="/daftar_pelayanan" class="btn btn-primary text-white mt-5" style="width:30vh;padding:10px 20px">Profile Lengkap</a>
                 </div>
             </div>
         </div>
@@ -336,8 +352,8 @@
 
     <!-- Start of Footer section
 	============================================= -->
-    {{-- <footer id="in-footer" class="in-footer-section" data-background="/assets/img/bg/footer-bg.jpg">
-        <div class="container">
+    <footer id="in-footer" class="in-footer-section" data-background="/assets/img/bg/footer-bg.jpg">
+        <div class="container ">
             <div class="in-footer-widget-wrapper">
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
@@ -429,7 +445,7 @@
                 </div>
             </div>
         </div>
-    </footer> --}}
+    </footer>
     <!-- End of Footer section
 	============================================= -->
 
