@@ -328,7 +328,7 @@
                 </div>
 
                 <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:30vh;">
-                    <img src="/assets/img/about/ab-fn.png" alt="" width="550vh">
+                    <img src="/assets/img/about/keluarga.jpg" alt="" width="550vh">
                 </div>
             </div>
         </div>
