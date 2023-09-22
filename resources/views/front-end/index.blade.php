@@ -69,7 +69,7 @@
                 </div>
             </div>
         </div>
-        <div class="in-header-main-menu-wrapper">
+        <div style="background-color: #198754; padding:15px 0">
             <div class="container">
                 <div class="in-header-main-menu-content d-flex align-items-center justify-content-between">
                     <div class="sticky-logo">
@@ -315,16 +315,15 @@
 
     <!-- Start of Banner section
 	============================================= -->
-    <section>
+    <section id="header">
         <div class="container">
-
             <div class="row">
                 <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:45vh;">
                     <h3>Lembaga Psikolog</h3>
                     <h1 class="text-dark fw-bold">Akhlaqul Karimah</h1>
                     <h1>Konsultan Keluarga</h1>
                     <h3>Keluarga Berdaya, Indonesia Berjaya</h3>
-                    <a href="/daftar_pelayanan" class="btn btn-primary text-white mt-5" style="width:30vh;padding:10px 20px">Jadwalkan Konsultasi</a>
+                    <a href="/daftar_pelayanan" class="btn btn-success text-white mt-5" style="width:30vh;padding:10px 20px">Jadwalkan Konsultasi</a>
                 </div>
 
                 <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:30vh;">
