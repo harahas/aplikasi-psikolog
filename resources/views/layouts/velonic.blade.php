@@ -12,12 +12,18 @@
     <link rel="shortcut icon" href="/assets2/images/favicon.ico">
 
     <!-- Datatables css -->
-    <link href="/assets2/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets2/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets2/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets2/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets2/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
-    <link href="/assets2/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets2/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/assets2/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/assets2/vendor/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/assets2/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/assets2/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/assets2/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet"
+        type="text/css" />
 
     <!-- Theme Config Js -->
     <script src="/assets2/js/config.js"></script>
@@ -75,14 +81,12 @@
             padding: 75px 150px;
             background-color: rgba(0, 0, 0, 0.3);
         }
-
     </style>
     <script>
         const loader = `
             <div class="card d-flex justify-conten-center align-items-center card-spinner">
                 <div class="spinner" style="position:relative;z-index: 101;"></div>
             </div>`
-
     </script>
 </head>
 
@@ -132,17 +136,19 @@
                             <span></span>
                         </div>
                     </button>
-                   
+
                 </div>
 
                 <ul class="topbar-menu d-flex align-items-center gap-3">
                     <li class="dropdown d-lg-none">
-                        <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="false" aria-expanded="false">
                             <i class="ri-search-line fs-22"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
                             <form class="p-3">
-                                <input type="search" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                <input type="search" class="form-control" placeholder="Search ..."
+                                    aria-label="Recipient's username">
                             </form>
                         </div>
                     </li>
@@ -160,12 +166,15 @@
                     </li>
 
                     <li class="dropdown">
-                        <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#"
+                            role="button" aria-haspopup="false" aria-expanded="false">
                             <span class="account-user-avatar">
-                                <img src="/assets2/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
+                                <img src="/assets2/images/users/avatar-1.jpg" alt="user-image" width="32"
+                                    class="rounded-circle">
                             </span>
                             <span class="d-lg-block d-none">
-                                <h5 class="my-0 fw-normal">HamniRH <i class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
+                                <h5 class="my-0 fw-normal">HamniRH <i
+                                        class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
                             </span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
@@ -213,7 +222,8 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Online School</a></li>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Online School</a>
+                                        </li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Master</a></li>
                                         <li class="breadcrumb-item active">{{ $title }}</li>
                                     </ol>
@@ -240,7 +250,6 @@
                         <div class="col-12 text-center">
                             <script>
                                 document.write(new Date().getFullYear())
-
                             </script> © Velonic - Theme by <b>Techzaa</b>
                         </div>
                     </div>
@@ -261,7 +270,8 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="theme-settings-offcanvas">
         <div class="d-flex align-items-center bg-primary p-3 offcanvas-header">
             <h5 class="text-white m-0">Theme Settings</h5>
-            <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
         </div>
 
         <div class="offcanvas-body p-0">
@@ -272,7 +282,8 @@
                     <div class="row">
                         <div class="col-4">
                             <div class="form-check form-switch card-switch mb-1">
-                                <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-light" value="light">
+                                <input class="form-check-input" type="checkbox" name="data-bs-theme"
+                                    id="layout-color-light" value="light">
                                 <label class="form-check-label" for="layout-color-light">
                                     <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
                                 </label>
@@ -282,7 +293,8 @@
 
                         <div class="col-4">
                             <div class="form-check form-switch card-switch mb-1">
-                                <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-dark" value="dark">
+                                <input class="form-check-input" type="checkbox" name="data-bs-theme"
+                                    id="layout-color-dark" value="dark">
                                 <label class="form-check-label" for="layout-color-dark">
                                     <img src="/assets2/images/layouts/dark.png" alt="" class="img-fluid">
                                 </label>
@@ -297,9 +309,11 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-fluid" value="fluid">
+                                    <input class="form-check-input" type="checkbox" name="data-layout-mode"
+                                        id="layout-mode-fluid" value="fluid">
                                     <label class="form-check-label" for="layout-mode-fluid">
-                                        <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
+                                        <img src="/assets2/images/layouts/light.png" alt=""
+                                            class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Fluid</h5>
@@ -308,9 +322,11 @@
                             <div class="col-4">
                                 <div id="layout-boxed">
                                     <div class="form-check form-switch card-switch mb-1">
-                                        <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-boxed" value="boxed">
+                                        <input class="form-check-input" type="checkbox" name="data-layout-mode"
+                                            id="layout-mode-boxed" value="boxed">
                                         <label class="form-check-label" for="layout-mode-boxed">
-                                            <img src="/assets2/images/layouts/boxed.png" alt="" class="img-fluid">
+                                            <img src="/assets2/images/layouts/boxed.png" alt=""
+                                                class="img-fluid">
                                         </label>
                                     </div>
                                     <h5 class="font-14 text-center text-muted mt-2">Boxed</h5>
@@ -324,7 +340,8 @@
                     <div class="row">
                         <div class="col-4">
                             <div class="form-check form-switch card-switch mb-1">
-                                <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-light" value="light">
+                                <input class="form-check-input" type="checkbox" name="data-topbar-color"
+                                    id="topbar-color-light" value="light">
                                 <label class="form-check-label" for="topbar-color-light">
                                     <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
                                 </label>
@@ -334,9 +351,11 @@
 
                         <div class="col-4">
                             <div class="form-check form-switch card-switch mb-1">
-                                <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-dark" value="dark">
+                                <input class="form-check-input" type="checkbox" name="data-topbar-color"
+                                    id="topbar-color-dark" value="dark">
                                 <label class="form-check-label" for="topbar-color-dark">
-                                    <img src="/assets2/images/layouts/topbar-dark.png" alt="" class="img-fluid">
+                                    <img src="/assets2/images/layouts/topbar-dark.png" alt=""
+                                        class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
@@ -349,9 +368,11 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-light" value="light">
+                                    <input class="form-check-input" type="checkbox" name="data-menu-color"
+                                        id="leftbar-color-light" value="light">
                                     <label class="form-check-label" for="leftbar-color-light">
-                                        <img src="/assets2/images/layouts/sidebar-light.png" alt="" class="img-fluid">
+                                        <img src="/assets2/images/layouts/sidebar-light.png" alt=""
+                                            class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Light</h5>
@@ -359,9 +380,11 @@
 
                             <div class="col-4">
                                 <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-dark" value="dark">
+                                    <input class="form-check-input" type="checkbox" name="data-menu-color"
+                                        id="leftbar-color-dark" value="dark">
                                     <label class="form-check-label" for="leftbar-color-dark">
-                                        <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
+                                        <img src="/assets2/images/layouts/light.png" alt=""
+                                            class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
@@ -375,9 +398,11 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-default" value="default">
+                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size"
+                                        id="leftbar-size-default" value="default">
                                     <label class="form-check-label" for="leftbar-size-default">
-                                        <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
+                                        <img src="/assets2/images/layouts/light.png" alt=""
+                                            class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Default</h5>
@@ -385,9 +410,11 @@
 
                             <div class="col-4">
                                 <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-compact" value="compact">
+                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size"
+                                        id="leftbar-size-compact" value="compact">
                                     <label class="form-check-label" for="leftbar-size-compact">
-                                        <img src="/assets2/images/layouts/compact.png" alt="" class="img-fluid">
+                                        <img src="/assets2/images/layouts/compact.png" alt=""
+                                            class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Compact</h5>
@@ -395,7 +422,8 @@
 
                             <div class="col-4">
                                 <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-small" value="condensed">
+                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size"
+                                        id="leftbar-size-small" value="condensed">
                                     <label class="form-check-label" for="leftbar-size-small">
                                         <img src="/assets2/images/layouts/sm.png" alt="" class="img-fluid">
                                     </label>
@@ -406,7 +434,8 @@
 
                             <div class="col-4">
                                 <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-full" value="full">
+                                    <input class="form-check-input" type="checkbox" name="data-sidenav-size"
+                                        id="leftbar-size-full" value="full">
                                     <label class="form-check-label" for="leftbar-size-full">
                                         <img src="/assets2/images/layouts/full.png" alt="" class="img-fluid">
                                     </label>
@@ -420,11 +449,14 @@
                         <h5 class="my-3 fs-16 fw-bold">Layout Position</h5>
 
                         <div class="btn-group checkbox" role="group">
-                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed">
+                            <input type="radio" class="btn-check" name="data-layout-position"
+                                id="layout-position-fixed" value="fixed">
                             <label class="btn btn-soft-primary w-sm" for="layout-position-fixed">Fixed</label>
 
-                            <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
-                            <label class="btn btn-soft-primary w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
+                            <input type="radio" class="btn-check" name="data-layout-position"
+                                id="layout-position-scrollable" value="scrollable">
+                            <label class="btn btn-soft-primary w-sm ms-0"
+                                for="layout-position-scrollable">Scrollable</label>
                         </div>
                     </div>
                 </div>
@@ -436,7 +468,8 @@
                     <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
                 </div>
                 <div class="col-6">
-                    <a href="https://1.envato.market/velonic" target="_blank" role="button" class="btn btn-primary w-100">Buy Now</a>
+                    <a href="https://1.envato.market/velonic" target="_blank" role="button"
+                        class="btn btn-primary w-100">Buy Now</a>
                 </div>
             </div>
         </div>
@@ -462,6 +495,12 @@
 
     <!-- App js -->
     <script src="/assets2/js/app.min.js"></script>
+
+    <!-- Bootstrap Wizard Form js -->
+    <script src="/assets2/vendor/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+
+    <!-- Wizard Form Demo js -->
+    <script src="/assets2/js/pages/form-wizard.init.js"></script>
 
 </body>
 

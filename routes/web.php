@@ -35,3 +35,4 @@ Route::get('/changeStatus', [PelayananController::class, 'ubah_status']);
 
 //datatables
 Route::get('/datatablesKonsultasi', [PelayananController::class, 'dataTables']);
+Route::get('/datatablesKonsultasiSelesai', [PelayananController::class, 'dataTablesSelesai']);

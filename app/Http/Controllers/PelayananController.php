@@ -109,11 +109,24 @@ class PelayananController extends Controller
 
     public function dataTables(Request $request)
     {
-        $query = Pelayanan::all();
+        $query = Pelayanan::where('status', 'BELUM SELESAI')->get();
         return DataTables::of($query)->addColumn('action', function ($row) {
             $actionBtn =
                 '
     <button class="btn btn-rounded btn-sm btn-primary text-white selesai-button" title="Edit Data" data-unique="' . $row->unique . '">Selesai</button>
+    <a href="https://wa.me/+62' . $row->no_hp . '" class="btn btn-rounded btn-sm btn-info text-white selesai-button" title="Edit Data" data-unique="' . $row->unique . '">Hubungi</a>
+    ';
+
+            return $actionBtn;
+        })->make(true);
+    }
+    public function dataTablesSelesai(Request $request)
+    {
+        $query = Pelayanan::where('status', 'SELESAI')->get();
+        return DataTables::of($query)->addColumn('action', function ($row) {
+            $actionBtn =
+                '
+    
     <a href="https://wa.me/+62' . $row->no_hp . '" class="btn btn-rounded btn-sm btn-info text-white selesai-button" title="Edit Data" data-unique="' . $row->unique . '">Hubungi</a>
     ';
 
