@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\PelayananController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PelayananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//AUTH 
+//jika ada request url /login dengan method GET maka request tersebut akan ditangani oleh authcontroller  method index
+Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
+Route::get('/home', [PelayananController::class, 'index'])->middleware('auth');
+//jika ada request url /auth dengan method post maka request tersebut akan ditangani oleh authcontroller  method authenticate
+Route::post('/auth', [AuthController::class, 'authenticate']);
+Route::get('/logout', [AuthController::class, 'logout']);
 //halaman home
 Route::get('/', function () {
     return view('front-end.index');
@@ -26,8 +34,9 @@ Route::get('/bukit-bintang', function () {
     return view('front-end.bukit-bintang');
 });
 //pelayanan
-Route::resource('/pelayanan', PelayananController::class);
+Route::resource('/pelayanan', PelayananController::class)->except('store')->middleware('auth');
 //pendaftaran
+Route::post('/simpan_pelayanan', [PelayananController::class, 'store']);
 Route::get('/daftar_pelayanan', [PelayananController::class, 'daftar_pelayanan']);
 //mengubah status
 Route::get('/changeStatus', [PelayananController::class, 'ubah_status']);

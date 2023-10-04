@@ -313,7 +313,7 @@
                                         <p>Tuliskan data anda</p>
                                     </div>
                                     <div class="in-contact-form">
-                                        <form action="/pelayanan" method="POST">
+                                        <form action="/simpan_pelayanan" method="POST">
                                             @csrf
                                             <input type="text" name="nama" id="nama" placeholder="Nama" required>
                                             <textarea style="background-color:#F5F8F8" type="text" name="alamat" id="alamat" class="form-control mb-3 border-0" placeholder="Alamat" required></textarea>
