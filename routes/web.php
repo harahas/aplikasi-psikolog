@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Artikel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PelayananController;
@@ -41,6 +42,14 @@ Route::get('/daftar_pelayanan', [PelayananController::class, 'daftar_pelayanan']
 //mengubah status
 Route::get('/changeStatus', [PelayananController::class, 'ubah_status']);
 
+//view artikel
+Route::get('/view_artikel', function () {
+    $data = [
+        'postingan_terbaru' => Artikel::latest()->first(), //ngambil data terakhir untuk headline
+        'postingan_all' => Artikel::all() //untung mengambil semua data
+    ];
+    return view('artikel.index', $data);
+});
 
 //datatables
 Route::get('/datatablesKonsultasi', [PelayananController::class, 'dataTables']);

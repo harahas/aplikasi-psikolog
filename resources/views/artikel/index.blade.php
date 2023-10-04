@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Akhlaqul Qarimah </title>
-    <meta name="description" content="Insurin - Insurance Company HTML Template">
-    <meta name="keywords" content="	accounting, advising, advisory, business, company, consulting, corporate, finance, financial, investments, law, multi-purpose, services, tax help, visual composer">
-    <meta name="author" content="Themexriver">
-    <link rel="shortcut icon" href="/assets/img/logo/ficon.png" type="image/x-icon">
-    <!-- Mobile Specific Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8">
+	<title>Blog Grid - Insurin </title>
+	<meta name="description" content="Insurin - Insurance Company HTML Template">
+	<meta name="keywords" content="	accounting, advising, advisory, business, company, consulting, corporate, finance, financial, investments, law, multi-purpose, services, tax help, visual composer">
+	<meta name="author" content="Themexriver">
+	<link rel="shortcut icon" href="/assets/img/logo/ficon.png" type="image/x-icon">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/fontawesome-all.css">
-    <link rel="stylesheet" href="/assets/css/flaticon.css">
-    <link rel="stylesheet" href="/assets/css/animate.css">
-    <link rel="stylesheet" href="/assets/css/video.min.css">
-    <link rel="stylesheet" href="/assets/css/slick-theme.css">
-    <link rel="stylesheet" href="/assets/css/slick.css">
-    <link rel="stylesheet" href="/assets/css/nice-select.css">
-    <link rel="stylesheet" href="/assets/css/rs6.css">
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/fontawesome-all.css">
+	<link rel="stylesheet" href="/assets/css/flaticon.css">
+	<link rel="stylesheet" href="/assets/css/animate.css">
+	<link rel="stylesheet" href="/assets/css/video.min.css">
+	<link rel="stylesheet" href="/assets/css/slick-theme.css">
+	<link rel="stylesheet" href="/assets/css/slick.css">
+	<link rel="stylesheet" href="/assets/css/nice-select.css">
+	<link rel="stylesheet" href="/assets/css/rs6.css">
+	<link rel="stylesheet" href="/assets/css/global.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <div id="preloader"></div>
-    <div class="up">
-        <a href="#" class="scrollup text-center"><i class="fas fa-chevron-up"></i></a>
-    </div>
-
-    <!-- Start of header section
+	<div id="preloader"></div>
+	<div class="up">
+		<a href="#" class="scrollup text-center"><i class="fas fa-chevron-up"></i></a>
+	</div>
+	
+<!-- Start of header section
 	============================================= -->
-    <header id="in-header" class="in-header-section header-style-one">
+	<header id="in-header" class="in-header-section header-style-one">
         <div class="in-header-top-content-area">
             <div class="container">
                 <div class="header-top-content d-flex justify-content-between align-items-center">
@@ -298,180 +298,205 @@
             </div>
         </div>
     </header>
-    <!-- search filed -->
-    <div class="search-body">
-        <div class="search-form">
-            <form action="#" class="search-form-area">
-                <input class="search-input" type="search" placeholder="Search Here">
-                <button type="submit" class="search-btn1">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
-            <div class="outer-close text-center search-btn">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-    </div>
-    <!-- End of header section
+	<!-- search filed -->
+	<div class="search-body">
+		<div class="search-form">
+			<form action="#" class="search-form-area">
+				<input class="search-input" type="search" placeholder="Search Here">
+				<button type="submit" class="search-btn1">
+					<i class="fas fa-search"></i>
+				</button>	
+			</form>
+			<div class="outer-close text-center search-btn">
+				<i class="fas fa-times"></i>
+			</div>
+		</div>
+	</div>
+<!-- End of header section
 	============================================= -->
 
-    <!-- Start of Banner section
+<!-- Start of breadcrumb section
 	============================================= -->
-    <section id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:45vh;">
-                    <h3>Lembaga Psikolog</h3>
-                    <h1 class="text-dark fw-bold">Akhlaqul Karimah</h1>
-                    <h1>Konsultan Keluarga</h1>
-                    <h3>Keluarga Berdaya, Indonesia Berjaya</h3>
-                    <a href="/daftar_pelayanan" class="btn btn-success text-white mt-5" style="width:30vh;padding:10px 20px">Jadwalkan Konsultasi</a>
-                </div>
-
-                <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:30vh;">
-                    <img src="/assets/img/about/keluarga.jpg" alt="" width="600vh">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-
-            <div class="row" style="margin-top:30px">
-                <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:20vh;">
-                    <img src="/assets/img/about/keluarga.jpg" alt="" width="550vh">
-                </div>
-                <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:20vh;">
-                    <h3>Profile Psikolog</h3>
-                    <h1 class="text-dark fw-bold">Dewi Widiastuti M.Psi</h1>
-                    <a href="/daftar_pelayanan" class="btn btn-primary text-white mt-5" style="width:30vh;padding:10px 20px">Profile Lengkap</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Start of Footer section
+	<section id="in-breadcrumb" class="in-breadcrumb-section" style="background-color: #198754">
+		<div class="in-breadcrumb-content position-relative"  data-background="{{ $postingan_terbaru->image }}">
+			<div class="background_overlay"></div>
+			<div class="container">
+				<div class="in-breadcrumb-title-content position-relative headline ul-li">
+					<h2>{{ $postingan_terbaru->title }} </h2>
+					<ul class="col-sm-4">
+						<p >{{ $postingan_terbaru->excerpt }}</p>
+						<li><a href="#">Read More</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+<!-- End of breadcrumb section
 	============================================= -->
-    <footer id="in-footer" class="in-footer-section" data-background="/assets/img/bg/footer-bg.jpg">
-        <div class="container ">
-            <div class="in-footer-widget-wrapper">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="in-footer-widget">
-                            <div class="logo-widget">
-                                <div class="brand-logo">
-                                    <a href="#"><img src="/assets/img/logo/logo-2.png" alt=""></a>
-                                </div>
-                                <div class="footer-text">
-                                    Hamni Rahma
-                                </div>
-                                <div class="footer-social d-flex">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="in-footer-widget">
-                            <div class="contact-widget headline">
-                                <h3 class="widget-title">Contact info</h3>
-                                <div class="contact-info">
-                                    <div class="info-item d-flex align-items-center">
-                                        <div class="inner-icon d-flex align-items-center justify-content-center">
-                                            <i class="fal fa-map-marker-alt"></i>
-                                        </div>
-                                        <div class="inner-text">
-                                            30 Commercial Road
-                                            Fratton, Australia
-                                        </div>
-                                    </div>
-                                    <div class="info-item d-flex align-items-center">
-                                        <div class="inner-icon d-flex align-items-center justify-content-center">
-                                            <i class="fal fa-envelope-open-text"></i>
-                                        </div>
-                                        <div class="inner-text">
-                                            insurin@company.com
-                                            1-888-452-1505
-                                        </div>
-                                    </div>
-                                    <div class="info-item d-flex align-items-center">
-                                        <div class="inner-icon d-flex align-items-center justify-content-center">
-                                            <i class="fal fa-phone-plus"></i>
-                                        </div>
-                                        <div class="inner-text">
-                                            Mon – Sat: 8 am – 5 pm,
-                                            Sunday: CLOSED
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="in-footer-widget">
-                            <div class="menu-widget headline ul-li-block">
-                                <h3 class="widget-title">Our Company</h3>
-                                <ul>
-                                    <li><a href="#">Our Story</a></li>
-                                    <li><a href="#">News & Blog</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">Customer Support</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Website Accessibility</a></li>
+
+<!-- Start of Blog Grid section
+	============================================= -->
+	<section id="in-blog-grid" class="in-blog-grid-section">
+		<div class="container">
+			<div class="blog-grid-content">
+				<div class="row justify-content-center">
+                    @foreach ($postingan_all as $row)  
+					<div class="col-lg-4 col-md-6">
+						<div class="in-blog-item">
+							<div class="blog-title headline">
+								<h3><a href="#" tabindex="0">{{ $row->title }}</a></h3>
+							</div>
+							<div class="blog-img">
+								<img src="{{ $row->image }}" alt="">
+							</div>
+							<div class="blog-meta-text">
+								<div class="in-meta">
+									<a href="#" tabindex="0"><i class="far fa-calendar-check"></i> {{ date('d M Y', strtotime($row->created_at)) }}</a>
+									<a href="#" tabindex="0"><i class="far fa-file-alt"></i> Business</a>
+								</div>
+								<div class="in-blog-text">
+									{{ $row->excerpt }}
+								</div>
+                                <ul style="list-style:none; color:blue ">
+                                    <li><a href="#">Read More...</a></li>
                                 </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="in-footer-widget">
-                            <div class="newslatter-widget headline ul-li-block">
-                                <h3 class="widget-title">Subscribe newsletter</h3>
-                                <form action="#" method="get">
-                                    <input type="email" name="email" placeholder="Email">
-                                    <button type="submit">Subscribe Now</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="in-footer-copyright-area d-flex justify-content-end">
-                <div class="in-footer-copyright-text">
-                    <div class="inner-text d-flex justify-content-end">
-                        Copyright © 2022themexriver
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer section
-	============================================= -->
+							</div>
+						</div>
+					</div>
+                    @endforeach
+					
+				</div>
+				
+			</div>
+		</div>
+	</section>
+<!-- End of Blog Grid section
+	============================================= -->	
 
-    <!-- For Js Library -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/jquery-ui.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/popper.min.js"></script>
-    <script src="/assets/js/appear.js"></script>
-    <script src="/assets/js/slick.js"></script>
-    <script src="/assets/js/wow.min.js"></script>
-    <script src="/assets/js/knob.js"></script>
-    <script src="/assets/js/jquery.filterizr.js"></script>
-    <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="/assets/js/rbtools.min.js"></script>
-    <script src="/assets/js/rs6.min.js"></script>
-    <script src="/assets/js/jarallax.js"></script>
-    <script src="/assets/js/jquery.counterup.min.js"></script>
-    <script src="/assets/js/waypoints.min.js"></script>
-    <script src="/assets/js/tilt.jquery.min.js"></script>
-    <script src="/assets/js/isotope.pkgd.min.js"></script>
-    <script src="/assets/js/jquery.marquee.min.js"></script>
-    <script src="/assets/js/roundslider.js"></script>
-    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="/assets/js/jquery.nice-select.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+	
+
+
+<!-- Start of Footer section
+	============================================= -->
+	<footer id="in-footer" class="in-footer-section" data-background="/assets/img/bg/footer-bg.jpg">
+		<div class="container">
+			<div class="in-footer-widget-wrapper">
+				<div class="row">
+					<div class="col-lg-3 col-md-6">
+						<div class="in-footer-widget">
+							<div class="logo-widget">
+								<div class="brand-logo">
+									<a href="#"><img src="/assets/img/logo/logo-2.png" alt=""></a>
+								</div>
+								<div class="footer-text">
+									The charms of pleasure of the empect moment, so blinded by desire, thats they cannot fores that ound to.
+								</div>
+								<div class="footer-social d-flex">
+									<a href="#"><i class="fab fa-facebook-f"></i></a>
+									<a href="#"><i class="fab fa-instagram"></i></a>
+									<a href="#"><i class="fab fa-twitter"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="in-footer-widget">
+							<div class="contact-widget headline">
+								<h3 class="widget-title">Contact info</h3>
+								<div class="contact-info">
+									<div class="info-item d-flex align-items-center">
+										<div class="inner-icon d-flex align-items-center justify-content-center">
+											<i class="fal fa-map-marker-alt"></i>
+										</div>
+										<div class="inner-text">
+											30 Commercial Road
+											Fratton, Australia 
+										</div>
+									</div>
+									<div class="info-item d-flex align-items-center">
+										<div class="inner-icon d-flex align-items-center justify-content-center">
+											<i class="fal fa-envelope-open-text"></i>
+										</div>
+										<div class="inner-text">
+											insurin@company.com
+											1-888-452-1505 
+										</div>
+									</div>
+									<div class="info-item d-flex align-items-center">
+										<div class="inner-icon d-flex align-items-center justify-content-center">
+											<i class="fal fa-phone-plus"></i>
+										</div>
+										<div class="inner-text">
+											Mon – Sat: 8 am – 5 pm,
+											Sunday: CLOSED
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="in-footer-widget">
+							<div class="menu-widget headline ul-li-block">
+								<h3 class="widget-title">Our Company</h3>
+								<ul>
+									<li><a href="#">Our Story</a></li>
+									<li><a href="#">News & Blog</a></li>
+									<li><a href="#">Careers</a></li>
+									<li><a href="#">Customer Support</a></li>
+									<li><a href="#">Contact Us</a></li>
+									<li><a href="#">Website Accessibility</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="in-footer-widget">
+							<div class="newslatter-widget headline ul-li-block">
+								<h3 class="widget-title">Subscribe newsletter</h3>
+								<form action="#" method="get">
+									<input type="email" name="email" placeholder="Email">
+									<button type="submit">Subscribe Now</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="in-footer-copyright-area d-flex justify-content-end">
+				<div class="in-footer-copyright-text">
+					<div class="inner-text d-flex justify-content-end">
+						Copyright © 2022themexriver
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>		
+<!-- End of Footer section============================================= -->	
+
+	<!-- For Js Library -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery-ui.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/appear.js"></script>
+	<script src="/assets/js/slick.js"></script>
+	<script src="/assets/js/wow.min.js"></script>
+	<script src="/assets/js/knob.js"></script>
+	<script src="/assets/js/jquery.filterizr.js"></script>
+	<script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+	<script src="/assets/js/rbtools.min.js"></script>
+	<script src="/assets/js/rs6.min.js"></script>
+	<script src="/assets/js/jarallax.js"></script>
+	<script src="/assets/js/jquery.counterup.min.js"></script>
+	<script src="/assets/js/waypoints.min.js"></script>
+	<script src="/assets/js/tilt.jquery.min.js"></script>
+	<script src="/assets/js/isotope.pkgd.min.js"></script>
+	<script src="/assets/js/jquery.marquee.min.js"></script>
+	<script src="/assets/js/roundslider.js"></script>
+	<script src="/assets/js/jquery.inputarrow.js"></script>
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/js/jquery.nice-select.min.js"></script>
+	<script src="/assets/js/script.js"></script>
 </body>
-</html>
+</html>			
