@@ -3,6 +3,7 @@
 use App\Models\Artikel;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\PelayananController;
 
 /*
@@ -36,6 +37,8 @@ Route::get('/bukit-bintang', function () {
 });
 //pelayanan
 Route::resource('/pelayanan', PelayananController::class)->except('store')->middleware('auth');
+//pelayanan
+Route::resource('/list_artikel', ArtikelController::class)->middleware('auth');
 //pendaftaran
 Route::post('/simpan_pelayanan', [PelayananController::class, 'store']);
 Route::get('/daftar_pelayanan', [PelayananController::class, 'daftar_pelayanan']);
@@ -54,3 +57,4 @@ Route::get('/view_artikel', function () {
 //datatables
 Route::get('/datatablesKonsultasi', [PelayananController::class, 'dataTables']);
 Route::get('/datatablesKonsultasiSelesai', [PelayananController::class, 'dataTablesSelesai']);
+Route::get('/datatablesArtikel', [ArtikelController::class, 'dataTables']);

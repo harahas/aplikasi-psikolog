@@ -72,7 +72,7 @@
                                                 
                                             </div>
                                             {{-- Ketika tombol login di klik maka request akan ditangani oleh url /auth --}}
-                                            <div class="mb-0 text-start">
+                                            <div class="mb-0 text-start mt-3">
                                                 <button class="btn btn-soft-primary w-100" type="submit"><i class="ri-login-circle-fill me-1"></i> <span class="fw-bold">LogIn</span> </button>
                                             </div>   
                                         </form>

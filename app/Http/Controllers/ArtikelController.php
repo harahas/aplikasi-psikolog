@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class ArtikelController extends Controller
 {
@@ -15,6 +16,11 @@ class ArtikelController extends Controller
     public function index()
     {
         //
+        $data = [
+            'title' => 'Artikel',
+
+        ];
+        return view('artikel.list-artikel', $data);
     }
 
     /**
@@ -22,9 +28,15 @@ class ArtikelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // untuk menambahkan data 
     public function create()
     {
         //
+        $data = [
+            'title' => 'Tambah Artikel',
+
+        ];
+        return view('artikel.create', $data);
     }
 
     /**
@@ -33,6 +45,7 @@ class ArtikelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    // proses penyimpanan data
     public function store(Request $request)
     {
         //
@@ -44,6 +57,7 @@ class ArtikelController extends Controller
      * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
+    // detail data
     public function show(Artikel $artikel)
     {
         //
@@ -55,6 +69,7 @@ class ArtikelController extends Controller
      * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
+    // edit data
     public function edit(Artikel $artikel)
     {
         //
@@ -67,6 +82,7 @@ class ArtikelController extends Controller
      * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
+    // proses update data
     public function update(Request $request, Artikel $artikel)
     {
         //
@@ -78,8 +94,25 @@ class ArtikelController extends Controller
      * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
+    // hapus data
     public function destroy(Artikel $artikel)
     {
         //
+    }
+
+    public function dataTables(Request $request)
+    {
+        // untuk mengambil data semua artikel dari database oleh MODEL ARTIKEL
+        $query = Artikel::all();
+        return DataTables::of($query)->addColumn('action', function ($row) {
+            $actionBtn =
+                '
+    <a href="#" class="btn btn-rounded btn-sm btn-primary text-white" title="Lihat">Lihat</a>
+    <a href="#" class="btn btn-rounded btn-sm btn-info text-white" title="Edit Data">Edit</a>
+    <a href="#" class="btn btn-rounded btn-sm btn-danger text-white" title="Hapus">Hapus</a>
+    ';
+
+            return $actionBtn;
+        })->make(true);
     }
 }

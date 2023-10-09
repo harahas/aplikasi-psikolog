@@ -38,13 +38,27 @@
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
                     <i class="ri-pages-line"></i>
-                    <span> Mater </span>
+                    <span> Master </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="sidebarPages">
                     <ul class="side-nav-second-level">
                         <li>
                             <a href="/pelayanan">Pelayanan</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#sidebarPages2" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
+                    <i class="ri-pages-line"></i>
+                    <span> Artikel </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="sidebarPages2">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="/list_artikel">List Artikel</a>
                         </li>
                     </ul>
                 </div>
