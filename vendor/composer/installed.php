@@ -29,9 +29,15 @@
             'dev_requirement' => false,
         ),
         'cocur/slugify' => array(
+<<<<<<< HEAD
             'pretty_version' => 'v4.5.1',
             'version' => '4.5.1.0',
             'reference' => '7c6e088228b9f082050876ae8b0cd287b117b840',
+=======
+            'pretty_version' => 'v4.4.0',
+            'version' => '4.4.0.0',
+            'reference' => '4c6ed14a087ca061b220ffda640c07644946e2a0',
+>>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
             'type' => 'library',
             'install_path' => __DIR__ . '/../cocur/slugify',
             'aliases' => array(),

@@ -23,6 +23,13 @@
     <link rel="stylesheet" href="/css/trix.css">
     <script src="/js/trix.umd.min.js"></script>
 
+    {{-- TRIX --}}
+    <link rel="stylesheet" href="/css/trix.css">
+    <script>
+        src = "/js/trix.umd.min.js"
+
+    </script>
+
     <!-- Theme Config Js -->
     <script src="/assets2/js/config.js"></script>
 
@@ -246,7 +253,7 @@
                             <script>
                                 document.write(new Date().getFullYear())
 
-                            </script> © Velonic - Theme by <b>Techzaa</b>
+                            </script> © Akhlaqul Karimah <b>Lembaga Psikolog</b>
                         </div>
                     </div>
                 </div>

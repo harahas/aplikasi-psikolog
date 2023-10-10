@@ -14,7 +14,7 @@
                     <div class="mb-3">
                         <div class="mb-3">
                             <label for="slug" class="form-label">Slug</label>
-                            <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug" readonly>
+                            <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
                         </div>
                         <label for="body" class="form-label">Body</label>
                         <input id="body" type="hidden" name="body">
@@ -24,23 +24,24 @@
                         <label for="image" class="form-label">Upload Image</label>
                         <input type="file" class="form-control" id="image" name="image" placeholder="Drag Photo">
                         <button type="submit" class="btn btn-primary mt-3">Upload</button>
-                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
 <script>
-    //tangkap element input title
-    let title = document.querySelector("#title")
-    //tangkap element input slug
-    let slug = document.querySelector("#slug")
+    //tangkap elemen input title
+    let title = document.querySelector('#title')
+    //tangkap elemen input slug
+    let slug = document.querySelector('#slug')
 
-    //ketika title selesai di ketik
-    title.addEventListener("change", function() {
+
+    //ketika title selesai di klik
+    title.addEventListener("change", () => {
         fetch('/createSlug?title=' + title.value)
-            .then(response => response.json())
-            .then(data => slug.value = data.slug)
+            .then((response) => response.json())
+            .then((data) => slug.value = data.slug)
+
     })
 
 </script>

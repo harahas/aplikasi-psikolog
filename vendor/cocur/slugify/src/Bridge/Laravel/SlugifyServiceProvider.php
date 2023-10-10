@@ -38,7 +38,11 @@ class SlugifyServiceProvider extends LaravelServiceProvider
      *
      * @return void
      */
+<<<<<<< HEAD
     public function register(): void
+=======
+    public function register()
+>>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         $this->app->singleton('slugify', function () {
             return new Slugify();
@@ -50,7 +54,11 @@ class SlugifyServiceProvider extends LaravelServiceProvider
      *
      * @return string[]
      */
+<<<<<<< HEAD
     public function provides(): array
+=======
+    public function provides()
+>>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         return ['slugify'];
     }

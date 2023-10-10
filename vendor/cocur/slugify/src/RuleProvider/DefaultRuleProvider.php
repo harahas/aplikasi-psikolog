@@ -29,7 +29,11 @@ class DefaultRuleProvider implements RuleProviderInterface
      *
      * @var array
      */
+<<<<<<< HEAD
     protected array $rules = /*INSERT_START*/array (
+=======
+    protected $rules = /*INSERT_START*/array (
+>>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
   'arabic' => 
   array (
     'أ' => 'a',
@@ -9607,6 +9611,7 @@ class DefaultRuleProvider implements RuleProviderInterface
     'ò' => 'o',
     'ù' => 'u',
   ),
+<<<<<<< HEAD
   'korean' => 
   array (
     '가' => 'ga',
@@ -10199,6 +10204,8 @@ class DefaultRuleProvider implements RuleProviderInterface
     '히' => 'hi',
     '힘' => 'him',
   ),
+=======
+>>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
   'latvian' => 
   array (
     'Ā' => 'A',
@@ -10903,7 +10910,11 @@ class DefaultRuleProvider implements RuleProviderInterface
      *
      * @return array
      */
+<<<<<<< HEAD
     public function getRules(string $ruleset): array
+=======
+    public function getRules($ruleset)
+>>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         if (!array_key_exists($ruleset, $this->rules)) {
             throw new OutOfBoundsException(sprintf('ruleset \'%s\' does not exist', $ruleset));

@@ -43,7 +43,11 @@ class SlugifyConverter implements ConverterInterface
      *
      * @return string
      */
+<<<<<<< HEAD
     public function convert($item): string
+=======
+    public function convert($item)
+>>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         return $this->slugify->slugify($item);
     }

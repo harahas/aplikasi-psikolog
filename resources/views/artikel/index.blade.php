@@ -8,11 +8,12 @@
 		<div class="in-breadcrumb-content position-relative"  data-background="{{ $postingan_terbaru->image }}">
 			<div class="background_overlay"></div>
 			<div class="container">
-				<div class="in-breadcrumb-title-content position-relative headline ul-li">
+				
+				<div class="in-breadcrumb-title-content position-relative headline ul-li" >
 					<h2>{{ $postingan_terbaru->title }} </h2>
 					<ul class="col-sm-4">
 						<p >{{ $postingan_terbaru->excerpt }}</p>
-						<li><a href="#">Read More</a></li>
+						<li><a href="#" style="list-style:none; color:blue">Read More</a></li>
 					</ul>
 				</div>
 			</div>

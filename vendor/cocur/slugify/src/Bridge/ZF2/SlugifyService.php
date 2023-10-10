@@ -18,7 +18,11 @@ class SlugifyService
      *
      * @return Slugify
      */
+<<<<<<< HEAD
     public function __invoke($sm): Slugify
+=======
+    public function __invoke($sm)
+>>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         $config = $sm->get('Config');
 

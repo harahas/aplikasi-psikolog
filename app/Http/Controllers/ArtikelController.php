@@ -116,10 +116,9 @@ class ArtikelController extends Controller
             return $actionBtn;
         })->make(true);
     }
-
     public function create_slug(Request $request)
     {
-        $slug = SlugService::createSlug(Artikel::class, 'slug', $request->title, ['unique' => false]);
+        $slug = SlugService::createSlug(Artikel::class, 'slug', $request->title);
         return response()->json(['slug' => $slug]);
     }
 }
