@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Artikel;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 
 class ArtikelController extends Controller
 {
@@ -114,5 +115,10 @@ class ArtikelController extends Controller
 
             return $actionBtn;
         })->make(true);
+    }
+    public function create_slug(Request $request)
+    {
+        $slug = SlugService::createSlug(Artikel::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

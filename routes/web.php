@@ -39,6 +39,7 @@ Route::get('/bukit-bintang', function () {
 Route::resource('/pelayanan', PelayananController::class)->except('store')->middleware('auth');
 //pelayanan
 Route::resource('/list_artikel', ArtikelController::class)->middleware('auth');
+Route::get('/createSlug', [ArtikelController::class, 'create_slug'])->middleware('auth');
 //pendaftaran
 Route::post('/simpan_pelayanan', [PelayananController::class, 'store']);
 Route::get('/daftar_pelayanan', [PelayananController::class, 'daftar_pelayanan']);

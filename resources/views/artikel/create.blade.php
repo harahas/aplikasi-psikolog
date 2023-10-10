@@ -1,28 +1,28 @@
 @extends('layouts.velonic')
 @section('container-velonic')
-.<div class="row">
+<div class="row">
 <div class="col">
 <div class="card ">
  <div class="card-header">Tambah Data</div>
   <div class="card-body">
+    <form action="">
     {{-- Buatkan form untuk input data title, slug, except, body dan upload image dan buatkan satu button tambah data --}}
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Tittle</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Tittle">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name="title" placeholder="Title">
     </div>
     <div class="mb-3">
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Slug</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Slug">
+        <label for="slug" class="form-label">Slug</label>
+        <input type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
       </div>
-        <label for="exampleFormControlInput1" class="form-label">Body</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Body">
+        <label for="body" class="form-label">Body</label>
+        <input id="body" type="hidden" name="body">
+        <trix-editor input="body"></trix-editor>
       </div>
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label" >Upload Image</label>
-        <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="Drag Photo">
-      
-        
+        <label for="image" class="form-label" >Upload Image</label>
+        <input type="file" class="form-control" id="image" name="image"  placeholder="Drag Photo">
                     <button type="submit" class="btn btn-primary mt-3" >Upload</button>
                 </form>
             </div>
@@ -30,7 +30,19 @@
         </div>
     </div>
   </div>
-</div>
-</div>
-</div>
+<script>
+  //tangkap elemen input title
+  let title = document.querySelector('#title')
+  //tangkap elemen input slug
+let slug= document.querySelector('#slug')
+
+
+//ketika title selesai di klik
+title.addEventListener("change", () => {
+  fetch('/createSlug?title=' + title.value)
+  .then((response) => response.json())
+  .then((data) => slug.value = data.slug)
+
+})
+</script>
 @endsection

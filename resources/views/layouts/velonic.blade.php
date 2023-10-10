@@ -25,6 +25,10 @@
     <link href="/assets2/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet"
         type="text/css" />
 
+        {{-- TRIX --}}
+    <link rel="stylesheet" href="/css/trix.css">
+    <script> src="/js/trix.umd.min.js"</script>
+    
     <!-- Theme Config Js -->
     <script src="/assets2/js/config.js"></script>
 
@@ -250,7 +254,7 @@
                         <div class="col-12 text-center">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> © Velonic - Theme by <b>Techzaa</b>
+                            </script> © Akhlaqul Karimah <b>Lembaga Psikolog</b>
                         </div>
                     </div>
                 </div>
