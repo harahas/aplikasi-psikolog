@@ -48,11 +48,7 @@ class SlugifyExtension extends AbstractExtension
      *
      * @return TwigFilter[]
      */
-<<<<<<< HEAD
-    public function getFilters(): array
-=======
     public function getFilters()
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         return [
             new TwigFilter('slugify', [$this, 'slugifyFilter']),
@@ -67,11 +63,7 @@ class SlugifyExtension extends AbstractExtension
      *
      * @return string
      */
-<<<<<<< HEAD
-    public function slugifyFilter($string, $separator = null): string
-=======
     public function slugifyFilter($string, $separator = null)
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         return $this->slugify->slugify($string, $separator);
     }
@@ -81,11 +73,7 @@ class SlugifyExtension extends AbstractExtension
      *
      * @return string
      */
-<<<<<<< HEAD
-    public function getName(): string
-=======
     public function getName()
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         return "SlugifyExtension";
     }

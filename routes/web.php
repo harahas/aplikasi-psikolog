@@ -43,6 +43,10 @@ Route::get('/createSlug', [ArtikelController::class, 'create_slug'])->middleware
 //pendaftaran
 Route::post('/simpan_pelayanan', [PelayananController::class, 'store']);
 Route::get('/daftar_pelayanan', [PelayananController::class, 'daftar_pelayanan']);
+//Register User
+Route::get('/register_user', function () {
+    return view('auth.register-user');
+});
 //mengubah status
 Route::get('/changeStatus', [PelayananController::class, 'ubah_status']);
 

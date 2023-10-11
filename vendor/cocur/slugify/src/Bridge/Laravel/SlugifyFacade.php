@@ -32,11 +32,7 @@ class SlugifyFacade extends Facade
      *
      * @codeCoverageIgnore
      */
-<<<<<<< HEAD
-    protected static function getFacadeAccessor(): string
-=======
     protected static function getFacadeAccessor()
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         return 'slugify';
     }

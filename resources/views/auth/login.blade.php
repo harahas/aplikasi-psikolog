@@ -62,19 +62,19 @@
                                                 <input class="form-control @error('username') is-invalid @enderror" type="text" name="username" id="username" placeholder="Enter your username">
                                                 {{-- jika di bawah tag input diberi class in-valid ada div dengan class invalid-feedback maka pesa yang ada dalam div tersebut akan muncul --}}
                                                 <div class="invalid-feedback"> @error('username') {{ $message }}
-                                                    
-                                                @enderror</div>
+
+                                                    @enderror</div>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="password" class="form-label">Password</label>
-                                                <input class="form-control @error('password') is-invalid @enderror" name="password" type="password"  id="password" placeholder="Enter your password">
+                                                <input class="form-control @error('password') is-invalid @enderror" name="password" type="password" id="password" placeholder="Enter your password">
                                                 <div class="invalid-feedback"> @error('password') {{ $message }} @enderror
-                                                
-                                            </div>
-                                            {{-- Ketika tombol login di klik maka request akan ditangani oleh url /auth --}}
-                                            <div class="mb-0 text-start mt-3">
-                                                <button class="btn btn-soft-primary w-100" type="submit"><i class="ri-login-circle-fill me-1"></i> <span class="fw-bold">LogIn</span> </button>
-                                            </div>   
+
+                                                </div>
+                                                {{-- Ketika tombol login di klik maka request akan ditangani oleh url /auth --}}
+                                                <div class="mb-0 text-start mt-3">
+                                                    <button class="btn btn-soft-primary w-100" type="submit"><i class="ri-login-circle-fill me-1"></i> <span class="fw-bold">LogIn</span> </button>
+                                                </div>
                                         </form>
                                         <!-- end form-->
                                     </div>
@@ -85,7 +85,7 @@
                 </div>
                 <!-- end row -->
             </div>
-          
+
             <!-- end row -->
         </div>
         <!-- end container -->
@@ -96,6 +96,7 @@
         <span class="text-dark">
             <script>
                 document.write(new Date().getFullYear())
+
             </script> © Velonic - Theme by Techzaa
         </span>
     </footer>

@@ -11,7 +11,7 @@
                     <h1 class="text-dark fw-bold">Akhlaqul Karimah</h1>
                     <h1>Konsultan Keluarga</h1>
                     <h3>Keluarga Berdaya, Indonesia Berjaya</h3>
-                    <a href="/daftar_pelayanan" class="btn btn-success text-white mt-5" style="width:30vh;padding:10px 20px">Jadwalkan Konsultasi</a>
+                    <button class="btn btn-success text-white mt-5" style="width:30vh;padding:10px 20px " data-bs-toggle="modal" data-bs-target="#modal-reservasi">Jadwalkan Konsultasi</button>
                 </div>
 
                 <div class="col-sm-6 d-flex flex-column justify-content-center " style="margin-top:30vh;">

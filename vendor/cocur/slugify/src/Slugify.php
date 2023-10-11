@@ -26,38 +26,22 @@ use Cocur\Slugify\RuleProvider\RuleProviderInterface;
  */
 class Slugify implements SlugifyInterface
 {
-<<<<<<< HEAD
-    public const LOWERCASE_NUMBERS_DASHES = '/[^A-Za-z0-9]+/';
-=======
     const LOWERCASE_NUMBERS_DASHES = '/[^A-Za-z0-9]+/';
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
 
     /**
      * @var array<string,string>
      */
-<<<<<<< HEAD
-    protected array $rules = [];
-=======
     protected $rules = [];
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
 
     /**
      * @var RuleProviderInterface
      */
-<<<<<<< HEAD
-    protected RuleProviderInterface $provider;
-=======
     protected $provider;
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
 
     /**
      * @var array<string,mixed>
      */
-<<<<<<< HEAD
-    protected array $options = [
-=======
     protected $options = [
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
         'regexp'    => self::LOWERCASE_NUMBERS_DASHES,
         'separator' => '-',
         'lowercase' => true,
@@ -113,11 +97,7 @@ class Slugify implements SlugifyInterface
      *
      * @return string Slugified version of the string
      */
-<<<<<<< HEAD
-    public function slugify(string $string, array|string|null $options = null): string
-=======
     public function slugify(string $string, $options = null): string
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         // BC: the second argument used to be the separator
         if (is_string($options)) {
@@ -165,11 +145,7 @@ class Slugify implements SlugifyInterface
      *
      * @return Slugify
      */
-<<<<<<< HEAD
-    public function addRule($character, $replacement): self
-=======
     public function addRule($character, $replacement)
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         $this->rules[$character] = $replacement;
 
@@ -183,11 +159,7 @@ class Slugify implements SlugifyInterface
      *
      * @return Slugify
      */
-<<<<<<< HEAD
-    public function addRules(array $rules): self
-=======
     public function addRules(array $rules)
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         foreach ($rules as $character => $replacement) {
             $this->addRule($character, $replacement);
@@ -201,11 +173,7 @@ class Slugify implements SlugifyInterface
      *
      * @return Slugify
      */
-<<<<<<< HEAD
-    public function activateRuleSet($ruleSet): self
-=======
     public function activateRuleSet($ruleSet)
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         return $this->addRules($this->provider->getRules($ruleSet));
     }
@@ -217,11 +185,7 @@ class Slugify implements SlugifyInterface
      *
      * @return Slugify
      */
-<<<<<<< HEAD
-    public static function create(array $options = []): self
-=======
     public static function create(array $options = [])
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         return new static($options);
     }

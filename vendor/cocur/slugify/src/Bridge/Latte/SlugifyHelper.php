@@ -31,11 +31,7 @@ class SlugifyHelper
      *
      * @return string
      */
-<<<<<<< HEAD
-    public function slugify($string, $separator = null): string
-=======
     public function slugify($string, $separator = null)
->>>>>>> 6bdbc33dff69e834385e05134dea9b68775ad77c
     {
         return $this->slugify->slugify($string, $separator);
     }

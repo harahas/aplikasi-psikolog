@@ -1,3 +1,6 @@
+@php
+$warna = 'black';
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div style="background-color: #198754; padding:15px 0">
+        <div style="background-color: {{ $warna }}; padding:15px 0">
             <div class="container">
                 <div class="in-header-main-menu-content d-flex align-items-center justify-content-between">
                     <div class="sticky-logo">
@@ -97,7 +100,7 @@
                                     <li><a target="_blank" href="/bukit-bintang">Outbond</a></li>
                                 </ul>
                             </li>
-                             <li><a href="/view_artikel">Artikel</a></li>
+                            <li><a href="/view_artikel">Artikel</a></li>
                             </li>
                             <li><a target="_blank" href="about.html">Testimoni</a></li>
                             </li>
@@ -110,7 +113,7 @@
                         <div class="in-header-search">
                             <button class="search-btn"><i class="fal fa-search"></i></button>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="mobile_menu position-relative">
@@ -311,8 +314,27 @@
 
     <!-- End of header section
 	============================================= -->
-@yield('template')
-  <!-- Start of Footer section
+    @yield('template')
+    <!-- Modal -->
+    <div class="modal fade" id="modal-reservasi" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header text-white" style="background-color: {{ $warna }}">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <a href="/login" class="btn btn-primary text-white me-2" style="border-radius : 20px">Login</a>
+                    <a href="/register_user" type="button" class="btn btn-success" style="border-radius : 20px">Register</a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Start of Footer section
 	============================================= -->
     <footer id="in-footer" class="in-footer-section" data-background="/assets/img/bg/footer-bg.jpg">
         <div class="container ">
@@ -341,7 +363,7 @@
                                 <h3 class="widget-title">Contact info</h3>
                                 <div class="contact-info">
                                     <div class="info-item d-flex align-items-center">
-                                        <div class="inner-icon d-flex align-items-center justify-content-center" style="color:#198754">
+                                        <div class="inner-icon d-flex align-items-center justify-content-center" style="color:{{ $warna }}">
                                             <i class="fal fa-map-marker-alt text-success"></i>
                                         </div>
                                         <div class="inner-text">
