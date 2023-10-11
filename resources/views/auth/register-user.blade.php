@@ -39,19 +39,19 @@
 
                                                 <ul class="nav nav-pills nav-justified form-wizard-header mb-4">
                                                     <li class="nav-item">
-                                                        <a href="#basictab1" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 py-2">
+                                                        <a href="#basictab1" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 py-2" id="tab1">
                                                             <i class="ri-account-circle-line fw-normal fs-20 align-middle me-1"></i>
                                                             <span class="d-none d-sm-inline">Buat Akun</span>
                                                         </a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="#basictab2" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 py-2">
+                                                        <a href="#basictab2" data-bs-toggle="tab" data-toggle="tab" class="nav-link disabled rounded-0 py-2" id="tab2">
                                                             <i class="ri-profile-line fw-normal fs-20 align-middle me-1"></i>
                                                             <span class="d-none d-sm-inline">Lengkapi Profilmu</span>
                                                         </a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a href="#basictab3" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 py-2">
+                                                        <a href="#basictab3" data-bs-toggle="tab" data-toggle="tab" class="nav-link disabled rounded-0 py-2" id="tab3">
                                                             <i class="ri-profile-line fw-normal fs-20 align-middle me-1"></i>
                                                             <span class="d-none d-sm-inline">Selesai</span>
                                                         </a>
@@ -66,11 +66,12 @@
                                                             </div> <!-- end col -->
                                                         </div> <!-- end row -->
 
-                                                        <form action="">
+                                                        <form action="javascript:">
 
                                                             <div class="mb-3">
                                                                 <label for="nama" class="form-label">Nama</label>
                                                                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Nama Anda">
+
                                                             </div>
                                                             <div class="mb-3">
                                                                 <div class="mb-3">
@@ -84,10 +85,14 @@
                                                                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                                                                 </div>
                                                                 <div class="mb-3">
-                                                                    <label for="password" class="form-label">Masukan Ulang Password</label>
-                                                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                                                                    <label for="password_confirmation" class="form-label">Masukan Ulang Password</label>
+                                                                    <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password">
                                                                 </div>
-                                                                <button type="button" class="btn btn-light">Selanjutnya</button>
+                                                                <div class="row d-flex">
+                                                                    <div class="col-sm-12">
+                                                                        <button type="button" class="btn btn-primary float-end" id="next-1">Selanjutnya</button>
+                                                                    </div>
+                                                                </div>
                                                             </div>
 
                                                         </form>
@@ -99,22 +104,23 @@
 
                                                             </div> <!-- end col -->
                                                         </div> <!-- end row -->
-                                                        <form action="">
-
+                                                        <form action="javascript:;">
                                                             <div class="mb-3">
-                                                                <label for="tgl_lahir" class="form-label">Masukan Tanggal Lahir Anda</label>
-                                                                <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="Masukan Nama Anda">
+                                                                <label for="tgl_lahir" class="form-label">Tanggal Lahir</label>
+                                                                <input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir" placeholder="Masukan tanggal lahir Anda">
                                                             </div>
                                                             <div class="mb-3">
-                                                                <select class="form-select" aria-label="Default select example">
-                                                                    <option selected>Pilih Jenis Kelamin</option>
+                                                                <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                                                                <select class="form-select" aria-label="Default select example" name="jenis_kelamin">
+                                                                    <option selected disabled value="">Pilih Jenis Kelamin</option>
                                                                     <option value="laki_laki">Laki-laki</option>
                                                                     <option value="perempuan">Perempuan</option>
                                                                 </select>
                                                             </div>
                                                             <div class="mb-3">
-                                                                <select class="form-select" aria-label="Default select example">
-                                                                    <option selected>Pendidikan Tekakhir</option>
+                                                                <label for="pendidikan_terakhir" class="form-label">Pendidikan Terakhir</label>
+                                                                <select class="form-select" aria-label="Default select example" name="pendidikan_terakhir">
+                                                                    <option selected disabled value="">Pendidikan Tekakhir</option>
                                                                     <option value="sd">SD</option>
                                                                     <option value="smp">SMP</option>
                                                                     <option value="sma">SMA</option>
@@ -127,8 +133,9 @@
                                                                 </select>
                                                             </div>
                                                             <div class="mb-3">
-                                                                <select class="form-select" aria-label="Default select example">
-                                                                    <option selected>Pilih Pekerjaan</option>
+                                                                <label for="pekerjaan" class="form-label">Pekerjaan</label>
+                                                                <select class="form-select" aria-label="Default select example" name="pekerjaan">
+                                                                    <option selected disabled value="">Pilih Pekerjaan</option>
                                                                     <option value="belum_bekerja">Belum Bekerja</option>
                                                                     <option value="pelajar">Pelajar</option>
                                                                     <option value="mahasiswa">Mahasiswa</option>
@@ -142,13 +149,19 @@
                                                                 </select>
                                                             </div>
                                                             <div class="mb-3">
-                                                                <select class="form-select" aria-label="Default select example">
-                                                                    <option selected>Status</option>
+                                                                <label for="status" class="form-label">Status</label>
+                                                                <select class="form-select" aria-label="Default select example" name="status">
+                                                                    <option selected disabled value="">Status</option>
                                                                     <option value="belum_menikah">Belum Menikah</option>
                                                                     <option value="menikah">Menikah</option>
                                                                     <option value="cerai_mati">Cerai Mati</option>
                                                                     <option value="cerai_hidup">Cerai Hidup</option>
                                                                 </select>
+                                                            </div>
+                                                            <div class="row d-flex">
+                                                                <div class="col-sm-12">
+                                                                    <button type="button" class="btn btn-primary float-end" id="next-2">Selanjutnya</button>
+                                                                </div>
                                                             </div>
 
 
@@ -224,7 +237,7 @@
 
     <!-- Wizard Form Demo js -->
     <script src="/assets2/js/pages/form-wizard.init.js"></script>
-
+    <script src="/page-script/register.js"></script>
 </body>
 
 </html>

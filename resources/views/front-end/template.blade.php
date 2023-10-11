@@ -1,5 +1,5 @@
 @php
-$warna = 'black';
+$warna = '#596E5C';
 @endphp
 <!DOCTYPE html>
 <html lang="en">
