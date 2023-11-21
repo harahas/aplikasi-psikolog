@@ -1,7 +1,7 @@
 :root {
     
-  --gradiant-color-from: #0163ea;
-  --gradiant-color-to: #00bcf9;
+  --gradiant-color-from: #045F4E;
+  --gradiant-color-to: rgb(46, 46, 46);
   --black-color: #101010; 
 
   --heading: 'DM Sans';
@@ -9,12 +9,12 @@
   --body-color: #666666;  
   --sv-body-color: #202020;  
   --transition: 500ms all ease;
-  --main-color: #015fea;
+  --main-color: #3d3d3d;
   --base-color:  linear-gradient(to right,var(--gradiant-color-from),var(--gradiant-color-to));
-  --theme-color: #056251;
+  --theme-color: #414141;
   --theme-color-2: #FFB966;
   --meta-font: 'Play', sans-serif;
-  --main-sv-color: #034b5b;
+  --main-sv-color: #313131;
   --base-sv-color: #f18f20;
   --sv-body-font: 'Montserrat';
   --sv-heading-font: 'Libre Baskerville';

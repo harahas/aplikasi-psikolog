@@ -44,8 +44,8 @@ Font load
 
 .in-footer-widget .newslatter-widget button, .shop-details-text-wrap .quantity-btn-area .add-cart-btn a, .in-shop-item .in-add-cart-btn a, .in-faq-contact-form button, .in-contact-form-title-area .in-contact-form button, .mobile_menu .in-m-search button {
   background-size: 200%, 1px;
-  background: -webkit-gradient(linear, left top, right top, from(#0163ea), color-stop(50%, #00bcf9), to(#0163ea));
-  background: linear-gradient(90deg, #0163ea 0%, #00bcf9 50%, #0163ea);
+  background: -webkit-gradient(linear, left top, right top, from(#045F4E), color-stop(50%, #242424), to(#045F4E));
+  background: linear-gradient(90deg, #045F4E 0%, #141414 50%, #045F4E);
   background-size: 200%, 1px;
   -webkit-transition: all 200ms linear 0ms;
   transition: all 200ms linear 0ms;
@@ -817,8 +817,8 @@ select:visited {
   border-radius: 8px;
   padding: 12px 40px;
   display: inline-block;
-  background: -webkit-gradient(linear, left top, right top, from(#0163ea), color-stop(50%, #00bcf9), to(#0163ea));
-  background: linear-gradient(90deg, #0163ea 0%, #00bcf9 50%, #0163ea);
+  background: -webkit-gradient(linear, left top, right top, from(#272727), color-stop(50%, #535353), to(#363636));
+  background: linear-gradient(90deg, #2e2e2e 0%, #313131 50%, #4a4a4b);
   background-size: 200%, 1px;
   -webkit-transition: all 200ms linear 0ms;
   transition: all 200ms linear 0ms;
@@ -885,8 +885,8 @@ select:visited {
   border-radius: 5px;
   padding: 12px 40px;
   display: inline-block;
-  background: -webkit-gradient(linear, left top, right top, from(#0163ea), color-stop(50%, #00bcf9), to(#0163ea));
-  background: linear-gradient(90deg, #0163ea 0%, #00bcf9 50%, #0163ea);
+  background: -webkit-gradient(linear, left top, right top, from(#2b2b2b), color-stop(50%, #222222), to(#2b2b2b));
+  background: linear-gradient(90deg, #242424 0%, #2b2b2b 50%, #4d4d4d);
   background-size: 200%, 1px;
   -webkit-transition: all 200ms linear 0ms;
   transition: all 200ms linear 0ms;
@@ -1759,8 +1759,8 @@ select:visited {
   padding: 16px 60px;
   border-radius: 5px;
   display: inline-block;
-  background: -webkit-gradient(linear, left top, right top, from(#0163ea), color-stop(50%, #00bcf9), to(#0163ea));
-  background: linear-gradient(90deg, #0163ea 0%, #00bcf9 50%, #0163ea);
+  background: -webkit-gradient(linear, left top, right top, from(#3d3d3d), color-stop(100%, #ffffff), to(#111111));
+  background: linear-gradient(90deg, #3a3a3a 0%, #2e2e2e 50%, #2c2c2c);
   background-size: 200%, 1px;
   -webkit-transition: all 200ms linear 0ms;
   transition: all 200ms linear 0ms;
@@ -1949,8 +1949,8 @@ select:visited {
   width: 220px;
 }
 .in-cta-content .in-cta-btn-grp a:nth-child(1) {
-  background: -webkit-gradient(linear, left top, right top, from(#0163ea), color-stop(50%, #00bcf9), to(#0163ea));
-  background: linear-gradient(90deg, #0163ea 0%, #00bcf9 50%, #0163ea);
+  background: -webkit-gradient(linear, left top, right top, from(#1f1f1f), color-stop(50%, #636363), to(#424242));
+  background: linear-gradient(90deg, #2c2c2c 0%, #2b2b2b 50%, #292929);
   background-size: 200%, 1px;
   -webkit-transition: all 200ms linear 0ms;
   transition: all 200ms linear 0ms;
@@ -2674,8 +2674,8 @@ select:visited {
 .in-btn-2 {
   border-radius: 5px;
   display: inline-block;
-  background: -webkit-gradient(linear, left top, right top, from(#0163ea), color-stop(50%, #00bcf9), to(#0163ea));
-  background: linear-gradient(90deg, #0163ea 0%, #00bcf9 50%, #0163ea);
+  background: -webkit-gradient(linear, left top, right top, from(#272727), color-stop(50%, #424242), to(#252525));
+  background: linear-gradient(90deg, #242424 0%, #474747 50%, #333333);
   background-size: 200%, 1px;
   -webkit-transition: all 200ms linear 0ms;
   transition: all 200ms linear 0ms;
@@ -2711,8 +2711,8 @@ select:visited {
   width: 186px;
   height: 46px;
   border-radius: 5px;
-  background: -webkit-gradient(linear, left top, right top, from(#0163ea), color-stop(50%, #00bcf9), to(#0163ea));
-  background: linear-gradient(90deg, #0163ea 0%, #00bcf9 50%, #0163ea);
+  background: -webkit-gradient(linear, left top, right top, from(#252f35), color-stop(50%, #464646), to(#252f35));
+  background: linear-gradient(90deg, #252f35 0%, #424242 50%, #252f35);
   background-size: 200%, 1px;
 }
 .in-btn-2:hover {
@@ -2941,8 +2941,8 @@ select:visited {
   border-radius: 4px;
   text-transform: uppercase;
   display: inline-block;
-  background: -webkit-gradient(linear, left top, right top, from(#0163ea), color-stop(50%, #00bcf9), to(#0163ea));
-  background: linear-gradient(90deg, #0163ea 0%, #00bcf9 50%, #0163ea);
+  background: -webkit-gradient(linear, left top, right top, from(#045F4E), color-stop(50%, #575757), to(#045F4E));
+  background: linear-gradient(90deg, #045F4E 0%, #575757 50%, #045F4E);
   background-size: 200%, 1px;
   -webkit-transition: all 200ms linear 0ms;
   transition: all 200ms linear 0ms;
@@ -3059,8 +3059,8 @@ select:visited {
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#0163ea), color-stop(50%, #00bcf9), to(#0163ea));
-  background: linear-gradient(90deg, #0163ea 0%, #00bcf9 50%, #0163ea);
+  background: -webkit-gradient(linear, left top, right top, from(045F4E), color-stop(50%, #5c5c5c), to(045F4E));
+  background: linear-gradient(90deg, 045F4E 0%, #1b1b1b 50%, 045F4E);
   background-size: 200%, 1px;
   -webkit-transition: all 200ms linear 0ms;
   transition: all 200ms linear 0ms;
@@ -3845,7 +3845,7 @@ select:visited {
   content: "";
   height: 0%;
   position: absolute;
-  background: linear-gradient(130deg, rgb(1, 94, 234) 0%, rgb(0, 192, 250) 100%);
+  background: linear-gradient(130deg, rgb(54, 54, 54) 0%, #045F4E 100%);
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
 }
@@ -7476,7 +7476,7 @@ select:visited {
 /*----------------------------------------------------*/
 .in-breadcrumb-section {
   padding-top: 171px;
-  background-color: #0163ea;
+  background-color: #045F4E;
 }
 .in-breadcrumb-section .in-breadcrumb-content {
   overflow: hidden;
@@ -8547,8 +8547,8 @@ select:visited {
   position: absolute;
   border-radius: 3px;
   border: 2px dashed #fff;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, from(#00bcf9), color-stop(49%, #0163ea), to(#0163ea)) border-box;
-  background: linear-gradient(#fff 0 0) padding-box, linear-gradient(to bottom, #00bcf9, #0163ea 49%, #0163ea) border-box;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) padding-box, -webkit-gradient(linear, left top, left bottom, from(#00bcf9), color-stop(49%, #045F4E), to(#045F4E)) border-box;
+  background: linear-gradient(#fff 0 0) padding-box, linear-gradient(to bottom, #00bcf9, #045F4E 49%, #045F4E) border-box;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
 }
