@@ -166,8 +166,6 @@
 
 
                                                         </form>
-
-
                                                     </div>
                                                     <div class="tab-pane" id="basictab3">
                                                         <div class="row">
@@ -190,16 +188,29 @@
                                                         </div> <!-- end row -->
 
                                                         <ul class="pager wizard mb-0 list-inline mt-1">
-                                                            <li class="previous list-inline-item">
-                                                                <button type="button" class="btn btn-light"><i class="ri-arrow-left-line me-0"></i>
-                                                                    Back to Account</button>
-                                                            </li>
-                                                            <li class="next list-inline-item float-end">
-                                                                <button type="button" class="btn btn-info">Submit</button>
-                                                            </li>
+                                                            <form action="/register" method="POST">
+                                                                {{-- <input type="text" name="nama" id="input1">
+                                                                <input type="text" name="no_hp" id="input2">
+                                                                <input type="text" name="password" id="input3">
+                                                                <input type="text" name="password_confirmation" id="input4">
+                                                                <input type="text" name="tgl_lahir" id="input5">
+                                                                <input type="text" name="jenis_kelamin" id="input6">
+                                                                <input type="text" name="jenis_kelamin" id="input7">
+                                                                <input type="text" name="pendidikan_terakhir" id="input8"> --}}
+                                                                {{-- <input type="text" name="data" id="data-simpan"> --}}
+                                                                <div id="data-input"></div>
+                                                                <div id="data-input2"></div>
+                                                                @csrf
+                                                                <li class="previous list-inline-item">
+                                                                    <button type="button" class="btn btn-light"><i class="ri-arrow-left-line me-0"></i>
+                                                                        Back to Account</button>
+                                                                </li>
+                                                                <li class="next list-inline-item float-end">
+                                                                    <button type="submit" class="btn btn-info" id="btnsimpan">Submit</button>
+                                                                </li>
+                                                            </form>
                                                         </ul>
                                                     </div>
-
                                                 </div> <!-- tab-content -->
                                             </div> <!-- end #basicwizard-->
                                             <!-- end col -->

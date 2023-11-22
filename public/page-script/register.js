@@ -15,6 +15,28 @@ $(document).ready(function () {
                 if (response.errors) {
                     displayErrors(response.errors);
                 } else {
+                    let data = response.success;
+                    let container = $("#data-input");
+                    for (var key in data) {
+                        if (data.hasOwnProperty(key)) {
+                            // Membuat elemen input menggunakan jQuery
+                            var inputElement = $('<input>').attr({
+                                type: 'hidden', // Anda dapat mengganti ini sesuai kebutuhan (text, password, dll.)
+                                value: data[key],
+                                name: key // Menambahkan atribut name sesuai dengan nama properti objek
+                            });
+
+                            // // Membuat label (opsional) menggunakan jQuery
+                            // var labelElement = $('<label>').text(key + ': ');
+
+                            // Menambahkan elemen input dan label ke dalam div container menggunakan jQuery
+                            // container.append(labelElement);
+                            container.append(inputElement);
+
+                            // Menambahkan spasi antara setiap elemen input menggunakan jQuery
+                            container.append('<br>');
+                        }
+                    }
                     $("#basictab1").removeClass("active");
                     $("#basictab2").addClass("active");
                     $("#tab1").removeClass("show active");
@@ -41,6 +63,28 @@ $(document).ready(function () {
                 if (response.errors) {
                     displayErrors(response.errors);
                 } else {
+                    let data = response.success;
+                    let container = $("#data-input2");
+                    for (var key in data) {
+                        if (data.hasOwnProperty(key)) {
+                            // Membuat elemen input menggunakan jQuery
+                            var inputElement = $('<input>').attr({
+                                type: 'hidden', // Anda dapat mengganti ini sesuai kebutuhan (text, password, dll.)
+                                value: data[key],
+                                name: key // Menambahkan atribut name sesuai dengan nama properti objek
+                            });
+
+                            // Membuat label (opsional) menggunakan jQuery
+                            // var labelElement = $('<label>').text(key + ': ');
+
+                            // Menambahkan elemen input dan label ke dalam div container menggunakan jQuery
+                            // container.append(labelElement);
+                            container.append(inputElement);
+
+                            // Menambahkan spasi antara setiap elemen input menggunakan jQuery
+                            container.append('<br>');
+                        }
+                    }
                     $("#basictab2").removeClass("active");
                     $("#basictab3").addClass("active");
                     $("#tab2").removeClass("show active");
@@ -132,4 +176,29 @@ $(document).ready(function () {
             });
         });
     }
+    // simpan data register
+    $("#btnsimpan").on("click", function () {
+        let formdata = $('form[id="simpan-data"] ').serializeArray();
+        let data = {}
+        $(formdata).each(function (index, obj) {
+            data[obj.name] = obj.value;
+        });
+        let register = $('form[id="simpan-data"] ').serialize();
+        console.log(register);
+        // $.ajax({
+        //     data:
+        //         url: "",
+        //     type: "",
+        //     dataType: 'json',
+        //     success: function (response) {
+        //         if (response.errors) {
+        //             displayErrors(response.errors);
+        //         } else {
+        //             table.ajax.reload();
+        //             $("#modal-pelatih").modal("hide");
+        //             Swal.fire("Good job!", response.success, "success");
+        //         }
+        //     }
+        // });
+    });
 })
