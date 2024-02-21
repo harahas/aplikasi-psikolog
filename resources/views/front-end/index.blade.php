@@ -241,7 +241,7 @@
                             <button class="search-btn"><i class="fal fa-search"></i></button>
                         </div>
                         <div class="in-header-cta-btn">
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-login">Get A Quote</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#modal-login">Masuk</a>
                         </div>
                     </div>
                 </div>
