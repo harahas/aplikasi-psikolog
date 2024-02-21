@@ -22,6 +22,54 @@
     <link rel="stylesheet" href="/assets/css/rs6.css">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        .loader {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            position: relative;
+            animation: rotate 1s linear infinite
+        }
+
+        .loader::before {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            inset: 0px;
+            border-radius: 50%;
+            border: 5px solid #FFF;
+            animation: prixClipFix 2s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes prixClipFix {
+            0% {
+                clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+            }
+
+            25% {
+                clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+            }
+
+            50% {
+                clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+            }
+
+            75% {
+                clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+            }
+
+            100% {
+                clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+            }
+        }
+
+    </style>
 </head>
 
 <body>
@@ -237,11 +285,15 @@
                         </ul>
                     </nav>
                     <div class="in-header-search-cta-btn d-flex align-items-center">
-                        <div class="in-header-search">
-                            <button class="search-btn"><i class="fal fa-search"></i></button>
-                        </div>
+                        @if (session('klien'))
+                        <h5 class="text-white mt-2">{{ session('klien')->nama }}</h5>
+                        @endif
                         <div class="in-header-cta-btn">
+                            @if (session('klien'))
+                            <a href="/logoutKlien">Logout</a>
+                            @else
                             <a href="#" data-bs-toggle="modal" data-bs-target="#modal-login">Masuk</a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -1301,17 +1353,23 @@
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: #fff"></button>
                 </div>
-                <div class="modal-body d-grid gap-2">
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="text" name="username" class="form-control" id="username" placeholder="Masukan Username">
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" name="password" class="form-control" id="password" placeholder="Masukan Password">
-                    </div>
-                    <a href="/login" class="gradient-button text-white rounded-pill">Login</a>
-                    <a href="/register_user" class="btn btn-outline-success rounded-pill">Register</a>
+                <div class="modal-body ">
+                    <div class="error"></div>
+                    <form action="javascript:;" id="form-login">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="no_hp" class="form-label">No Handphone</label>
+                            <input type="text" name="no_hp" class="form-control" id="no_hp" placeholder="Masukan No Handphone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Masukan Password">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="button" class="gradient-button text-white rounded-pill" id="btn-login">Login</button>
+                            <a href="/register_user" class="btn btn-outline-success rounded-pill">Register</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1441,6 +1499,7 @@
     <script src="/assets/js/jquery.magnific-popup.min.js"></script>
     <script src="/assets/js/jquery.nice-select.min.js"></script>
     <script src="/assets/js/script.js"></script>
+    <script src="/page-script/login.js"></script>
 </body>
 
 </html>

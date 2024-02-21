@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Artikel;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArtikelController;
@@ -16,7 +18,7 @@ use App\Http\Controllers\PelayananController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//AUTH 
+//AUTH
 //jika ada request url /login dengan method GET maka request tersebut akan ditangani oleh authcontroller  method index
 Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::get('/home', [PelayananController::class, 'index'])->middleware('auth');
@@ -50,6 +52,15 @@ Route::get('/daftar_pelayanan', [PelayananController::class, 'daftar_pelayanan']
 //Register User
 Route::get('/register_user', function () {
     return view('auth.register-user');
+});
+// Login Klien
+Route::post('/loginKlien', [AuthController::class, 'loginKlien']);
+Route::get('logoutKlien', function (Request $request) {
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerate();
+
+    return redirect('/');
 });
 //mengubah status
 Route::get('/changeStatus', [PelayananController::class, 'ubah_status']);

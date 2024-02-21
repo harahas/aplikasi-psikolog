@@ -53,7 +53,7 @@ class AuthController extends Controller
         // rules validasi
         $rules = [
             'nama' => 'required',
-            'no_hp' => 'required',
+            'no_hp' => 'required|unique:klien',
             'password' => 'required|confirmed|min:7',
             'password_confirmation' => 'required',
 
@@ -62,6 +62,7 @@ class AuthController extends Controller
         $pesan = [
             'nama.required' => 'Nama tidak boleh kosong',
             'no_hp.required' => 'No HP tidak boleh kosong',
+            'no_hp.unique' => 'No HP sudah terdaftar',
             'password.required' => 'Password tidak boleh kosong',
             'password.confirmed' => 'Password tidak sesuai',
             'password.min' => 'Password minimal 7 karakter',
@@ -117,5 +118,30 @@ class AuthController extends Controller
         ];
         Klien::create($data);
         return view('front-end.index');
+    }
+    public function loginKlien(Request $request)
+    {
+        $credentials = $request->validate(
+            [
+                //requered itu adalah validasi ketika input kosong
+                'no_hp' => 'required',
+                'password' => 'required',
+            ],
+            [
+                // ini adalah pesan jika validasi tidak terpenuhi
+                'no_hp.required' => 'Nomor hp tidak boleh kosong',
+                'password.required' => 'Password tidak boleh kosong',
+            ]
+        );
+        $klien = new Klien;
+        if ($klien->attemptAuthentication($request->no_hp, $request->password)) {
+            $dataKlien = $klien->where('no_hp', $request->no_hp)->first();
+            session()->put('klien', $dataKlien);
+            return response()->json(['success' => 'succes']);
+        } else {
+            return response()->json(['errors' => 'Password atau username salah']);
+        }
+        //kalau username atau password tidak terdaftar di database maka laravel akan mengembalkan halaman ke halaman semula sambil mengirimkan pesan session error.
+        // return back()->with('error', 'Username atau Password Salah');
     }
 }
