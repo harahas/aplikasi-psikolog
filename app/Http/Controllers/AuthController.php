@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Klien;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -99,5 +101,21 @@ class AuthController extends Controller
             return response()->json(['errors' => $validator->errors()]);
         }
         return response()->json(['success' => $request->all()]);
+    }
+    public function register(Request $request)
+    {
+        $data = [
+            'unique' => Str::orderedUuid(),
+            'nama' => $request->nama,
+            'no_hp' => $request->no_hp,
+            'password' => bcrypt($request->password),
+            'tgl_lahir' => $request->tgl_lahir,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'pendidikan_terakhir' => $request->pendidikan_terakhir,
+            'pekerjaan' => $request->pekerjaan,
+            'status' => $request->status,
+        ];
+        Klien::create($data);
+        return view('front-end.index');
     }
 }

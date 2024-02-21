@@ -22,6 +22,7 @@ Route::get('/login', [AuthController::class, 'index'])->name('login')->middlewar
 Route::get('/home', [PelayananController::class, 'index'])->middleware('auth');
 //jika ada request url /auth dengan method post maka request tersebut akan ditangani oleh authcontroller  method authenticate
 Route::post('/auth', [AuthController::class, 'authenticate']);
+Route::post('/register', [AuthController::class, 'register']);
 Route::get('/logout', [AuthController::class, 'logout']);
 //Register User
 Route::get('/registerUser', [AuthController::class, 'register_user']);
