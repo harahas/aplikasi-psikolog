@@ -35,6 +35,22 @@ $(document).ready(function () {
 
         });
     })
+    $("#logoutKlien").on("click", function () {
+        //HAPUS DATA
+        Swal.fire({
+            title: "Apakah Kamu Yakin?",
+            text: "Kamu akan keluar",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Keluar!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.location.href = '/logoutKlien'
+            }
+        });
+    })
     //Hendler Error
     function displayErrors(errors) {
         // menghapus class 'is-invalid' dan pesan error sebelumnya

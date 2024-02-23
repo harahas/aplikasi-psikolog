@@ -725,12 +725,12 @@ select:visited {
   background-color: var(--main-color);
 }
 .in-header-section.header-style-two {
-  background-color: #262e3d;
+  background-color: #ffffff;
 }
 .in-header-section.header-style-two .in-header-top-content {
   padding: 12px 145px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #3c4351;
+  border-bottom: 1px solid #ffffff;
 }
 .in-header-section.header-style-two .header-top-info li {
   color: #fff;
