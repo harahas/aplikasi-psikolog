@@ -24,6 +24,7 @@ class Klien extends Migration
             $table->string('pendidikan_terakhir');
             $table->string('pekerjaan');
             $table->string('status');
+            $table->string('agama');
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Klien;
 use App\Models\Artikel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -82,5 +83,13 @@ Route::get('/datatablesArtikel', [ArtikelController::class, 'dataTables']);
 
 // Menu Profil Saya
 Route::get('/profilUser', function () {
-    return view('front-end.profil');
+    if (session('klien')) {
+        $data = [
+            'klien' => Klien::where('unique', session('klien')->unique)->first()
+        ];
+        return view('front-end.profil', $data);
+    } else {
+        return redirect('/');
+    }
 });
+Route::POST('/updateProfil', [AuthController::class, 'updateProfil']);

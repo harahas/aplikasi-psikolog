@@ -159,6 +159,18 @@
                                                                     <option value="cerai_hidup">Cerai Hidup</option>
                                                                 </select>
                                                             </div>
+                                                            <div class="mb-3">
+                                                                <label for="status" class="form-label">Agama</label>
+                                                                <select class="form-select" aria-label="Default select example" name="agama">
+                                                                    <option selected disabled value="">Pilih Agama</option>
+                                                                    <option value="islam">Islam</option>
+                                                                    <option value="kristen">Kristen</option>
+                                                                    <option value="katolik">Katolik</option>
+                                                                    <option value="hindu">Hindu</option>
+                                                                    <option value="budha">Budha</option>
+                                                                    <option value="khonghucu">Khonghucu</option>
+                                                                </select>
+                                                            </div>
                                                             <div class="row d-flex">
                                                                 <div class="col-sm-12">
                                                                     <button type="button" class="btn btn-primary float-end" id="next-2">Selanjutnya</button>
@@ -182,15 +194,6 @@
 
                                                         <ul class="pager wizard mb-0 list-inline mt-1">
                                                             <form action="/register" method="POST">
-                                                                {{-- <input type="text" name="nama" id="input1">
-                                                                <input type="text" name="no_hp" id="input2">
-                                                                <input type="text" name="password" id="input3">
-                                                                <input type="text" name="password_confirmation" id="input4">
-                                                                <input type="text" name="tgl_lahir" id="input5">
-                                                                <input type="text" name="jenis_kelamin" id="input6">
-                                                                <input type="text" name="jenis_kelamin" id="input7">
-                                                                <input type="text" name="pendidikan_terakhir" id="input8"> --}}
-                                                                {{-- <input type="text" name="data" id="data-simpan"> --}}
                                                                 <div id="data-input"></div>
                                                                 <div id="data-input2"></div>
                                                                 @csrf

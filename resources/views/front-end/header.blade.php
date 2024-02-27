@@ -19,6 +19,8 @@
                             <li><a target="_blank" href="shop-single.html">Shop Details</a></li>
                         </ul>
                     </li>
+                    @if (session('klien'))
+
                     <li class="dropdown">
                         <a href="!#">Menu Saya</a>
                         <ul class="dropdown-menu clearfix">
@@ -27,6 +29,7 @@
                             <li><a target="_blank" href="shop-single.html">Riwayat Transisi</a></li>
                         </ul>
                     </li>
+                    @endif
 
                     <li class="dropdown">
                         <a href="!#">Tentang Kami</a>
@@ -137,16 +140,18 @@
                         <li class="dropdown in-megamenu">
                             <a href="!#">Beranda</a>
                         </li>
+
+                        @if (session('klien'))
+
                         <li class="dropdown">
-                            <a class="" href="!#">Menu Saya</a>
+                            <a href="!#">Menu Saya</a>
                             <ul class="dropdown-menu clearfix">
-                                <li><a target="_blank" href="blog-list.html">News </a></li>
-                                <li><a target="_blank" href="blog-grid.html">News Grid</a></li>
-                                <li><a target="_blank" href="blog-list-2.html">News List</a></li>
-                                <li><a target="_blank" href="blog-slider.html">News Slider</a></li>
-                                <li><a target="_blank" href="blog-single.html">News Details</a></li>
+                                <li><a target="_blank" href="/profilUser">Profil </a></li>
+                                <li><a target="_blank" href="shop-single.html">Jadwal Konseling</a></li>
+                                <li><a target="_blank" href="shop-single.html">Riwayat Transisi</a></li>
                             </ul>
                         </li>
+                        @endif
                         <li class="dropdown">
                             <a href="!#">Pelayanan</a>
                             <ul class="dropdown-menu clearfix">

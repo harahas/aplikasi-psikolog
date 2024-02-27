@@ -85,9 +85,7 @@ class AuthController extends Controller
             'pendidikan_terakhir' => 'required',
             'pekerjaan' => 'required',
             'status' => 'required',
-
-
-
+            'agama' => 'required',
         ];
         $pesan = [
             'tgl_lahir.required' => 'Tanggal lahir tidak boleh kosong',
@@ -95,6 +93,7 @@ class AuthController extends Controller
             'pendidikan_terakhir.required' => 'Pendidikan Terakhir tidak boleh kosong',
             'pekerjaan.required' => 'Pekerjaan tidak boleh kosong',
             'status.required' => 'Status tidak boleh kosong',
+            'agama.required' => 'Agama tidak boleh kosong',
         ];
         $validator = Validator::make($request->all(), $rules, $pesan);
         // jika ada rules yang tidak terpenuhi
@@ -115,9 +114,10 @@ class AuthController extends Controller
             'pendidikan_terakhir' => $request->pendidikan_terakhir,
             'pekerjaan' => $request->pekerjaan,
             'status' => $request->status,
+            'agama' => $request->agama,
         ];
         Klien::create($data);
-        return view('front-end.index');
+        return redirect('/');
     }
     public function loginKlien(Request $request)
     {
@@ -143,5 +143,48 @@ class AuthController extends Controller
         }
         //kalau username atau password tidak terdaftar di database maka laravel akan mengembalkan halaman ke halaman semula sambil mengirimkan pesan session error.
         // return back()->with('error', 'Username atau Password Salah');
+    }
+    public function updateProfil(Request $request)
+    {
+        // rules validasi
+        $rules = [
+            'nama' => 'required',
+            'no_hp' => 'required',
+            'tgl_lahir' => 'required',
+            'jenis_kelamin' => 'required',
+            'pendidikan_terakhir' => 'required',
+            'pekerjaan' => 'required',
+            'status' => 'required',
+            'agama' => 'required',
+        ];
+        $pesan = [
+            'nama.required' => 'Nama tidak boleh kosong',
+            'no_hp.required' => 'No HP tidak boleh kosong',
+            'tgl_lahir.required' => 'Tanggal lahir tidak boleh kosong',
+            'jenis_kelamin.required' => 'Jenis kelamin tidak boleh kosong',
+            'pendidikan_terakhir.required' => 'Pendidikan Terakhir tidak boleh kosong',
+            'pekerjaan.required' => 'Pekerjaan tidak boleh kosong',
+            'status.required' => 'Status tidak boleh kosong',
+            'agama.required' => 'Agama tidak boleh kosong',
+        ];
+        $validator = Validator::make($request->all(), $rules, $pesan);
+        // jika ada rules yang tidak terpenuhi
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()]);
+        } else {
+            $data = [
+                'nama' => $request->nama,
+                'no_hp' => $request->no_hp,
+                'password' => bcrypt($request->password),
+                'tgl_lahir' => $request->tgl_lahir,
+                'jenis_kelamin' => $request->jenis_kelamin,
+                'pendidikan_terakhir' => $request->pendidikan_terakhir,
+                'pekerjaan' => $request->pekerjaan,
+                'status' => $request->status,
+                'agama' => $request->agama,
+            ];
+            Klien::where('unique', $request->unique)->update($data);
+            return response()->json(['success' => 'Data Berhasil Di Update']);
+        }
     }
 }
