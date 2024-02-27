@@ -30,9 +30,10 @@
                         <div class="row g-0">
                             <div class="row">
                                 <div class="col-12">
+                                    <br>
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4 class="header-title mb-0">Register</h4>
+                                            <h4 class="header-title mb-0">Register User</h4>
                                         </div>
                                         <div class="card-body">
                                             <div id="basicwizard">
@@ -41,7 +42,7 @@
                                                     <li class="nav-item">
                                                         <a href="#basictab1" data-bs-toggle="tab" data-toggle="tab" class="nav-link rounded-0 py-2" id="tab1">
                                                             <i class="ri-account-circle-line fw-normal fs-20 align-middle me-1"></i>
-                                                            <span class="d-none d-sm-inline">Buat Akun</span>
+                                                            <span class="d-none d-sm-inline">Buat Akunmu</span>
                                                         </a>
                                                     </li>
                                                     <li class="nav-item">
@@ -52,7 +53,7 @@
                                                     </li>
                                                     <li class="nav-item">
                                                         <a href="#basictab3" data-bs-toggle="tab" data-toggle="tab" class="nav-link disabled rounded-0 py-2" id="tab3">
-                                                            <i class="ri-profile-line fw-normal fs-20 align-middle me-1"></i>
+                                                            <i class="ri- ri-check-double-fill fw-normal fs-20 align-middle me-1"></i>
                                                             <span class="d-none d-sm-inline">Selesai</span>
                                                         </a>
                                                     </li>
@@ -173,16 +174,8 @@
                                                                 <div class="text-center">
                                                                     <h2 class="mt-0"><i class="ri-check-double-line"></i></h2>
                                                                     <h3 class="mt-0">Thank you !</h3>
-
-                                                                    <p class="w-75 mb-2 mx-auto">Hai, Perjalananmu untuk kembali memiliki mental yang sehat sudah dimulai.. </p>
-
-                                                                    <div class="mb-3">
-                                                                        <div class="form-check d-inline-block">
-                                                                            <input type="checkbox" class="form-check-input" id="customCheck1">
-                                                                            <label class="form-check-label" for="customCheck1">I agree with the
-                                                                                Terms and Conditions</label>
-                                                                        </div>
-                                                                    </div>
+                                                                    <br>
+                                                                    <p class="w-75 mb-2 mx-auto fw-normal">Selamat kamu akan bergabung dengan kami! Anda telah membuka pintu menuju perubahan yang positif. Ayo mulai eksplorasi layanan psikolog kami. </p>
                                                                 </div>
                                                             </div> <!-- end col -->
                                                         </div> <!-- end row -->
@@ -235,7 +228,7 @@
             <script>
                 document.write(new Date().getFullYear())
 
-            </script> © Velonic - Theme by Techzaa
+            </script> © Akhlaqul Karimah - 2024
         </span>
     </footer>
     <!-- Vendor js -->

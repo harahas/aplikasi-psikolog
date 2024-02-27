@@ -11,9 +11,7 @@
                 <ul id="main-nav" class="nav navbar-nav clearfix">
                     <li class="dropdown in-megamenu">
                         <a href="!#">Beranda</a>
-
                     </li>
-                    <li><a target="_blank" href="about.html">Tentang Psikolog</a></li>
                     <li class="dropdown">
                         <a href="!#">Pelayanan</a>
                         <ul class="dropdown-menu clearfix">
@@ -21,6 +19,15 @@
                             <li><a target="_blank" href="shop-single.html">Shop Details</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="!#">Menu Saya</a>
+                        <ul class="dropdown-menu clearfix">
+                            <li><a target="_blank" href="/profilUser">Profil </a></li>
+                            <li><a target="_blank" href="shop-single.html">Jadwal Konseling</a></li>
+                            <li><a target="_blank" href="shop-single.html">Riwayat Transisi</a></li>
+                        </ul>
+                    </li>
+
                     <li class="dropdown">
                         <a href="!#">Tentang Kami</a>
                         <ul class="dropdown-menu clearfix">
@@ -82,11 +89,11 @@
             <div class="header-cta-btn ">
                 <div class="in-header-search-cta-btn d-flex align-items-center">
                     @if (session('klien'))
-                    <h6 class="text-dark  mt-2 me-5">{{ session('klien')->nama }}</h6>
+                    <h6 class="text-dark mt-2 me-5">Hai,{{ session('klien')->nama }} </h6>
                     @endif
                     <div class="in-header-cta-btn">
                         @if (session('klien'))
-                        <button id="logoutKlien">Logout</button>
+                        <button class="btn btn-dark" id="logoutKlien">Logout</button>
                         @else
                         <a href="#" data-bs-toggle="modal" data-bs-target="#modal-login">Masuk</a>
                         @endif
@@ -105,6 +112,7 @@
         </div>
     </div>
     </div>
+    {{-- INI UNTUK MOBILE MI JANGAN SALAH LAGI YA!!!! --}}
     <div class="mobile_menu position-relative">
         <div class="mobile_menu_button open_mobile_menu">
             <i class="fal fa-bars text-dark"></i>
@@ -129,8 +137,16 @@
                         <li class="dropdown in-megamenu">
                             <a href="!#">Beranda</a>
                         </li>
-                        <li><a target="_blank" href="about.html">Tentang Psikolog</a></li>
-
+                        <li class="dropdown">
+                            <a class="" href="!#">Menu Saya</a>
+                            <ul class="dropdown-menu clearfix">
+                                <li><a target="_blank" href="blog-list.html">News </a></li>
+                                <li><a target="_blank" href="blog-grid.html">News Grid</a></li>
+                                <li><a target="_blank" href="blog-list-2.html">News List</a></li>
+                                <li><a target="_blank" href="blog-slider.html">News Slider</a></li>
+                                <li><a target="_blank" href="blog-single.html">News Details</a></li>
+                            </ul>
+                        </li>
                         <li class="dropdown">
                             <a href="!#">Pelayanan</a>
                             <ul class="dropdown-menu clearfix">

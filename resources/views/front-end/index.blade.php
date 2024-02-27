@@ -290,7 +290,11 @@
                                 <br>
                                 <div class="in-about-counter-item-1 position-relative headline pera-content">
                                     <p>Berpengalaman Selama: </p>
-                                    <h3><span class="counter">15</span>Tahun</h3>
+                                    <h3>
+                                        <h3>±</h3>
+                                        <h3><span class="counter">15</span></h3>
+                                        <h3>Tahun</h3>
+                                    </h3>
                                     <br>
                                     <div class="in-btn-2 position-relative  wow fadeInUp" data-wow-delay="700ms" data-wow-duration="1000ms">
                                         <a href="about.html">Get Started Now</a>

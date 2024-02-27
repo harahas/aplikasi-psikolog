@@ -36,7 +36,7 @@ $(document).ready(function () {
         });
     })
     $("#logoutKlien").on("click", function () {
-        //HAPUS DATA
+        //Logout
         Swal.fire({
             title: "Apakah Kamu Yakin?",
             text: "Kamu akan keluar",

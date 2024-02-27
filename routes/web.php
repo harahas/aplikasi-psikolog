@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\MenuUserController;
 use App\Http\Controllers\PelayananController;
 
 /*
@@ -78,3 +79,8 @@ Route::get('/view_artikel', function () {
 Route::get('/datatablesKonsultasi', [PelayananController::class, 'dataTables']);
 Route::get('/datatablesKonsultasiSelesai', [PelayananController::class, 'dataTablesSelesai']);
 Route::get('/datatablesArtikel', [ArtikelController::class, 'dataTables']);
+
+// Menu Profil Saya
+Route::get('/profilUser', function () {
+    return view('front-end.profil');
+});

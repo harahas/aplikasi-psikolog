@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/assets/css/rs6.css">
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style2.css">
     <script src="/page-script/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="/css/sweetalert2.min.css">
     <script src="/page-script/sweetalert2.all.min.js"></script>
@@ -53,7 +54,7 @@
                                 <div class="brand-logo">
                                     <a href="#"><img src="/assets/img/logo/logo-2.png" alt=""></a>
                                 </div>
-                                <div class="footer-text">
+                                <div class="footer-text ">
                                     The charms of pleasure of the empect moment, so blinded by desire, thats they cannot
                                     fores that ound to.
                                 </div>
@@ -74,7 +75,7 @@
                                         <div class="inner-icon d-flex align-items-center justify-content-center">
                                             <i class="fal fa-map-marker-alt"></i>
                                         </div>
-                                        <div class="inner-text">
+                                        <div class="inner-text text-dark">
                                             30 Commercial Road
                                             Fratton, Australia
                                         </div>
