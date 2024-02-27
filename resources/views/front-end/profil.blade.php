@@ -44,70 +44,67 @@
             <div class="card-body">
                 <h5 class="card-title">Menu</h5>
                 <br>
-                <div class="card" style="width: 18rem;">
-                    <div class="card-header">
-                        Featured
+                <div class="d-flex align-items-start">
+                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Profil</button>
+                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Jadwal Konseling</button>
+                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Riwayat Transaksi</button>
+                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Ubah Kata Sandi</button>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">An item</li>
-                        <li class="list-group-item">A second item</li>
-                        <li class="list-group-item">A third item</li>
-                    </ul>
-                </div>
-                <hr>
-                <div class="card col-md-10">
-                    <div class="col-md-12">
-                        <div class="card-header">
-                            <div class="tab-content" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                    <form action="">
-                                        <div class="row">
-                                            <div class="col-sm-4 label"><strong>Nama Lengkap:</strong></div>
-                                            <div class="col-sm-8 value" id="namaLengkap" name="namaLengkap">Hamni Rahma Hasibuan</div>
+                    <hr>
+                    <div class="card col-md-10">
+                        <div class="col-md-12">
+                            <div class="card-header">
+                                <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                        <form action="">
+                                            <div class="row">
+                                                <div class="col-sm-4 label"><strong>Nama Lengkap:</strong></div>
+                                                <div class="col-sm-8 value" id="namaLengkap" name="namaLengkap">Hamni Rahma Hasibuan</div>
 
-                                            <div class="col-sm-4 label"><strong>No HP:</strong></div>
-                                            <div class="col-sm-8 value" id="noHP" name="noHP">085860568027</div>
+                                                <div class="col-sm-4 label"><strong>No HP:</strong></div>
+                                                <div class="col-sm-8 value" id="noHP" name="noHP">085860568027</div>
 
-                                            <div class="col-sm-4 label"><strong>Tanggal Lahir:</strong></div>
-                                            <div class="col-sm-8 value" id="tglLahir" name="tglLahir">28 Januari 2000</div>
+                                                <div class="col-sm-4 label"><strong>Tanggal Lahir:</strong></div>
+                                                <div class="col-sm-8 value" id="tglLahir" name="tglLahir">28 Januari 2000</div>
 
-                                            <div class="col-sm-4 label"><strong>Jenis Kelamin:</strong></div>
-                                            <div class="col-sm-8 value" id="jenisKelamin" name="jenisKelamin">Perempuan</div>
+                                                <div class="col-sm-4 label"><strong>Jenis Kelamin:</strong></div>
+                                                <div class="col-sm-8 value" id="jenisKelamin" name="jenisKelamin">Perempuan</div>
 
-                                            <div class="col-sm-4 label"><strong>Pendidikan Terakhir:</strong></div>
-                                            <div class="col-sm-8 value" id="pendidikanTerakhir" name="pendidikanTerakhir">S1 Teknik Informatika</div>
+                                                <div class="col-sm-4 label"><strong>Pendidikan Terakhir:</strong></div>
+                                                <div class="col-sm-8 value" id="pendidikanTerakhir" name="pendidikanTerakhir">S1 Teknik Informatika</div>
 
-                                            <div class="col-sm-4 label"><strong>Pekerjaan:</strong></div>
-                                            <div class="col-sm-8 value" id="pekerjaan" name="pekerjaan">Software Engineer</div>
+                                                <div class="col-sm-4 label"><strong>Pekerjaan:</strong></div>
+                                                <div class="col-sm-8 value" id="pekerjaan" name="pekerjaan">Software Engineer</div>
 
-                                            <div class="col-sm-4 label"><strong>Status:</strong></div>
-                                            <div class="col-sm-8 value" id="status" name="status">Belum Menikah</div>
+                                                <div class="col-sm-4 label"><strong>Status:</strong></div>
+                                                <div class="col-sm-8 value" id="status" name="status">Belum Menikah</div>
 
-                                            <div class="col-sm-4 label"><strong>Agama:</strong></div>
-                                            <div class="col-sm-8 value" id="agama" name="agama">Islam</div>
+                                                <div class="col-sm-4 label"><strong>Agama:</strong></div>
+                                                <div class="col-sm-8 value" id="agama" name="agama">Islam</div>
+                                            </div>
+                                        </form>
+
+
+                                        <div class="mt-3">
+                                            <button class="btn btn-primary">Ubah Profil</button>
+                                            <br>
                                         </div>
-                                    </form>
-
-
-                                    <div class="mt-3">
-                                        <button class="btn btn-primary">Ubah Profil</button>
-                                        <br>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                        <!-- Konten Jadwal Konseling -->
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                        <!-- Konten Riwayat Transaksi -->
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                    <!-- Konten Jadwal Konseling -->
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                                    <!-- Konten Riwayat Transaksi -->
-                                </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 </div>
 {{-- Card menu --}}
