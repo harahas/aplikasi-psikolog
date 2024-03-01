@@ -174,8 +174,6 @@ class AuthController extends Controller
         } else {
             $data = [
                 'nama' => $request->nama,
-                'no_hp' => $request->no_hp,
-                'password' => bcrypt($request->password),
                 'tgl_lahir' => $request->tgl_lahir,
                 'jenis_kelamin' => $request->jenis_kelamin,
                 'pendidikan_terakhir' => $request->pendidikan_terakhir,

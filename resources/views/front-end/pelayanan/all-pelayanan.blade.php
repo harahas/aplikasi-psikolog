@@ -299,16 +299,28 @@
             </div>
             <div class="in-price-content">
                 <div class="row justify-content-center">
+                    @foreach ($setting as $settings)
 
                     <div class="col-lg-4 col-md-6">
                         <div class="in-price-inner-items text-center">
                             <div class="pricing-title-price-area headline">
-                                <h2>Konseling Individu</h2>
+                                <h2>{{ $settings->nama_pelayanan }}</h2>
                                 <span>Mulai dari</span>
-                                <h3><sup>Rp</sup>180.000</h3><span>/sesi</span>
-                                <span>Jangan biarkan kecemasan atau masalah lainnya menghambat kebahagiaanmu. Temukan langkah pertamamu menuju pemulihan dengan menjalani konsultasi bersama konsultan keluarga Akhlaqul Karimah.
-                                </span>
-                                <br>
+                                @php
+                                $huruf = str_split($settings->harga);
+                                $angka = '';
+                                if (count($huruf)>5) {
+                                for ($i = 0; $i < 6; $i++) { array_pop($huruf); } } foreach($huruf as $row){ $angka .=$row; } @endphp @if($settings->harga > 999999)
+                                    <h3><sup>Rp</sup>{{$angka }}Jt
+                                    </h3><span>/sesi</span>
+                                    <span>{{ $settings->keterangan }}
+                                    </span>
+                                    <br>
+                                    @else <h3><sup>Rp</sup>{{ number_format($settings->harga, 0, '.', '.') }}</h3><span>/sesi</span>
+                                    <span>{{ $settings->keterangan }}
+                                    </span>
+                                    <br>
+                                    @endif
                             </div>
                             <div class="pricing-list-btn position-relative">
                                 <div class="pricing-list ul-li-block">
@@ -326,60 +338,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="in-price-inner-items text-center">
-                            <div class="pricing-title-price-area headline">
-                                <h2>Konseling Pasangan</h2>
-                                <span>Mulai dari</span>
-                                <h3><sup>Rp</sup>500.000</h3><span>/sesi</span>
-                                <span>Jangan biarkan kecemasan, rasa tidak aman, atau masalah lainnya menghambat kebahagiaanmu. Temukan langkah pertamamu menuju pemulihan dengan menjalani konsultasi bersama konsultan keluarga Akhlaqul Karimah.
-                                </span>
-                            </div>
-                            <div class="pricing-list-btn position-relative">
-                                <div class="pricing-list ul-li-block">
-                                    <ul>
-                                        <li><i class="fas fa-check checkmark"></i> Terapi yang Beragam</li>
-                                        <li><i class="fas fa-check checkmark"></i> Konseling tatap muka atau via Chat/Call/Video Call</li>
-                                        <li><i class="fas fa-check checkmark"></i> Fokus Pada Solusi</li>
-                                        <li><i class="fas fa-check checkmark"></i> Terdiri dari konseling individu & bersama </li>
-                                    </ul>
-                                </div>
-                                <div class="price-btn">
-                                    <div class="in-btn-1">
-                                        <a href="#">Selengkapnya</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6">
-                        <div class="in-price-inner-items text-center">
-                            <div class="pricing-title-price-area headline">
-                                <h2>Konseling Individu</h2>
-                                <span>Mulai dari</span>
-                                <h3><sup>Rp</sup>1jt</h3><span>/sesi</span>
-                                <span>Proses konsultasi melibatkan partisipasi anggota keluarga dengan maksud untuk mengatasi masalah yang muncul, bertujuan menciptakan suasana harmonis dalam lingkungan keluarga. Bersama psikolog profesional Akhlaqul Karimah</span>
-                            </div>
-                            <div class="pricing-list-btn position-relative">
-                                <div class="pricing-list ul-li-block">
-                                    <ul>
-                                        <li><i class="fas fa-check checkmark"></i> Terapi yang Beragam</li>
-                                        <li><i class="fas fa-check checkmark"></i> Lokasi yang Nyaman</li>
-                                        <li><i class="fas fa-check checkmark"></i> Terdiri dari konseling individu maupun bersama anggota keluarga</li>
-                                    </ul>
-                                </div>
-                                <div class="price-btn">
-                                    <div class="in-btn-1">
-                                        <a href="#">Selengkapnya</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
         </div>
