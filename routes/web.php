@@ -7,8 +7,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\jadwalResevasiController;
+use App\Http\Controllers\KlienAdminController;
 use App\Http\Controllers\MenuUserController;
 use App\Http\Controllers\PelayananController;
+use App\Http\Controllers\settingJadwalAdminController;
+use App\Http\Controllers\settingPelayanAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,3 +97,20 @@ Route::get('/profilUser', function () {
     }
 });
 Route::POST('/updateProfil', [AuthController::class, 'updateProfil']);
+Route::get('/service', function () {
+    return view('front-end.pelayanan.all-pelayanan');
+});
+Route::get('/jadwal', function () {
+    if (session('klien')) {
+        $data = [
+            'klien' => Klien::where('unique', session('klien')->unique)->first()
+        ];
+        return view('front-end.pelayanan.jadwal-konsul', $data);
+    } else {
+        return redirect('/');
+    }
+});
+Route::get('/adminKlien', [KlienAdminController::class, 'index']);
+Route::get('/jadwalReservasiAdmin', [jadwalResevasiController::class, 'index']);
+Route::get('/settingJadwalAdmin', [settingJadwalAdminController::class, 'index']);
+Route::get('/settingPelayanAdmin', [settingPelayanAdminController::class, 'index']);

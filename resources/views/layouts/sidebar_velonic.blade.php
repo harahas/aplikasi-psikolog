@@ -2,24 +2,24 @@
 <div class="leftside-menu">
 
     <!-- Brand Logo Light -->
-    <a href="index.html" class="logo logo-light">
+    {{-- <a href="index.html" class="logo logo-light">
         <span class="logo-lg">
             <img src="assets/images/logo.png" alt="logo">
         </span>
         <span class="logo-sm">
             <img src="assets/images/logo-sm.png" alt="small logo">
         </span>
-    </a>
+    </a> --}}
 
     <!-- Brand Logo Dark -->
-    <a href="/" class="logo logo-dark">
+    {{-- <a href="/" class="logo logo-dark">
         <span class="logo-lg">
             <img src="assets/images/logo-dark.png" alt="dark logo">
         </span>
         <span class="logo-sm">
             <img src="assets/images/logo-sm.png" alt="small logo">
         </span>
-    </a>
+    </a> --}}
 
     <!-- Sidebar -left -->
     <div class="h-100" id="leftside-menu-container" data-simplebar>
@@ -48,6 +48,32 @@
                         </li>
                     </ul>
                 </div>
+
+            </li>
+            <li class="side-nav-item">
+                <a href="/adminKlien" class="side-nav-link">
+                    <i class=" ri-user-2-line"></i>
+                    <span> Klien </span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="/jadwalReservasiAdmin" class="side-nav-link">
+                    <i class="ri-calendar-todo-fill"></i>
+                    <span> Jadwal Reservasi</span>
+                </a>
+            </li>
+            <li class="side-nav-title">Setting</li>
+            <li class="side-nav-item">
+                <a href="/settingJadwalAdmin" class="side-nav-link">
+                    <i class="mdi mdi-calendar-account"></i>
+                    <span> Setting Jadwal Psikolog</span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="/settingPelayanAdmin" class="side-nav-link">
+                    <i class="mdi mdi-credit-card-settings"></i>
+                    <span> Setting Pelayanan</span>
+                </a>
             </li>
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages2" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
@@ -63,7 +89,7 @@
                     </ul>
                 </div>
             </li>
-           
+
         </ul>
         <!--- End Sidemenu -->
 

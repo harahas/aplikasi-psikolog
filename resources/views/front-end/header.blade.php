@@ -10,27 +10,21 @@
             <nav class="in-main-navigation-area clearfix ul-li">
                 <ul id="main-nav" class="nav navbar-nav clearfix">
                     <li class="dropdown in-megamenu">
-                        <a href="!#">Beranda</a>
+                        <a href="/">Beranda</a>
                     </li>
                     <li class="dropdown">
-                        <a href="!#">Pelayanan</a>
-                        <ul class="dropdown-menu clearfix">
+                        <a href="/service">Pelayanan</a>
+                        {{-- <ul class="dropdown-menu clearfix">
                             <li><a target="_blank" href="shop.html">Shop Page </a></li>
                             <li><a target="_blank" href="shop-single.html">Shop Details</a></li>
-                        </ul>
+                        </ul> --}}
                     </li>
                     @if (session('klien'))
 
                     <li class="dropdown">
-                        <a href="!#">Menu Saya</a>
-                        <ul class="dropdown-menu clearfix">
-                            <li><a target="_blank" href="/profilUser">Profil </a></li>
-                            <li><a target="_blank" href="shop-single.html">Jadwal Konseling</a></li>
-                            <li><a target="_blank" href="shop-single.html">Riwayat Transisi</a></li>
-                        </ul>
+                        <a href="/profilUser">Menu Saya</a>
                     </li>
                     @endif
-
                     <li class="dropdown">
                         <a href="!#">Tentang Kami</a>
                         <ul class="dropdown-menu clearfix">
@@ -92,7 +86,7 @@
             <div class="header-cta-btn ">
                 <div class="in-header-search-cta-btn d-flex align-items-center">
                     @if (session('klien'))
-                    <h6 class="text-dark mt-2 me-5">Hai,{{ session('klien')->nama }} </h6>
+                    <h6 class="text-dark mt-2 me-5">Hai, {{ session('klien')->nama }} </h6>
                     @endif
                     <div class="in-header-cta-btn">
                         @if (session('klien'))
@@ -126,6 +120,7 @@
                 <div class="mobile_menu_close open_mobile_menu">
                     <i class="fal fa-times"></i>
                 </div>
+
                 <div class="m-brand-logo">
                     <a href="!#"><img src="assets/img/logo/logo.png" alt=""></a>
                 </div>
@@ -140,16 +135,9 @@
                         <li class="dropdown in-megamenu">
                             <a href="!#">Beranda</a>
                         </li>
-
                         @if (session('klien'))
-
                         <li class="dropdown">
-                            <a href="!#">Menu Saya</a>
-                            <ul class="dropdown-menu clearfix">
-                                <li><a target="_blank" href="/profilUser">Profil </a></li>
-                                <li><a target="_blank" href="shop-single.html">Jadwal Konseling</a></li>
-                                <li><a target="_blank" href="shop-single.html">Riwayat Transisi</a></li>
-                            </ul>
+                            <a href="/profilUser">Menu Saya</a>
                         </li>
                         @endif
                         <li class="dropdown">

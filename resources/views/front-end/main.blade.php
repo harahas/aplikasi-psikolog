@@ -44,7 +44,7 @@
     <!-- Start of Footer section
 	============================================= -->
     @include('front-end.modal-login')
-    <footer id="in-footer" class="in-footer-section" data-background="/assets/img/bg/footer-bg.jpg">
+    <footer id="in-footer" class="in-footer-section" data-background="/assets/img/bg/footerr.png">
         <div class="container">
             <div class="in-footer-widget-wrapper">
                 <div class="row">
@@ -52,11 +52,9 @@
                         <div class="in-footer-widget">
                             <div class="logo-widget">
                                 <div class="brand-logo">
-                                    <a href="#"><img src="/assets/img/logo/logo-2.png" alt=""></a>
                                 </div>
                                 <div class="footer-text ">
-                                    The charms of pleasure of the empect moment, so blinded by desire, thats they cannot
-                                    fores that ound to.
+                                    Menyelaraskan Keluarga Menuju Akhlaqul Karimah: Cinta, Harmoni, dan Kebahagiaan.
                                 </div>
                                 <div class="footer-social d-flex">
                                     <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -66,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-5 col-md-6">
                         <div class="in-footer-widget">
                             <div class="contact-widget headline">
                                 <h3 class="widget-title">Contact info</h3>
@@ -75,9 +73,8 @@
                                         <div class="inner-icon d-flex align-items-center justify-content-center">
                                             <i class="fal fa-map-marker-alt"></i>
                                         </div>
-                                        <div class="inner-text text-dark">
-                                            30 Commercial Road
-                                            Fratton, Australia
+                                        <div class="inner-text">
+                                            Jln. Sukamulya, Panglayungan, Kab. Tasikmalaya, Jawa Barat 46151
                                         </div>
                                     </div>
                                     <div class="info-item d-flex align-items-center">
@@ -85,8 +82,8 @@
                                             <i class="fal fa-envelope-open-text"></i>
                                         </div>
                                         <div class="inner-text">
-                                            insurin@company.com
-                                            1-888-452-1505
+                                            akhlaqulkarimah@gmail.com
+                                            085-860-568-027
                                         </div>
                                     </div>
                                     <div class="info-item d-flex align-items-center">
@@ -94,15 +91,17 @@
                                             <i class="fal fa-phone-plus"></i>
                                         </div>
                                         <div class="inner-text">
-                                            Mon – Sat: 8 am – 5 pm,
-                                            Sunday: CLOSED
+                                            Sen – Sel: 08.00 – 16.00,
+                                            Minggu : Tutup
                                         </div>
                                     </div>
+                                    <br>
+                                    <br>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    {{-- <div class="col-lg-3 col-md-6">
                         <div class="in-footer-widget">
                             <div class="menu-widget headline ul-li-block">
                                 <h3 class="widget-title">Our Company</h3>
@@ -116,8 +115,9 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
+                    </div> --}}
+
+                    <div class="col-lg-4 col-md-6">
                         <div class="in-footer-widget">
                             <div class="newslatter-widget headline ul-li-block">
                                 <h3 class="widget-title">Subscribe newsletter</h3>
@@ -133,7 +133,7 @@
             <div class="in-footer-copyright-area d-flex justify-content-end">
                 <div class="in-footer-copyright-text">
                     <div class="inner-text d-flex justify-content-end">
-                        Copyright © 2022themexriver
+                        Copyright © 2024 Akhlaqul Karimah
                     </div>
                 </div>
             </div>

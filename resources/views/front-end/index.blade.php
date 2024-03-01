@@ -513,40 +513,6 @@
 
 <!-- Start of CTA section
 ============================================= -->
-<section id="in-cta-2" class="in-cta-section-2">
-    <div class="jarallax  position-relative" data-background="assets/img/bg/cta2.jpg">
-        <div class="background_overlay"></div>
-        <div class="container">
-            <div class="in-cta-content-2 position-relative">
-                <div class="in-cta-text-btn-group wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1000ms">
-                    <div class="in-section-title-2 headline">
-                        <h2>Need Insurence Consultent
-                            or Find an agent</h2>
-                    </div>
-                    <div class="in-cta-btn-grp d-flex">
-                        <div class="in-btn-2 position-relative">
-                            <a href="contact.html">Get Started Now</a>
-                        </div>
-                        <div class="in-btn-2 position-relative">
-                            <a href="contact.html">Get Started Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="in-cta-info-2 position-absolute wow fadeInRight" data-wow-delay="600ms" data-wow-duration="1000ms" data-background="assets/img/bg/cta-bg.png">
-            <div class="in-cta-info-item d-flex">
-                <div class="inner-icon">
-                    <img src="assets/img/about/call.png" alt="">
-                </div>
-                <div class="inner-text headline">
-                    <h3>Facing any problem to get a quote!</h3>
-                    <span>Call: 1.888.255.4364</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- End of CTA section
 ============================================= -->
 
@@ -723,15 +689,13 @@
                             <div class="sub-title text-uppercase">
                                 Testimonials
                             </div>
-                            <h2>Our Client Reviews</h2>
+                            <h2>Ulasan Dari Klien Kami</h2>
                         </div>
                         <div class="in-testimonial-slider-area-2">
                             <div class="in-testimonial-slider-2">
                                 <div class="in-testimonial-item-2 position-relative">
                                     <div class="inner-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
-                                        ultrices gravida. Risuscommodo viverra maecenas accumsan
+                                        Kami sangat bersyukur telah mendapatkan bimbingan dari konsultan keluarga Akhlaqul Karimah. Mereka membantu kami melewati masa-masa sulit dalam pernikahan kami dan memberikan solusi yang sesuai dengan ajaran agama. Keluarga kami sekarang lebih bahagia dan tentram
                                     </div>
                                     <div class="inner-author-quote d-flex justify-content-between align-items-center">
                                         <div class="inner-author d-flex align-items-center">
@@ -739,8 +703,8 @@
                                                 <img src="assets/img/about/tst1.png" alt="">
                                             </div>
                                             <div class="author-meta headline">
-                                                <h3>Arnold Logan</h3>
-                                                <span>Managing Diretor</span>
+                                                <h3>Euis Ignes SH</h3>
+                                                <span>Karyawan Swasta</span>
                                             </div>
                                         </div>
                                         <div class="inner-quote d-flex align-items-center justify-content-center">
@@ -1004,7 +968,7 @@
 
 <!-- Start of Sponsor section
 ============================================= -->
-<section id="in-sponsor" class="in-sponsor-section-2">
+{{-- <section id="in-sponsor" class="in-sponsor-section-2">
     <div class="container">
         <div class="in-sponsor-slider">
             <div class="in-sponsor-item">
@@ -1044,5 +1008,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 @endsection
