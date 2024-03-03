@@ -412,21 +412,6 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="col-lg-3 col-md-6">
-                        <div class="in-footer-widget">
-                            <div class="menu-widget headline ul-li-block">
-                                <h3 class="widget-title">Our Company</h3>
-                                <ul>
-                                    <li><a href="#">Our Story</a></li>
-                                    <li><a href="#">News & Blog</a></li>
-                                    <li><a href="#">Careers</a></li>
-                                    <li><a href="#">Customer Support</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Website Accessibility</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> --}}
 
                     <div class="col-lg-4 col-md-6">
                         <div class="in-footer-widget">
@@ -455,28 +440,29 @@
 	============================================= -->
 
     <!-- For Js Library -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/knob.js"></script>
-    <script src="assets/js/jquery.filterizr.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/rbtools.min.js"></script>
-    <script src="assets/js/rs6.min.js"></script>
-    <script src="assets/js/jarallax.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/tilt.jquery.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/jquery.marquee.min.js"></script>
-    <script src="assets/js/roundslider.js"></script>
-    <script src="assets/js/jquery.inputarrow.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery-ui.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/appear.js"></script>
+    <script src="/assets/js/slick.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/assets/js/knob.js"></script>
+    <script src="/assets/js/jquery.filterizr.js"></script>
+    <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/js/rbtools.min.js"></script>
+    <script src="/assets/js/rs6.min.js"></script>
+    <script src="/assets/js/jarallax.js"></script>
+    <script src="/assets/js/jquery.counterup.min.js"></script>
+    <script src="/assets/js/waypoints.min.js"></script>
+    <script src="/assets/js/tilt.jquery.min.js"></script>
+    <script src="/assets/js/isotope.pkgd.min.js"></script>
+    <script src="/assets/js/jquery.marquee.min.js"></script>
+    <script src="/assets/js/roundslider.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/jquery.nice-select.min.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/page-script/login.js"></script>
+    <script src="/page-script/menu-saya.js"></script>
 </body>
 </html>
