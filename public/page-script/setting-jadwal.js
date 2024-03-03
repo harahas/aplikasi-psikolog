@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let table = $("#table-settingpembayaran").DataTable({
+    let table = $("#table-jadwal").DataTable({
         processing: true,
         responsive: true,
         responsive: !0,
@@ -17,25 +17,28 @@ $(document).ready(function () {
         lengthChange: false,
         autoWidth: false,
         serverSide: true,
-        ajax: "/datatableSettingPembayaran",
+        ajax: "/datatableSettingJadwal",
         columns: [
             {
                 data: null,
                 orderable: false,
                 render: function (data, type, row, meta) {
-                    var pageInfo = $("#table-settingpembayaran").DataTable().page.info();
+                    var pageInfo = $("#table-jadwal").DataTable().page.info();
                     var index = meta.row + pageInfo.start + 1;
                     return index;
                 },
             },
             {
-                data: "nama_pelayanan",
+                data: "tanggal",
             },
             {
-                data: "harga",
+                data: "jam_awal",
             },
             {
-                data: "keterangan",
+                data: "jam_akhir",
+            },
+            {
+                data: "status",
             },
 
             {
@@ -56,19 +59,20 @@ $(document).ready(function () {
             },
         ],
     });
-    // Simpan data
-    $("#tambah_pelayanan").on('click', function () {
-        $("#modal-pelayanan").modal('show');
-        $("#title-modal").html('Tambah Pelayanan');
-        $("#btn-action").html(`<button id="simpan_pelayanan" type="button" class="btn btn-primary me-md-1 d-flex align-items-center">
-        <i class="ri-check-double-line me-1"></i><span>Simpan Pelayanan</span>
+    // nampilin modal
+    $("#tambah_jadwal").on('click', function () {
+        $("#modal-jadwal").modal('show');
+        $("#title-modal").html('Tambah Jadwal');
+        $("#btn-action").html(`<button id="simpan_jadwal" type="button" class="btn btn-primary me-md-1 d-flex align-items-center">
+        <i class="ri-check-double-line me-1"></i><span>Simpan jadwal</span>
     </button>`)
     })
-    $("#modal-pelayanan").on("click", "#simpan_pelayanan", function () {
-        let form = $("form[id='form-pelayanan']").serialize()
+    // TAMBAH
+    $("#modal-jadwal").on("click", "#simpan_jadwal", function () {
+        let form = $("form[id='form-jadwal']").serialize()
         $.ajax({
             data: form,
-            url: "/simpanSettingPelayanan",
+            url: "/simpanSettingjadwal",
             type: "POST",
             dataType: 'json',
             success: function (response) {
@@ -77,43 +81,45 @@ $(document).ready(function () {
                 } else {
                     $("#title-modal").html('');
                     $("#btn-action").html('');
-                    $("#nama_pelayanan").val('');
-                    $("#harga").val('');
-                    $("#keterangan").val('');
+                    $("#tanggal").val('');
+                    $("#jam_awal").val('');
+                    $("#jam_akhir").val('');
                     table.ajax.reload()
-                    $("#modal-pelayanan").modal('hide');
+                    $("#modal-jadwal").modal('hide');
                     Swal.fire("Good Job!", response.success, "success");
                 }
             }
         });
     })
+    // GET DATA DULU
     // Edit Data
-    $("#table-settingpembayaran").on("click", ".btn-edit-pelayanan", function () {
+    $("#table-jadwal").on("click", ".btn-edit-jadwal", function () {
         let unique = $(this).data("unique");
         $.ajax({
-            url: "/getSettingPelayanan/" + unique,
+            url: "/getSettingJadwal/" + unique,
             type: "get",
             dataType: "json",
             success: function (response) {
-                $("#unique").val(response.pelayanan.unique);
-                $("#nama_pelayanan").val(response.pelayanan.nama_pelayanan);
-                $("#harga").val(response.pelayanan.harga);
-                $("#keterangan").val(response.pelayanan.keterangan);
-                $("#title-modal").html("Edit Pelayanan");
+                $("#unique").val(response.jadwal.unique);
+                $("#tanggal").val(response.jadwal.tanggal);
+                $("#jam_awal").val(response.waktu.jam_awal);
+                $("#jam_akhir").val(response.waktu.jam_akhir);
+                $("#title-modal").html("Edit Jadwal");
                 $("#btn-action").html(
                     `<button type="button" class="btn btn-primary" id="update-data">Update Data</button>`
                 );
-                $("#modal-pelayanan").modal("show");
+                $("#modal-jadwal").modal("show");
             },
         });
     });
-    // update setting pelayanan
+    // update data
+    // update setting jadwal
     $("#btn-action").on("click", "#update-data", function () {
-        let form = $("form[id='form-pelayanan']").serialize();
+        let form = $("form[id='form-jadwal']").serialize();
 
         $.ajax({
             data: form,
-            url: "/updateSettingPelayanan",
+            url: "/updateSettingJadwal",
             type: "POST",
             dataType: "json",
             success: function (response) {
@@ -125,10 +131,10 @@ $(document).ready(function () {
                     // Jika sukses, reload tabel dan tampilkan pesan sukses
                     table.ajax.reload();
                     $("#unique").val("");
-                    $("#nama_pelayanan").val("");
-                    $("#harga").val("");
-                    $("#keterangan").val("");
-                    $("#modal-pelayanan").modal("hide");
+                    $("#tanggal").val("");
+                    $("#jam_awal").val("");
+                    $("#jam_akhir").val("");
+                    $("#modal-jadwal").modal("hide");
                     Swal.fire("Success!", response.success, "success");
                 }
             },
@@ -138,13 +144,12 @@ $(document).ready(function () {
         });
 
     });
-    // Hapus setting pelayanan
-    $("#table-settingpembayaran").on("click", ".delete-button", function () {
+    $("#table-jadwal").on("click", ".btn-hapus-jadwal", function () {
         let unique = $(this).data("unique");
         let token = $(this).data("token");
         Swal.fire({
             title: "Apakah Kamu Yakin?",
-            text: "Kamu akan menghapus data pelayanan!",
+            text: "Kamu akan menghapus data jadwal!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
@@ -153,7 +158,7 @@ $(document).ready(function () {
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: "/deletePelayanan/" + unique,
+                    url: "/deleteJadwal/" + unique,
                     type: "POST",
                     data: {
                         _token: token,
@@ -258,4 +263,5 @@ $(document).ready(function () {
             });
         });
     }
+
 });

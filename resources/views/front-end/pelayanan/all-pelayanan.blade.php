@@ -332,7 +332,7 @@
                                 </div>
                                 <div class="price-btn">
                                     <div class="in-btn-1">
-                                        <a href="/jadwal">Selengkapnya</a>
+                                        <a href="/jadwal/{{ $settings->unique }}">Selengkapnya</a>
                                     </div>
                                 </div>
                             </div>

@@ -63,7 +63,7 @@ class SettingPembayaranController extends Controller
 
                 '
         <button class="btn btn-rounded btn-sm btn-warning text-dark edit-button btn-edit-pelayanan mt-2 d-flex align-items-left" title="Edit Data" data-unique="' . $row->unique . '"><i class=" ri-edit-box-line">Edit</i></button>
-        <button class="btn btn-rounded btn-sm btn-danger text-white delete-button btn-hapus-pelayanan mt-2 d-flex align-items-left" title="Hapus Data" data-unique="' . $row->unique . '"    data-token="' . csrf_token() . '"><i class="ri-delete-bin-line">Hapus</i></button>';
+        <button class="btn btn-rounded btn-sm btn-danger text-white delete-button mt-2 d-flex align-items-left" title="Hapus Data" data-unique="' . $row->unique . '"    data-token="' . csrf_token() . '"><i class="ri-delete-bin-line">Hapus</i></button>';
             return $actionBtn;
         })->make(true);
     }
@@ -109,9 +109,9 @@ class SettingPembayaranController extends Controller
     }
     public function deletePelayanan($unique)
     {
-        $pelayanan = SettingPembayaran::where('unique', $unique)->first();
+        $pelayanan = SettingPembayaran::where('unique', $unique);
 
-        if (!$pelayanan) {
+        if (!$pelayanan->first()) {
             return response()->json(['error' => 'Data not found'], 404);
         }
 

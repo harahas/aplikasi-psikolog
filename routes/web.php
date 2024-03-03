@@ -14,7 +14,9 @@ use App\Http\Controllers\KlienAdminController;
 use App\Http\Controllers\jadwalResevasiController;
 use App\Http\Controllers\SettingPembayaranController;
 use App\Http\Controllers\settingJadwalAdminController;
+use App\Http\Controllers\SettingJadwalController;
 use App\Http\Controllers\settingPelayanAdminController;
+use App\Models\SettingJadwal;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,10 +107,11 @@ Route::get('/service', function () {
     ];
     return view('front-end.pelayanan.all-pelayanan', $data);
 });
-Route::get('/jadwal', function () {
+Route::get('/jadwal/{unique}', function ($unique) {
     if (session('klien')) {
         $data = [
-            'klien' => Klien::where('unique', session('klien')->unique)->first()
+            'klien' => Klien::where('unique', session('klien')->unique)->first(),
+            'data_pembayaran' => SettingPembayaran::where('unique', $unique)->first()
         ];
         return view('front-end.pelayanan.jadwal-konsul', $data);
     } else {
@@ -130,3 +133,16 @@ Route::get('/getSettingPelayanan/{unique}', [SettingPembayaranController::class,
 Route::post('/updateSettingPelayanan', [SettingPembayaranController::class, 'updateSettingPelayanan']);
 // hapus data pelayanan
 Route::post('/deletePelayanan/{unique}', [SettingPembayaranController::class, 'deletePelayanan']);
+// Setting jadwal
+Route::get('/datatableSettingJadwal', [SettingJadwalController::class, 'datatableSettingJadwal']);
+//  SIMPAN JADWAL
+Route::post('/simpanSettingjadwal', [SettingJadwalController::class, 'simpanSettingJadwal']);
+// get data
+Route::get('/getSettingJadwal/{unique}', [SettingJadwalController::class, 'getSettingJadwal']);
+// simpan data
+Route::post('/updateSettingJadwal', [SettingJadwalController::class, 'updateSettingJadwal']);
+// hapus jadwal
+Route::post('/deleteJadwal/{unique}', [SettingJadwalController::class, 'deleteJadwal']);
+
+// atur jadwal
+Route::get('/getWaktu', [SettingJadwalController::class, 'getWaktu']);
