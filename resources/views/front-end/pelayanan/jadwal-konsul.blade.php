@@ -79,12 +79,11 @@
             <div class="card-body">
                 <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-
                         <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" text-color="white"><i class="
                             mdi mdi-account-heart"></i> Isi Data Diri</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="mdi mdi-calendar-clock"></i> Atur Jadwal</button>
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="mdi mdi-calendar-clock"></i> Selanjutnya</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="mdi mdi-credit-card-check"></i> Pembayaran</button>
@@ -190,36 +189,27 @@
                                 <ul class="list-group">
                                     <div class="container mt-5">
                                         <form id="konselingForm">
-                                            <div class="form-group">
-                                                <label for="metodeKonseling">Metode Konseling:</label>
-                                                <select class="form-control" id="metodeKonseling" name="metodeKonseling" onchange="toggleAlamat()">
-                                                    <option value="online">Online</option>
-                                                    <option value="offline">Offline</option>
-                                                </select>
-                                            </div>
-
                                             <div class="form-group" id="alamatContainer" style="display: none;">
                                                 <label for="alamat">Alamat:</label>
                                                 <input type="text" class="form-control" id="alamat" name="alamat" value="Jalan A" readonly>
                                             </div>
-
                                             <div class="form-group">
                                                 <label for="jumlahSesi">Jumlah Sesi:</label>
                                                 <input type="number" class="form-control" id="jumlahSesi" name="jumlahSesi" required>
                                             </div>
-
                                             <div class="form-group">
-                                                <label for="tanggal">Tanggal:</label>
-                                                <input type="date" class="form-control" id="tanggal" name="tanggal" required>
+                                                <div class="form-group">
+                                                    <label for="tanggal">Pilih Tanggal:</label>
+                                                    <input type="date" id="tanggal" name="tanggal" class="form-control">
+                                                </div>
                                             </div>
-
                                             <div class="form-group">
                                                 <label>Waktu:</label>
                                                 <div data-toggle="buttons">
                                                     <label class="btn ">
                                                         <input type="radio" name="waktu" id="waktu1"> 08.00 - 09.00
                                                     </label>
-                                                    <label class="">
+                                                    <label class="btn">
                                                         <input type="radio" name="waktu" id="waktu2"> 09.00 - 10.00
                                                     </label>
                                                     <!-- Tambahkan tombol waktu lainnya sesuai kebutuhan -->
@@ -283,11 +273,6 @@
                                 <div class="form-group">
                                     <label for="waktu">Waktu:</label>
                                     <input type="text" class="form-control" id="waktu" name="waktu" value="08.00 - 09.00" readonly>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="metodeKonseling">Metode Konseling:</label>
-                                    <input type="text" class="form-control" id="metodeKonseling" name="metodeKonseling" value="Offline" readonly>
                                 </div>
 
                                 <div class="form-group">
