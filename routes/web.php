@@ -122,3 +122,11 @@ Route::get('/settingPelayanAdmin', [settingPelayanAdminController::class, 'index
 //simpan setting pelayanan
 Route::post('/simpanSettingPelayanan', [SettingPembayaranController::class, 'simpanSettingPelayanan']);
 Route::get('/datatableSettingPembayaran', [SettingPembayaranController::class, 'datatableSettingPembayaran']);
+// edit pelayanan
+// Route::get('/getSettingPelayanan/{pelayanan:unique}', [SettingPembayaranController::class, 'getSettingPelayanan']);
+//edit setting pelayanan
+Route::get('/getSettingPelayanan/{unique}', [SettingPembayaranController::class, 'getSettingPelayanan']);
+// update data setting pelayanan
+Route::post('/updateSettingPelayanan', [SettingPembayaranController::class, 'updateSettingPelayanan']);
+// hapus data pelayanan
+Route::post('/deletePelayanan/{unique}', [SettingPembayaranController::class, 'deletePelayanan']);
