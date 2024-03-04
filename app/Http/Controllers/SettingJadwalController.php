@@ -114,4 +114,26 @@ class SettingJadwalController extends Controller
         $waktu = SettingJadwal::where('tanggal', $request->tanggal)->where('status', 0)->get();
         return response()->json(['waktu' => $waktu]);
     }
+
+    public function cekValidasiKonsul(Request $request)
+    {
+        $rules = [
+            'tanggal' => 'required',
+            'waktu2' => 'required',
+            'deskripsi' => 'required',
+            'harapan' => 'required',
+        ];
+        $pesan = [
+            'tanggal.required' => 'Tanggal tidak boleh kosong',
+            'waktu2.required' => 'Silahkan pilih minimal salah satu',
+            'deskripsi.required' => 'Deskripsi tidak boleh kosong',
+            'harapan.required' => 'Tidak boleh putus harapan',
+        ];
+        $validator = Validator::make($request->all(), $rules, $pesan);
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()]);
+        } else {
+            return response()->json(['success' => 'oke']);
+        }
+    }
 }

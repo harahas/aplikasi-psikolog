@@ -110,7 +110,9 @@ Route::get('/service', function () {
 });
 Route::get('/serviceLain', function () {
     $data = [
-        'setting' => SettingPembayaran::all()
+        'setting' => SettingPembayaran::all(),
+        'pelayanan_lain' => SettingPembayaran::where('jenis_pelayanan', 'lainnya')->get()
+
     ];
     return view('front-end.pelayanan.pelayanan-lain', $data);
 });
@@ -155,3 +157,5 @@ Route::post('/deleteJadwal/{unique}', [SettingJadwalController::class, 'deleteJa
 
 // atur jadwal
 Route::get('/getWaktu', [SettingJadwalController::class, 'getWaktu']);
+//CEK VALIDASI KONSUL
+Route::get('/cekValidasiKonsul', [SettingJadwalController::class, 'cekValidasiKonsul']);

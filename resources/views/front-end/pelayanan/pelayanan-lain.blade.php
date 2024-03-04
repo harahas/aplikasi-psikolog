@@ -77,18 +77,20 @@
         <div class="container">
             <div class="in-service-content-3">
                 <div class="row justify-content-center">
-                    <div class="col-ls-5 col-md-12">
+                    @foreach($pelayanan_lain as $lainnya)
+                    <div class="col-ls-5 col-md-6">
                         <div class="in-service-item-3 position-relative">
                             <div class="inner-text headline pera-content">
-                                <h3><strong href="#">Seminar Parenting</strong>
+                                <h3><strong href="#">{{ $lainnya->nama_pelayanan }}</strong>
                                 </h3>
                                 <h2>
                                     <strong>
-                                        <p>Rp 500.000 - 3Jt</p>
+
+                                        <p> <sup>Rp</sup>{{ $lainnya->harga }}</p>
                                     </strong>
                                 </h2>
                                 <br>
-                                <p>Apakah Anda sedang mencari cara untuk meningkatkan keterampilan parenting Anda? Sambutlah kesempatan untuk tumbuh dan belajar bersama Akhlaqul Karimah, bersama dengan pemateri psikolog profesional.Seminar parenting adalah pengalaman pembelajaran interaktif yang dirancang khusus untuk membantu orang tua memahami dan menghadapi tantangan dalam mendidik anak. Dengan melibatkan psikolog profesional, seminar ini menawarkan wawasan mendalam, strategi praktis, dan dukungan emosional untuk memperkuat hubungan orang tua-anak.
+                                <p>{{ $lainnya->keterangan }}
                                 </p>
                             </div>
 
@@ -102,6 +104,7 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>

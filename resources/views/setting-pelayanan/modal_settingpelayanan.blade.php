@@ -17,6 +17,19 @@
                         <input type="text" class="form-control" id="nama_pelayanan" name="nama_pelayanan">
                     </div>
                     <div class="form-group mt-2 mb-2">
+                        <label for="jenis_pelayanan">jenis_pelayanan</label><span class="text-danger">&nbsp;*</span>
+                        <div class="mb-3">
+                            <label for="" class="form-label">City</label>
+                            <select class="form-select form-select-lg" name="jenis_pelayanan" id="jenis_pelayanan">
+                                <option selected disabled>Pilih Jenis Pelayanan</option>
+                                <option value="konseling">Konseling</option>
+                                <option value="lainnya">Pelayanan Lainnya</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group mt-2 mb-2">
                         <label for="harga">harga</label><span class="text-danger">&nbsp;*</span>
                         <input type="text" class="form-control" id="harga" name="harga">
                     </div>
