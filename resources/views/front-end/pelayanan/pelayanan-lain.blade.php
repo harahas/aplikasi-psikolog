@@ -61,6 +61,7 @@
             </div>
         </div>
     </div>
+    <br>
     <!-- End of header section
 	============================================= -->
 
@@ -72,11 +73,11 @@
 
     <!-- Start of Service section
 	============================================= -->
-    {{-- <section id="in-service-page-service-1" class="in-service-page-service-section-1">
+    <section id="in-service-page-service-1" class="in-service-page-service-section-1">
         <div class="container">
             <div class="in-service-content-3">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8 col-md-6">
+                    <div class="col-ls-5 col-md-12">
                         <div class="in-service-item-3 position-relative">
                             <div class="inner-text headline pera-content">
                                 <h3><strong href="#">Seminar Parenting</strong>
@@ -87,8 +88,7 @@
                                     </strong>
                                 </h2>
                                 <br>
-                                <p>Parenting dalam dunia psikologi adalah studi tentang bagaimana orang tua mempengaruhi perkembangan anak-anak mereka, termasuk pengaruh pada ikatan emosional, perkembangan moral, gaya pengasuhan, perkembangan kognitif, dan banyak aspek lainnya. Ini adalah bidang yang mencakup teori dan praktik yang berhubungan dengan bagaimana orang tua membesarkan dan mendidik anak-anak mereka.
-                                    Pemberian parenting untuk komunitas dengan materi bahasan untuk semua segmen kelompok usia berdasarkan tahapan perkembangan psikologi (masa balita, masa anak-anak, masa remaja dan dewasa).
+                                <p>Apakah Anda sedang mencari cara untuk meningkatkan keterampilan parenting Anda? Sambutlah kesempatan untuk tumbuh dan belajar bersama Akhlaqul Karimah, bersama dengan pemateri psikolog profesional.Seminar parenting adalah pengalaman pembelajaran interaktif yang dirancang khusus untuk membantu orang tua memahami dan menghadapi tantangan dalam mendidik anak. Dengan melibatkan psikolog profesional, seminar ini menawarkan wawasan mendalam, strategi praktis, dan dukungan emosional untuk memperkuat hubungan orang tua-anak.
                                 </p>
                             </div>
 
@@ -97,7 +97,7 @@
                                     <i class="flaticon-home-insurance"></i>
                                 </div>
                                 <div class="inner-btn">
-                                    <a class="d-flex align-items-center justify-content-center" href="#"><i class="far fa-long-arrow-right"></i></a>
+                                    <a class="d-flex align-items-center justify-content-center" href="https://web.whatsapp.com/send?phone=6285860568027&text=Saya%20ingin%20bertanya%20tentang%20seminar%20parenting" target="_blank"><i class="fab fa-whatsapp whatsapp-icon" style="font-size: 30px;"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!-- End of Service section
 	============================================= -->
 
@@ -204,63 +204,7 @@
 
     <!-- Start of Price section
 	============================================= -->
-    <section id="in-price" class="in-price-section">
-        <div class="container">
-            <div class="in-section-title-2 in-title-wrap text-center headline pera-content">
-                <div class="sub-title text-uppercase">
-                    Layanan Konseling
-                </div>
-                <br>
-                <h2>Pilih jenis konseling yang cocok untukmu </h2>
-                <p>"Seringkali, langkah pertama menuju pemulihan adalah mengungkapkan rahasia yang telah lama terpendam. Seorang konselor adalah saksi setia dalam perjalanan tersebut." - Alice Miller
-                </p>
-            </div>
-            <div class="in-price-content">
-                <div class="row justify-content-center">
-                    @foreach ($setting as $settings)
 
-                    <div class="col-lg-4 col-md-6">
-                        <div class="in-price-inner-items text-center">
-                            <div class="pricing-title-price-area headline">
-                                <h2>{{ $settings->nama_pelayanan }}</h2>
-                                <span>Mulai dari</span>
-                                @php
-                                $huruf = str_split($settings->harga);
-                                $angka = '';
-                                if (count($huruf)>5) {
-                                for ($i = 0; $i < 6; $i++) { array_pop($huruf); } } foreach($huruf as $row){ $angka .=$row; } @endphp @if($settings->harga > 999999)
-                                    <h3><sup>Rp</sup>{{$angka }}Jt
-                                    </h3><span>/sesi</span>
-                                    <span>{{ $settings->keterangan }}
-                                    </span>
-                                    <br>
-                                    @else <h3><sup>Rp</sup>{{ number_format($settings->harga, 0, '.', '.') }}</h3><span>/sesi</span>
-                                    <span>{{ $settings->keterangan }}
-                                    </span>
-                                    <br>
-                                    @endif
-                            </div>
-                            <div class="pricing-list-btn position-relative">
-                                <div class="pricing-list ul-li-block">
-                                    <ul>
-                                        <li><i class="fas fa-check checkmark"></i> Terapi yang Beragam</li>
-                                        <li><i class="fas fa-check checkmark"></i> Konseling tatap muka atau via Chat/Call/Video Call</li>
-                                        <li><i class="fas fa-check checkmark"></i> Fokus Pada Solusi</li>
-                                    </ul>
-                                </div>
-                                <div class="price-btn">
-                                    <div class="in-btn-1">
-                                        <a href="/jadwal/{{ $settings->unique }}">Selengkapnya</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- End of Price section
 	============================================= -->
 

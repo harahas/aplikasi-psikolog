@@ -102,8 +102,8 @@ $(document).ready(function () {
             success: function (response) {
                 $("#unique").val(response.jadwal.unique);
                 $("#tanggal").val(response.jadwal.tanggal);
-                $("#jam_awal").val(response.waktu.jam_awal);
-                $("#jam_akhir").val(response.waktu.jam_akhir);
+                $("#jam_awal").val(response.jadwal.jam_awal);
+                $("#jam_akhir").val(response.jadwal.jam_akhir);
                 $("#title-modal").html("Edit Jadwal");
                 $("#btn-action").html(
                     `<button type="button" class="btn btn-primary" id="update-data">Update Data</button>`

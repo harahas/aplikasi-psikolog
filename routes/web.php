@@ -16,6 +16,7 @@ use App\Http\Controllers\SettingPembayaranController;
 use App\Http\Controllers\settingJadwalAdminController;
 use App\Http\Controllers\SettingJadwalController;
 use App\Http\Controllers\settingPelayanAdminController;
+use App\Http\Controllers\SettingPelayananLainController;
 use App\Models\SettingJadwal;
 
 /*
@@ -107,6 +108,12 @@ Route::get('/service', function () {
     ];
     return view('front-end.pelayanan.all-pelayanan', $data);
 });
+Route::get('/serviceLain', function () {
+    $data = [
+        'setting' => SettingPembayaran::all()
+    ];
+    return view('front-end.pelayanan.pelayanan-lain', $data);
+});
 Route::get('/jadwal/{unique}', function ($unique) {
     if (session('klien')) {
         $data = [
@@ -122,9 +129,11 @@ Route::get('/adminKlien', [KlienAdminController::class, 'index']);
 Route::get('/jadwalReservasiAdmin', [jadwalResevasiController::class, 'index']);
 Route::get('/settingJadwalAdmin', [settingJadwalAdminController::class, 'index']);
 Route::get('/settingPelayanAdmin', [settingPelayanAdminController::class, 'index']);
+Route::get('/settingPelayanLain', [SettingPelayananLainController::class, 'index']);
 //simpan setting pelayanan
 Route::post('/simpanSettingPelayanan', [SettingPembayaranController::class, 'simpanSettingPelayanan']);
 Route::get('/datatableSettingPembayaran', [SettingPembayaranController::class, 'datatableSettingPembayaran']);
+Route::get('/datatableSettingPelayananLain', [SettingPelayananLainController::class, 'datatableSettingPelayananLain']);
 // edit pelayanan
 // Route::get('/getSettingPelayanan/{pelayanan:unique}', [SettingPembayaranController::class, 'getSettingPelayanan']);
 //edit setting pelayanan

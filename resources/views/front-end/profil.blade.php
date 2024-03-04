@@ -180,7 +180,6 @@
                                                         <th scope="col">Tanggal Konseling</th>
                                                         <th scope="col">Jenis Konseling</th>
                                                         <th scope="col">Waktu Konseling</th>
-                                                        <th scope="col">Metode Konseling</th>
                                                         <th scope="col">Jumlah Bayar</th>
                                                         <th scope="col">Status</th>
                                                     </tr>
@@ -189,9 +188,8 @@
                                                     <tr>
                                                         <th scope="row">1</th>
                                                         <td>27 Februari 2024</td>
-                                                        <td>Konseling Individu</td>
+                                                        <td>Konsultan Keluarga Online</td>
                                                         <td>09.00 - 10.00</td>
-                                                        <td>Online</td>
                                                         <td>Rp 300.000</td>
                                                         <td>Dipesan</td>
                                                     </tr>
@@ -213,22 +211,18 @@
                                                     <th scope="col">Tanggal Konseling</th>
                                                     <th scope="col">Jenis Konseling</th>
                                                     <th scope="col">Waktu Konseling</th>
-                                                    <th scope="col">Metode Konseling</th>
                                                     <th scope="col">Jumlah Bayar</th>
                                                     <th scope="col">Status</th>
-                                                    <th scope="col">Pesan</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <th scope="row">1</th>
                                                     <td>27 Februari 2024</td>
-                                                    <td>Konseling Individu</td>
+                                                    <td>Konsultan Keluarga Online</td>
                                                     <td>09.00 - 10.00</td>
-                                                    <td>Online</td>
                                                     <td>Rp 300.000</td>
                                                     <td>Selesai</td>
-                                                    <td>Pulih semoga lebih baik lagi</td>
                                                 </tr>
 
                                             </tbody>
@@ -248,7 +242,6 @@
                                         <tr>
                                             <th scope="col">No</th>
                                             <th scope="col">Tanggal Konseling</th>
-                                            <th scope="col">Metode Konseling</th>
                                             <th scope="col">Jenis Konseling</th>
                                             <th scope="col">Harga</th>
                                             <th scope="col">Status Pembayaran</th>
@@ -258,7 +251,6 @@
                                         <tr>
                                             <th scope="row">1</th>
                                             <td>27 Februari 2024</td>
-                                            <td>Offline</td>
                                             <td>Konseling Individu</td>
                                             <td>Rp 300.000</td>
                                             <td>Pembayaran Selesai</td>

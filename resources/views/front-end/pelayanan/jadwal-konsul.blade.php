@@ -207,12 +207,20 @@
                                                 <div data-toggle="buttons" id="waktu">
 
                                                 </div>
+                                                <div class="form-group">
+                                                    <label>Pilih Waktu:</label>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="timeSlot1">
+                                                        <label class="form-check-label" for="timeSlot1">08.00 - 09.00</label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="timeSlot2">
+                                                        <label class="form-check-label" for="timeSlot2">09.00 - 10.00</label>
+                                                    </div>
+                                                    <!-- Tambahkan waktu pilihan lainnya sesuai kebutuhan -->
+                                                </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label for="noHP">No HP:</label>
-                                                <input type="tel" class="form-control" id="noHP" name="noHP" required>
-                                            </div>
 
                                             <div class="form-group">
                                                 <label for="deskripsiMasalah">Deskripsi Masalah:</label>

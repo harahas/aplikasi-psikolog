@@ -62,8 +62,8 @@ class SettingPembayaranController extends Controller
             $actionBtn =
 
                 '
-        <button class="btn btn-rounded btn-sm btn-warning text-dark edit-button btn-edit-pelayanan mt-2 d-flex align-items-left" title="Edit Data" data-unique="' . $row->unique . '"><i class=" ri-edit-box-line">Edit</i></button>
-        <button class="btn btn-rounded btn-sm btn-danger text-white delete-button mt-2 d-flex align-items-left" title="Hapus Data" data-unique="' . $row->unique . '"    data-token="' . csrf_token() . '"><i class="ri-delete-bin-line">Hapus</i></button>';
+        <button class="btn btn-rounded btn-sm btn-warning text-dark edit-button btn-edit-pelayanan mt-1 d-flex align-items-left" title="Edit Data" data-unique="' . $row->unique . '"><i class=" ri-edit-box-line">Edit</i></button>
+        <button class="btn btn-rounded btn-sm btn-danger text-white delete-button mt-1 d-flex align-items-left" title="Hapus Data" data-unique="' . $row->unique . '"    data-token="' . csrf_token() . '"><i class="ri-delete-bin-line">Hapus</i></button>';
             return $actionBtn;
         })->make(true);
     }

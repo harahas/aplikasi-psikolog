@@ -66,13 +66,19 @@
             <li class="side-nav-item">
                 <a href="/settingJadwalAdmin" class="side-nav-link">
                     <i class="mdi mdi-calendar-account"></i>
-                    <span> Setting Jadwal Psikolog</span>
+                    <span> Jadwal Psikolog</span>
                 </a>
             </li>
             <li class="side-nav-item">
                 <a href="/settingPelayanAdmin" class="side-nav-link">
                     <i class="mdi mdi-credit-card-settings"></i>
-                    <span> Setting Pelayanan</span>
+                    <span> Pelayanan Konseling</span>
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a href="/settingPelayanLain" class="side-nav-link">
+                    <i class="mdi mdi-table-cog"></i>
+                    <span> Pelayanan Lain</span>
                 </a>
             </li>
             <li class="side-nav-item">

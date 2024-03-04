@@ -2,7 +2,7 @@
 @section('container-velonic')
 <div class="row mb-2">
     <div class="col">
-        <button id="tambah_pelayanan" type="button" class="btn btn-primary me-md-1 d-flex align-items-center">
+        <button id="tambah_pelayanan_lain" type="button" class="btn btn-primary me-md-1 d-flex align-items-center">
             <i class="ri-check-double-line me-1"></i><span>Tambah Pelayanan</span>
         </button>
     </div>
@@ -10,18 +10,18 @@
 <div class="card">
     <div class="card-header">
 
-        <h4>Tabel Pelayanan Reservasi</h4>
+        <h4>Tabel Daftar Pelayanan</h4>
     </div>
     <div class="card-body">
 
         <div class="table-responsive">
-            <table class="table table-striped" id="table-settingpembayaran">
+            <table class="table table-striped" id="table-settingpelayananlain">
 
                 <thead>
                     <tr>
                         <th>No.</th>
                         <th>Nama Pelayanan</th>
-                        <th>Harga Persesi/Range</th>
+                        <th>Harga Pelayanan</th>
                         <th>Keterangan</th>
                         <th>Action</th>
                     </tr>
@@ -34,6 +34,6 @@
         </div>
     </div>
 </div>
-@include('setting-pelayanan.modal_settingpelayanan')
-<script src="/page-script/settingpelayanan.js"></script>
+@include('setting-pelayanan-lain.modal_settingpelayananlain')
+<script src="/page-script/settingpelayananlain.js"></script>
 @endsection

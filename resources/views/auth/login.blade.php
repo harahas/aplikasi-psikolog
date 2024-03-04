@@ -25,7 +25,7 @@
     <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5 position-relative">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-xxl-8 col-lg-10">
+                <div class="col-lg-8 col-lg-10">
                     <div class="card overflow-hidden">
                         <div class="row g-0">
                             <div class="col-lg-6 d-none d-lg-block p-2">
@@ -33,18 +33,10 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex flex-column h-100">
-                                    <div class="auth-brand p-4">
-                                        <a href="index.html" class="logo-light">
-                                            <img src="/assets2/images/logo.png" alt="logo" height="22">
-                                        </a>
-                                        <a href="index.html" class="logo-dark">
-                                            <img src="/assets2/images/logo-dark.png" alt="dark logo" height="22">
-                                        </a>
-                                    </div>
+
                                     <div class="p-4 my-auto">
                                         <h4 class="fs-20">Sign In</h4>
-                                        <p class="text-muted mb-3">Enter your email address and password to access
-                                            account.
+                                        <p class="text-muted mb-3">Masukan username dan password
                                         </p>
                                         {{-- Kodingan didalam if akan muncul ketika session(error) == true  --}}
                                         @if(session()->has('error'))
@@ -97,7 +89,7 @@
             <script>
                 document.write(new Date().getFullYear())
 
-            </script> © Velonic - Theme by Techzaa
+            </script> © Akhlaqul Karimah - 2024
         </span>
     </footer>
     <!-- Vendor js -->

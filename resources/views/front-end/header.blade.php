@@ -13,11 +13,11 @@
                         <a href="/">Beranda</a>
                     </li>
                     <li class="dropdown">
-                        <a href="/service">Pelayanan</a>
-                        {{-- <ul class="dropdown-menu clearfix">
-                            <li><a target="_blank" href="shop.html">Shop Page </a></li>
-                            <li><a target="_blank" href="shop-single.html">Shop Details</a></li>
-                        </ul> --}}
+                        <a href="#">Pelayanan</a>
+                        <ul class="dropdown-menu clearfix">
+                            <li><a href="/service">Konseling </a></li>
+                            <li><a href="/serviceLain">Pelayanan Lain</a></li>
+                        </ul>
                     </li>
                     @if (session('klien'))
 

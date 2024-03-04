@@ -20,7 +20,27 @@
     <!-- Icons css -->
     <link href="/assets2/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
+<style>
+    .nav-pills .nav-link {
+        color: black;
+    }
 
+    .nav-pills .nav-link.active {
+        background-color: #045F4E;
+        text-color: white;
+    }
+
+    .btn {
+        background-color: #045F4E;
+        text-color: white;
+    }
+
+    .nav-pills .nav-item .nav-link {
+        border-radius: 20px;
+        /* Adjust the value to make it more circular */
+    }
+
+</style>
 <body class="authentication-bg position-relative">
     <div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5 position-relative">
         <div class="container">
@@ -197,10 +217,7 @@
                                                                 <div id="data-input"></div>
                                                                 <div id="data-input2"></div>
                                                                 @csrf
-                                                                <li class="previous list-inline-item">
-                                                                    <button type="button" class="btn btn-light"><i class="ri-arrow-left-line me-0"></i>
-                                                                        Back to Account</button>
-                                                                </li>
+
                                                                 <li class="next list-inline-item float-end">
                                                                     <button type="submit" class="btn btn-info" id="btnsimpan">Submit</button>
                                                                 </li>

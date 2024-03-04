@@ -466,7 +466,7 @@
                             <i class="flaticon-privacy-policy"></i>
                         </div>
                         <div class="inner-text headline">
-                            <h3>Pendekatan Holistik</h3>
+                            <h3>Pendekatan yang bersifat Holistik</h3>
                         </div>
                     </div>
                 </div>
