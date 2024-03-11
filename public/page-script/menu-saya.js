@@ -17,6 +17,54 @@ $(document).ready(function () {
             }
         });
     });
+    $("#table-current-jadwal").on("click", ".reschedule", function () {
+        let unique = $(this).data("unique");
+        $("#current_unique").val(unique)
+        let tanggal_tersedia = $("#tanggal_tersedia").val()
+        let newTanggal = tanggal_tersedia.split('/')
+        newTanggal.pop()
+        flatpickr("#new_tanggal", {
+            enable: newTanggal
+        });
+        $("#modal-reschedule").modal('show');
+    })
+
+    $("#modal-reschedule").on("click", "input[name='waktu2[]']", function () {
+        let waktu = $("input[name='waktu2[]']:checked")
+        if (waktu.length > 0) {
+            $("#btn-reschedule").removeAttr("disabled")
+        } else {
+            $("#btn-reschedule").attr("disabled", "true")
+        }
+    })
+
+    $("#new_tanggal").on("change", function () {
+        $("#btn-reschedule").attr("disabled", "true")
+        let waktu = $("#waktu")
+        let tanggal = $(this).val()
+        $.ajax({
+            data: { tanggal: tanggal },
+            url: "/getWaktu",
+            type: "GET",
+            dataType: 'json',
+            success: function (response) {
+                let jam = `
+
+                    `
+                if (response.waktu.length > 0) {
+
+                    response.waktu.forEach(function (a) {
+                        jam += `<label class="btn">
+                            <input type="checkbox" value="${a.unique}" name="waktu2[]" id="waktu2">&nbsp;${a.jam_awal} - ${a.jam_akhir}
+                        </label><br>`
+                    })
+                } else {
+                    jam += `<span class="text-danger">Tidak Ada Jadwal Untuk Konseling, Silahkan pilih tanggal lain!</span>`
+                }
+                waktu.html(jam)
+            }
+        });
+    })
     //Hendler Error
     function displayErrors(errors) {
         // menghapus class 'is-invalid' dan pesan error sebelumnya

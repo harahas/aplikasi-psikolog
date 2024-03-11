@@ -115,7 +115,8 @@ Route::get('/profilUser', function () {
                 ->where('a.status', 3)
                 ->orWhere('a.status', 4)
                 ->get(),
-            'waktu' => new JadwalTaken()
+            'waktu' => new JadwalTaken(),
+            'setting_jadwal' => SettingJadwal::where('status', 0)->get(),
         ];
         return view('front-end.profil', $data);
     } else {
@@ -184,6 +185,7 @@ Route::get('/getWaktu', [SettingJadwalController::class, 'getWaktu']);
 Route::get('/cekValidasiKonsul', [SettingJadwalController::class, 'cekValidasiKonsul']);
 // SIMPAN RESERVASI
 Route::post('/storeReservasi', [ReservasiController::class, 'store']);
+Route::post('/reschedule-jadwal', [ReservasiController::class, 'reschedule']);
 // PESANAN DI KONFIRMASI
 Route::get('/konfirmasiPemesanan/{reservasi:unique}', [ReservasiController::class, 'confirm'])->middleware('auth');
 // PESANAN SELESAI

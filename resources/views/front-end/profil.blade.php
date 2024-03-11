@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/style2.css">
+    <link rel="stylesheet" href="/css/flatpickr.min.css">
     <script src="/page-script/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="/css/sweetalert2.min.css">
     <script src="/page-script/sweetalert2.all.min.js"></script>
@@ -172,8 +173,15 @@
                                 <div class="card text-start">
                                     <div class="card-body">
                                         <h4 class="card-title">Tabel Jadwal Mendatang</h4>
+                                        @php
+                                        $tanggal = '';
+                                        foreach($setting_jadwal as $row){
+                                        $tanggal .= $row->tanggal .'/';
+                                        }
+                                        @endphp
+                                        <input type="hidden" value="{{ $tanggal }}" id="tanggal_tersedia">
                                         <div class="table-responsive">
-                                            <table class="table caption-top">
+                                            <table class="table caption-top" id="table-current-jadwal">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">No</th>
@@ -182,6 +190,7 @@
                                                         <th scope="col">Waktu Konseling</th>
                                                         <th scope="col">Jumlah Bayar</th>
                                                         <th scope="col">Status</th>
+                                                        <th scope="col">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -206,6 +215,9 @@
                                                             @elseif($row->status == 1)
                                                             <span class="badge bg-info">Di Konfirmasi</span>
                                                             @endif
+                                                        </td>
+                                                        <td scope="col">
+                                                            <span data-unique="{{ $row->unique }}" class="reschedule badge bg-primary" style="cursor: pointer;">Reschedule</span>
                                                         </td>
                                                     </tr>
                                                     @endforeach
@@ -309,6 +321,7 @@
     <!-- Start of Footer section
 	============================================= -->
     @include('front-end.modal-login')
+    @include('front-end.modal-jadwal-saya')
     <footer id="in-footer" class="in-footer-section" data-background="/assets/img/bg/footerr.png">
         <div class="container">
             <div class="in-footer-widget-wrapper">
@@ -431,6 +444,7 @@
     <script src="/assets/js/jquery.magnific-popup.min.js"></script>
     <script src="/assets/js/jquery.nice-select.min.js"></script>
     <script src="/assets/js/script.js"></script>
+    <script src="/page-script/flatpickr.js"></script>
     <script src="/page-script/login.js"></script>
     <script src="/page-script/menu-saya.js"></script>
 </body>

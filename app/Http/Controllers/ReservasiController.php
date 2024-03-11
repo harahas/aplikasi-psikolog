@@ -105,6 +105,14 @@ class ReservasiController extends Controller
                 <button type="button" class="btn btn-purple me-md-1 d-flex align-items-center button-bukti-bayar" data-bukti="/storage/' . $row->bukti_bayar . '" data-unique="' . $row->unique . '">Bukti Bayar</button>
                 </div>
                 ';
+            } else if ($row->status == 4) {
+                $actionBtn =
+                    '
+                <div class="d-flex gap-1">
+                <a href="https://wa.me/62' . $newPhone . '" type="button" class="btn btn-info d-flex align-items-center" data-unique="' . $row->unique . '">
+                <i class="bi bi-whatsapp line me-1"></i><span>Hubungi</span>
+                </a>
+                ';
             }
 
             return $actionBtn;
@@ -121,5 +129,33 @@ class ReservasiController extends Controller
     {
         Reservasi::where('unique', $reservasi->unique)->update(['status' => 3]);
         return response()->json(['success' => 'Konsultasi Selesai']);
+    }
+
+    public function reschedule(Request $request)
+    {
+        $data = [
+            'tanggal' => $request->new_tanggal,
+            'status' => 0
+        ];
+        // UPDATE DATA RESERVASI
+        Reservasi::where('unique', $request->unique_reservasi)->update($data);
+        $current_jadwal = JadwalTaken::where('unique_reservasi', $request->unique_reservasi)->get();
+        // STATUS AVAILEBLE DI JADWAL SEBELUMNYA
+        foreach ($current_jadwal as $row) {
+            SettingJadwal::where('unique', $row->unique_setting_jadwal)->update(['status' => 0]);
+        }
+        JadwalTaken::where('unique_reservasi', $request->unique_reservasi)->delete();
+        foreach ($request->waktu2 as $waktu) {
+            $data2 = [
+                'unique' => Str::orderedUuid(),
+                'unique_reservasi' => $request->unique_reservasi,
+                'unique_setting_jadwal' => $waktu
+            ];
+            JadwalTaken::create($data2);
+
+            SettingJadwal::where('unique', $waktu)->update(['status' => 1]);
+        }
+
+        return redirect('/profilUser')->with('success', 'Reservasi Behasil Dilakukan');
     }
 }
