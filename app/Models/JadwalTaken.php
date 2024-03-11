@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Reservasi extends Model
+class JadwalTaken extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
@@ -13,10 +13,5 @@ class Reservasi extends Model
     public function getRouteKeyName()
     {
         return 'unique';
-    }
-
-    public static function rupiah($angka)
-    {
-        return "Rp. " . number_format($angka, 0, ',', ',');
     }
 }

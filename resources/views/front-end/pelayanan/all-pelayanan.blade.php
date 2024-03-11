@@ -250,7 +250,11 @@
                                 </div>
                                 <div class="price-btn">
                                     <div class="in-btn-1">
+                                        @if(session('klien'))
                                         <a href="/jadwal/{{ $settings->unique }}">Selengkapnya</a>
+                                        @else
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#modal-login">Selengkapnya</a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -353,7 +357,7 @@
             </div>
         </div>
     </footer>
-
+    @include('front-end.modal-login')
     <!-- End of Footer section
 	============================================= -->
 

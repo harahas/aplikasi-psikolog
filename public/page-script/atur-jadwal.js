@@ -30,6 +30,7 @@ $(document).ready(function () {
     $("#btn-next1").on("click", function () {
         if ($("input[name='waktu2[]']").prop('checked') == false) {
             Swal.fire("Warning!", "Silahkan pilih waktu konsultasi terlebih dahulu!", "warning");
+            $("#pills-contact-tab").attr("disabled", "true");
         } else {
             $.ajax({
                 data: $("form[id='form-update-profil']").serialize(),
@@ -38,12 +39,14 @@ $(document).ready(function () {
                 dataType: 'json',
                 success: function (response) {
                     if (response.errors) {
+                        $("#pills-contact-tab").attr("disabled", "true");
                         displayErrors(response.errors);
                     } else {
                         $("#pills-contact").addClass("show active");
                         $("#pills-contact-tab").addClass("active");
                         $("#pills-profile").removeClass("show active");
                         $("#pills-profile-tab").removeClass("active");
+                        $("#pills-contact-tab").removeAttr("disabled");
                     }
                 }
             });
@@ -52,8 +55,29 @@ $(document).ready(function () {
     $("#waktu").on("click", "[name='waktu2[]']", function () {
         let waktu = $("input[name='waktu2[]']:checked")
         let harga = parseInt($("#harga-sesi").val())
+        let jumlah_sesi = $("#jumlah_sesi")
+        let sesi = $("input[name='sesi']")
         if (waktu.length > 0) {
-            $("#harga").val(harga * waktu.length)
+            $("#harga").val(
+                new Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR",
+                    minimumFractionDigits: 0,
+                })
+                    .format(harga * waktu.length)
+                    .replace(/\./g, ",")
+            )
+            jumlah_sesi.html(waktu.length)
+            sesi.val(waktu.length)
+            $("#total_bayar").html(
+                new Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR",
+                    minimumFractionDigits: 0,
+                })
+                    .format(harga * waktu.length)
+                    .replace(/\./g, ",")
+            )
         } else {
             $("#harga").val(harga)
         }

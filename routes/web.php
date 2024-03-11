@@ -2,7 +2,9 @@
 
 use App\Models\Klien;
 use App\Models\Artikel;
+use App\Models\Reservasi;
 use Illuminate\Http\Request;
+use App\Models\SettingJadwal;
 use App\Models\SettingPembayaran;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -10,14 +12,14 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\MenuUserController;
 use App\Http\Controllers\PelayananController;
+use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\KlienAdminController;
+use App\Http\Controllers\SettingJadwalController;
 use App\Http\Controllers\jadwalResevasiController;
 use App\Http\Controllers\SettingPembayaranController;
 use App\Http\Controllers\settingJadwalAdminController;
-use App\Http\Controllers\SettingJadwalController;
 use App\Http\Controllers\settingPelayanAdminController;
 use App\Http\Controllers\SettingPelayananLainController;
-use App\Models\SettingJadwal;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,7 +122,8 @@ Route::get('/jadwal/{unique}', function ($unique) {
     if (session('klien')) {
         $data = [
             'klien' => Klien::where('unique', session('klien')->unique)->first(),
-            'data_pembayaran' => SettingPembayaran::where('unique', $unique)->first()
+            'data_pembayaran' => SettingPembayaran::where('unique', $unique)->first(),
+            'reservasi' => new Reservasi()
         ];
         return view('front-end.pelayanan.jadwal-konsul', $data);
     } else {
@@ -159,3 +162,11 @@ Route::post('/deleteJadwal/{unique}', [SettingJadwalController::class, 'deleteJa
 Route::get('/getWaktu', [SettingJadwalController::class, 'getWaktu']);
 //CEK VALIDASI KONSUL
 Route::get('/cekValidasiKonsul', [SettingJadwalController::class, 'cekValidasiKonsul']);
+// SIMPAN RESERVASI
+Route::post('/storeReservasi', [ReservasiController::class, 'store']);
+// PESANAN DI KONFIRMASI
+Route::get('/konfirmasiPemesanan/{reservasi:unique}', [ReservasiController::class, 'confirm'])->middleware('auth');
+// PESANAN SELESAI
+Route::get('/selesaiPemesanan/{reservasi:unique}', [ReservasiController::class, 'done'])->middleware('auth');
+// DATATABLES
+Route::get('/dataTablesJadwal', [ReservasiController::class, 'dataTables']);

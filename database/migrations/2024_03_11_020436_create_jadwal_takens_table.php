@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReservasisTable extends Migration
+class CreateJadwalTakensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateReservasisTable extends Migration
      */
     public function up()
     {
-        Schema::create('reservasis', function (Blueprint $table) {
+        Schema::create('jadwal_takens', function (Blueprint $table) {
             $table->id();
             $table->uuid('unique')->unique();
-            $table->string('unique_setting_bayar');
-            $table->string('tanggal');
-            $table->string('nominal');
-            $table->string('deskripsi');
-            $table->string('harapan');
-            $table->string('status');
+            $table->string('unique_reservasi');
+            $table->string('unique_setting_jadwal');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateReservasisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservasis');
+        Schema::dropIfExists('jadwal_takens');
     }
 }

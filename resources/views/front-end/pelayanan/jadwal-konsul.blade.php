@@ -85,60 +85,47 @@
                         <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="mdi mdi-calendar-clock"></i> Atur Jadwal</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="mdi mdi-credit-card-check"></i> Pembayaran</button>
+                        <button class="nav-link" id="pills-contact-tab" disabled="true" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="mdi mdi-credit-card-check"></i> Pembayaran</button>
                     </li>
                 </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade justify-content-center show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <form action="javascript:;" id="form-update-profil">
-                            <input type="hidden" name="unique" value="{{ $klien->unique }}">
+                <form action="/storeReservasi" method="POST" enctype="multipart/form-data" id="form-update-profil">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade justify-content-center show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <input type="hidden" name="unique_klien" value="{{ $klien->unique }}">
+                            <input type="hidden" name="unique_setting_bayar" value="{{ $data_pembayaran->unique }}">
+                            <input type="hidden" name="nominal" value="{{ $data_pembayaran->harga }}">
+                            <input type="hidden" name="sesi">
                             @csrf
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                     <ul class="list-group">
                                         <div class="container mt-5">
-                                            <form id="konselingForm">
-                                                <div class="form-group" id="alamatContainer" style="display: none;">
-                                                    <label for="alamat">Alamat:</label>
-                                                    <input type="text" class="form-control" id="alamat" name="alamat" value="Jalan A" readonly>
-                                                </div>
+                                            <div class="form-group">
                                                 <div class="form-group">
-                                                    <div class="form-group">
-                                                        <label for="tanggal">Pilih Tanggal:</label>
-                                                        <input type="date" id="tanggal" name="tanggal" class="form-control">
-                                                    </div>
+                                                    <label for="tanggal">Pilih Tanggal:</label>
+                                                    <input type="date" id="tanggal" name="tanggal" class="form-control">
                                                 </div>
-                                                <div class="form-group">
-                                                    <label>Waktu:</label>
-                                                    <div data-toggle="buttons" id="waktu">
-
-                                                    </div>
-
-                                                </div>
-
-
-                                                <div class="form-group">
-                                                    <label for="deskripsi">Deskripsi Masalah:</label>
-                                                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" required></textarea>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="harapan">Harapan Setelah Konseling:</label>
-                                                    <textarea class="form-control" id="harapan" name="harapan" rows="4" required></textarea>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label for="harga">Harga:</label>
-                                                    <input type="text" class="form-control" id="harga" name="harga" value="{{ $data_pembayaran->harga }}" readonly>
-                                                </div>
-                                                <br>
-                                                <button type="button" id="btn-next1" class="btn btn-primary">Submit</button>
-                                            </form>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Waktu:</label>
+                                                <div data-toggle="buttons" id="waktu"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="deskripsi">Deskripsi Masalah:</label>
+                                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" required></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="harapan">Harapan Setelah Konseling:</label>
+                                                <textarea class="form-control" id="harapan" name="harapan" rows="4" required></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="harga">Harga:</label>
+                                                <input type="text" class="form-control" id="harga" name="harga" value="Rp. {{ number_format($data_pembayaran->harga,0, ',','.') }}" readonly>
+                                            </div>
+                                            <br>
+                                            <button type="button" id="btn-next1" class="btn btn-primary">Submit</button>
                                         </div>
-
                                     </ul> <!-- Tambahkan Bootstrap JS dan jQuery (diperlukan oleh Bootstrap) -->
-
-
                                 </div>
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                     <div class="card-body">
@@ -146,48 +133,40 @@
                                     </div>
                                 </div>
                             </div>
-
-                    </div>
-                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                        <div class="container mt-5">
-                            <form id="detailPembayaranForm">
-                                <div class="form-group">
-                                    <label for="kategoriLayanan">Kategori Layanan:</label>
-                                    <input type="text" class="form-control" id="kategoriLayanan" name="kategoriLayanan" value="Konseling Individu" readonly>
+                        </div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="container mt-5" style="padding: 20px">
+                                <h2>Checkout</h2>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <h3>{{ $data_pembayaran->nama_pelayanan }}</h3>
+                                    <h3>{{ $reservasi->rupiah($data_pembayaran->harga) }}</h3>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="jumlahSesi">Jumlah Sesi:</label>
-                                    <input type="number" class="form-control" id="jumlahSesi" name="jumlahSesi" value="1" readonly>
+                                <div class="d-flex justify-content-between">
+                                    <h3>Jumlah Sesi</h3>
+                                    <h3 id="jumlah_sesi">1</h3>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="tanggal">Tanggal:</label>
-                                    <input type="text" class="form-control" id="tanggal" name="tanggal" value="2024-03-01" readonly>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <h3>Total</h3>
+                                    <h3 id="total_bayar">Total</h3>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="waktu">Waktu:</label>
-                                    <input type="text" class="form-control" id="waktu" name="waktu" value="08.00 - 09.00" readonly>
+                                <div class="d-flex justify-content-between">
+                                    <h3>Pembayaran Melalui: (BRI) 446601018784531 - Gian Sonia</h3>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="pembayaran">Pembayaran:</label>
-                                    <input type="text" class="form-control" id="pembayaran" name="pembayaran" value="Rp 300.000" readonly>
+                                <br><br><br><br>
+                                <h3>Upload Bukti Bayar</h3>
+                                <hr>
+                                <div class="d-flex justify-content-center">
+                                    <input type="file" class="form-control" name="bukti_bayar" required>
                                 </div>
-
-                                <div class="form-group">
-                                    <br>
-                                    <button type="button" class="btn btn-primary">Kembali</button>
-                                    <button type="button" class="btn btn-success">Bayar</button>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary mt-4">Reservasi</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
-                    </form>
-                </div>
-
-
+                </form>
                 {{-- Card menu --}}
                 <br>
                 <br>
