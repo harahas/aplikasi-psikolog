@@ -6,6 +6,7 @@ use App\Models\Reservasi;
 use Illuminate\Http\Request;
 use App\Models\SettingJadwal;
 use App\Models\SettingPembayaran;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -20,6 +21,7 @@ use App\Http\Controllers\SettingPembayaranController;
 use App\Http\Controllers\settingJadwalAdminController;
 use App\Http\Controllers\settingPelayanAdminController;
 use App\Http\Controllers\SettingPelayananLainController;
+use App\Models\JadwalTaken;
 
 /*
 |--------------------------------------------------------------------------
@@ -96,7 +98,24 @@ Route::get('/datatablesArtikel', [ArtikelController::class, 'dataTables']);
 Route::get('/profilUser', function () {
     if (session('klien')) {
         $data = [
-            'klien' => Klien::where('unique', session('klien')->unique)->first()
+            'klien' => Klien::where('unique', session('klien')->unique)->first(),
+            'reservasi_0' => DB::table('reservasis as a')
+                ->join('klien as b', 'a.unique_klien', '=', 'b.unique')
+                ->join('setting_pembayarans as c', 'a.unique_setting_bayar', '=', 'c.unique')
+                ->select('a.*', 'b.nama', 'b.no_hp', 'c.nama_pelayanan')
+                ->where('a.unique_klien', session('klien')->unique)
+                ->where('a.status', 0)
+                ->orWhere('a.status', 1)
+                ->get(),
+            'reservasi_3' => DB::table('reservasis as a')
+                ->join('klien as b', 'a.unique_klien', '=', 'b.unique')
+                ->join('setting_pembayarans as c', 'a.unique_setting_bayar', '=', 'c.unique')
+                ->select('a.*', 'b.nama', 'b.no_hp', 'c.nama_pelayanan')
+                ->where('a.unique_klien', session('klien')->unique)
+                ->where('a.status', 3)
+                ->orWhere('a.status', 4)
+                ->get(),
+            'waktu' => new JadwalTaken()
         ];
         return view('front-end.profil', $data);
     } else {
@@ -123,7 +142,8 @@ Route::get('/jadwal/{unique}', function ($unique) {
         $data = [
             'klien' => Klien::where('unique', session('klien')->unique)->first(),
             'data_pembayaran' => SettingPembayaran::where('unique', $unique)->first(),
-            'reservasi' => new Reservasi()
+            'reservasi' => new Reservasi(),
+            'setting_jadwal' => SettingJadwal::where('status', 0)->get(),
         ];
         return view('front-end.pelayanan.jadwal-konsul', $data);
     } else {

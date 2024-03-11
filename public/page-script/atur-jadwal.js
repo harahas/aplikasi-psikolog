@@ -82,6 +82,12 @@ $(document).ready(function () {
             $("#harga").val(harga)
         }
     })
+    let tanggal_tersedia = $("#tanggal-tersedia").val()
+    let newTanggal = tanggal_tersedia.split('/')
+    newTanggal.pop()
+    flatpickr("#tanggal", {
+        enable: newTanggal
+    });
     //Hendler Error
     function displayErrors(errors) {
         // menghapus class 'is-invalid' dan pesan error sebelumnya

@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
+    <link rel="stylesheet" href="/css/flatpickr.min.css">
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="/assets2/images/favicon.ico">
@@ -94,6 +95,13 @@
                             <input type="hidden" name="unique_klien" value="{{ $klien->unique }}">
                             <input type="hidden" name="unique_setting_bayar" value="{{ $data_pembayaran->unique }}">
                             <input type="hidden" name="nominal" value="{{ $data_pembayaran->harga }}">
+                            @php
+                            $tanggal = '';
+                            foreach($setting_jadwal as $row){
+                            $tanggal .= $row->tanggal .'/';
+                            }
+                            @endphp
+                            <input type="hidden" value="{{ $tanggal }}" id="tanggal-tersedia">
                             <input type="hidden" name="sesi">
                             @csrf
                             <div class="tab-content" id="myTabContent">
@@ -103,7 +111,7 @@
                                             <div class="form-group">
                                                 <div class="form-group">
                                                     <label for="tanggal">Pilih Tanggal:</label>
-                                                    <input type="date" id="tanggal" name="tanggal" class="form-control">
+                                                    <input type="text" id="tanggal" name="tanggal" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -322,6 +330,8 @@
 <script src="/assets/js/jquery.nice-select.min.js"></script>
 <script src="/assets/js/script.js"></script>
 <script src="/page-script/login.js"></script>
+<script src="/page-script/flatpickr.js"></script>
+
 <script>
     $(document).ready(function() {
         $("#jumlahSesi").on('keyup', function() {

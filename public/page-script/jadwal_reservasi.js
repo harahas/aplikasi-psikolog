@@ -52,7 +52,7 @@ $(document).ready(function () {
                             : data;
                     } else if (data == 2) {
                         return type === "display"
-                            ? '<button class="badge bg-info border-0">Diatur Ulang</button>'
+                            ? '<button class="badge bg-info border-0">Rechedule</button>'
                             : data;
                     } else if (data == 3) {
                         return type === "display"
@@ -60,7 +60,7 @@ $(document).ready(function () {
                             : data;
                     } else if (data == 4) {
                         return type === "display"
-                            ? '<button class="badge bg-secondary border-0">Diatur Kadaluarsa</button>'
+                            ? '<button class="badge bg-secondary border-0">Kadaluarsa</button>'
                             : data;
                     }
                 },

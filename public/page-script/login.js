@@ -51,6 +51,7 @@ $(document).ready(function () {
             }
         });
     })
+    // Modal Jadwal Saya
     //Hendler Error
     function displayErrors(errors) {
         // menghapus class 'is-invalid' dan pesan error sebelumnya

@@ -185,15 +185,30 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach($reservasi_0 as $index => $row)
+                                                    @php
+                                                    $waktu2 = $waktu->getWaktu($row->unique);
+                                                    $lenght = count($waktu2);
+                                                    $index +=1;
+                                                    @endphp
                                                     <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>27 Februari 2024</td>
-                                                        <td>Konsultan Keluarga Online</td>
-                                                        <td>09.00 - 10.00</td>
-                                                        <td>Rp 300.000</td>
-                                                        <td>Dipesan</td>
+                                                        <td scope="col">{{ $index++ }}</td>
+                                                        <td scope="col">{{ $row->tanggal }}</td>
+                                                        <td scope="col">{{ $row->nama_pelayanan }}</td>
+                                                        <td scope="col">
+                                                            @foreach($waktu2 as $value)
+                                                            ({{ $value->jam_awal }} - {{ $value->jam_akhir }})
+                                                            @endforeach</td>
+                                                        <td scope="col">Rp. {{ number_format($row->nominal, 0, '.', ',') }}</td>
+                                                        <td scope="col">
+                                                            @if($row->status == 0)
+                                                            <span class="badge bg-danger">Menunggu</span>
+                                                            @elseif($row->status == 1)
+                                                            <span class="badge bg-info">Di Konfirmasi</span>
+                                                            @endif
+                                                        </td>
                                                     </tr>
-
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
@@ -216,15 +231,30 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($reservasi_3 as $index => $row)
+                                                @php
+                                                $waktu2 = $waktu->getWaktu($row->unique);
+                                                $lenght = count($waktu2);
+                                                $index +=1;
+                                                @endphp
                                                 <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>27 Februari 2024</td>
-                                                    <td>Konsultan Keluarga Online</td>
-                                                    <td>09.00 - 10.00</td>
-                                                    <td>Rp 300.000</td>
-                                                    <td>Selesai</td>
+                                                    <td scope="col">{{ $index++ }}</td>
+                                                    <td scope="col">{{ $row->tanggal }}</td>
+                                                    <td scope="col">{{ $row->nama_pelayanan }}</td>
+                                                    <td scope="col">
+                                                        @foreach($waktu2 as $value)
+                                                        ({{ $value->jam_awal }} - {{ $value->jam_akhir }})
+                                                        @endforeach</td>
+                                                    <td scope="col">Rp. {{ number_format($row->nominal, 0, '.', ',') }}</td>
+                                                    <td>
+                                                        @if($row->status == 3)
+                                                        <span class="badge bg-success">Selesai</span>
+                                                        @elseif($row->status == 4)
+                                                        <span class="badge bg-secondary">Kadaluarsa</span>
+                                                        @endif
+                                                    </td>
                                                 </tr>
-
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
