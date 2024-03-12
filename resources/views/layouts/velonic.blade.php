@@ -265,9 +265,9 @@ if($kadaluarsa < $waktu_hari_ini){ $notifs[]=$row->unique; } }; @endphp
                                 </div>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item">
+                                <a href="#" class="dropdown-item" id="ubah-password">
                                     <i class="ri-account-circle-line fs-18 align-middle me-1"></i>
-                                    <span>My Account</span>
+                                    <span>Ubah Password</span>
                                 </a>
 
                                 <!-- item-->
@@ -533,6 +533,8 @@ if($kadaluarsa < $waktu_hari_ini){ $notifs[]=$row->unique; } }; @endphp
                 </div>
             </div>
         </div>
+        @include('layouts.modal-ubah-password')
+
         <script>
             $(document).ready(function() {
                 $("#table-notif").on("click", "#btn-selesai", function() {
@@ -584,6 +586,7 @@ if($kadaluarsa < $waktu_hari_ini){ $notifs[]=$row->unique; } }; @endphp
             });
 
         </script>
+        <script src="/page-script/ubah-password.js"></script>
 
         <!-- Vendor js -->
         <script src="/assets2/js/vendor.min.js"></script>

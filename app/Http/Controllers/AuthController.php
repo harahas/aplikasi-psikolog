@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Klien;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -183,6 +184,29 @@ class AuthController extends Controller
             ];
             Klien::where('unique', $request->unique)->update($data);
             return response()->json(['success' => 'Data Berhasil Di Update']);
+        }
+    }
+
+    public function change_password(Request $request)
+    {
+        $rules = [
+            'new_password' => 'required|min:7',
+            'confirm_password' => 'required',
+        ];
+        $pesan = [
+            'new_password.required' => 'Password tidak boleh kosong',
+            'new_password.min' => 'Password minimal 7 karakter',
+            'confirm_password.required' => 'Password tidak boleh kosong',
+        ];
+        $validator = Validator::make($request->all(), $rules, $pesan);
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()]);
+        } else {
+            $data = [
+                'password' => bcrypt($request->new_password)
+            ];
+            User::where('username', $request->username)->update($data);
+            return response()->json(['success' => 'Password Berhasil Diubah!']);
         }
     }
 }

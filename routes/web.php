@@ -193,3 +193,6 @@ Route::get('/selesaiPemesanan/{reservasi:unique}', [ReservasiController::class, 
 Route::get('/selesaiKadaluarsa/{reservasi:unique}', [ReservasiController::class, 'kadaluarsa'])->middleware('auth');
 // DATATABLES
 Route::get('/dataTablesJadwal', [ReservasiController::class, 'dataTables']);
+
+// UBAH SANDI
+Route::post('/changePassword', [AuthController::class, 'change_password'])->middleware('auth');
