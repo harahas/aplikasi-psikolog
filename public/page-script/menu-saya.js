@@ -23,8 +23,8 @@ $(document).ready(function () {
         let nominal = $(this).data("nominal");
         $("#current_unique").val(unique)
         $("#current_sesi").val(sesi)
-        $("#current_nominal").val(nominal)
-        $("#new_nominal").val(nominal)
+        $("#current_nominal").val(nominal * sesi)
+        $("#new_nominal").val(nominal * sesi)
         let tanggal_tersedia = $("#tanggal_tersedia").val()
         let newTanggal = tanggal_tersedia.split('/')
         newTanggal.pop()

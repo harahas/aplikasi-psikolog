@@ -51,7 +51,68 @@ $(document).ready(function () {
             }
         });
     })
-    // Modal Jadwal Saya
+    // UBAH SANDI KLIEN
+    $("#ubah-sandi-klien").on("click", function () {
+        $("#modal-ubah-password-klien").modal("show");
+    })
+    $("#eye").on("click", function () {
+        let i = $(this).children().eq(0);
+        let input = $(this).parent().children().eq(0);
+        let type = input.attr("type");
+        i.toggleClass("far fa-eye");
+        i.toggleClass("far fa-eye-slash");
+        i.toggleClass("text-danger");
+        if (type == "text") {
+            input.attr("type", "password");
+        } else if (type == "password") {
+            input.attr("type", "text");
+        }
+    })
+    $("#eye2").on("click", function () {
+        let i = $(this).children().eq(0);
+        let input = $(this).parent().children().eq(0);
+        let type = input.attr("type");
+        i.toggleClass("far fa-eye");
+        i.toggleClass("far fa-eye-slash");
+        i.toggleClass("text-danger");
+        if (type == "text") {
+            input.attr("type", "password");
+        } else if (type == "password") {
+            input.attr("type", "text");
+        }
+    })
+    $(".btn-close-password").on("click", function () {
+        $("#new_password").val("")
+        $("#confirm_password").val("")
+    })
+    $("#btn-change-password-klien").on("click", function () {
+        let formdata = $("form[id='form-ubah-password-klien']").serializeArray();
+        let data = {}
+        $(formdata).each(function (index, obj) {
+            data[obj.name] = obj.value;
+        });
+        let form = $("form[id='form-ubah-password-klien']").serialize();
+        if (data.new_password != data.confirm_password) {
+            Swal.fire("Warning!", "Konfirmasi Password Tidak Sesuai!", "warning");
+        } else {
+            $.ajax({
+                data: form,
+                url: "/ubahPasswordKlien",
+                type: "POST",
+                dataType: 'json',
+                success: function (response) {
+                    if (response.errors) {
+                        displayErrors(response.errors)
+                    } else {
+                        $("#new_password").val("")
+                        $("#confirm_password").val("")
+                        $("#modal-ubah-password-klien").modal("hide");
+                        Swal.fire("Success!", response.success, "success");
+                    }
+                }
+            });
+        }
+    })
     //Hendler Error
     function displayErrors(errors) {
         // menghapus class 'is-invalid' dan pesan error sebelumnya

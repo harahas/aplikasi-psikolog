@@ -196,3 +196,5 @@ Route::get('/dataTablesJadwal', [ReservasiController::class, 'dataTables']);
 
 // UBAH SANDI
 Route::post('/changePassword', [AuthController::class, 'change_password'])->middleware('auth');
+// UBAH KLIEN
+Route::post('/ubahPasswordKlien', [KlienAdminController::class, 'change_password_klien']);

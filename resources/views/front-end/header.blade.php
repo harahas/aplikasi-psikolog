@@ -82,13 +82,19 @@
                             <li><a target="_blank" href="portfolio-single.html">Portfolio Details</a></li>
                         </ul>
                     </li> -->
+                    @if (session('klien'))
+                    <li class="dropdown" style="float: right">
+                        <a href="#">Hai, {{ session('klien')->nama }}</a>
+                        <ul class="dropdown-menu clearfix">
+                            <li><a href="#" id="ubah-sandi-klien">Ubah Kata Sandi</a></li>
+                        </ul>
+                    </li>
+                    @endif
                 </ul>
             </nav>
             <div class="header-cta-btn ">
                 <div class="in-header-search-cta-btn d-flex align-items-center">
-                    @if (session('klien'))
-                    <h6 class="text-dark mt-2 me-5">Hai, {{ session('klien')->nama }} </h6>
-                    @endif
+
                     <div class="in-header-cta-btn">
                         @if (session('klien'))
                         <button class="btn btn-dark" id="logoutKlien">Logout</button>
