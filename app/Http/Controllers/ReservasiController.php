@@ -68,9 +68,9 @@ class ReservasiController extends Controller
                 <a href="https://wa.me/62' . $newPhone . '" type="button" class="btn btn-info d-flex align-items-center" data-unique="' . $row->unique . '">
                 <i class="bi bi-whatsapp line me-1"></i><span>Hubungi</span>
                 </a>
-                </div>
                 <button type="button" class="btn btn-purple me-md-1 d-flex align-items-center button-bukti-bayar" data-bukti="/storage/' . $row->bukti_bayar . '" data-unique="' . $row->unique . '">
                 <i class="ri-checkbox-line me-1"></i> Bukti Bayar</button>
+                </div>
                 ';
             } else if ($row->status == 2) {
                 $actionBtn =
@@ -86,12 +86,12 @@ class ReservasiController extends Controller
                 $actionBtn =
                     '
                 <div class="d-flex gap-1">
-                <button type="button" class="btn btn-dark me-md-1 d-flex align-items-center button-selesai" data-unique="' . $row->unique . '">
-                <i class="ri-check-double-line me-1"></i><span>Selesai</span>
-                </button>
-                <a href="https://wa.me/62' . $newPhone . '" type="button" class="btn btn-info d-flex align-items-center" data-unique="' . $row->unique . '">
-                <i class="bi bi-whatsapp line me-1"></i><span>Hubungi</span>
-                </a>
+                    <button type="button" class="btn btn-dark me-md-1 d-flex align-items-center button-selesai" data-unique="' . $row->unique . '">
+                        <i class="ri-check-double-line me-1"></i><span>Selesai</span>
+                    </button>
+                    <a href="https://wa.me/62' . $newPhone . '" type="button" class="btn btn-info d-flex align-items-center" data-unique="' . $row->unique . '">
+                        <i class="bi bi-whatsapp line me-1"></i><span>Hubungi</span>
+                    </a>
                 <button type="button" class="btn btn-purple me-md-1 d-flex align-items-center button-bukti-bayar" data-bukti="/storage/' . $row->bukti_bayar . '" data-unique="' . $row->unique . '">Bukti Bayar</button>
                 </div>
                 ';
@@ -135,8 +135,12 @@ class ReservasiController extends Controller
     {
         $data = [
             'tanggal' => $request->new_tanggal,
+            'nominal' => $request->new_nominal,
             'status' => 0
         ];
+        if ($request->file('bukti_bayar')) {
+            $data['bukti_bayar'] = $request->file('bukti_bayar')->store('bukti_bayar');
+        }
         // UPDATE DATA RESERVASI
         Reservasi::where('unique', $request->unique_reservasi)->update($data);
         $current_jadwal = JadwalTaken::where('unique_reservasi', $request->unique_reservasi)->get();

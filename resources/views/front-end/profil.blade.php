@@ -197,6 +197,7 @@
                                                     @foreach($reservasi_0 as $index => $row)
                                                     @php
                                                     $waktu2 = $waktu->getWaktu($row->unique);
+                                                    $jumlah_sesi = $waktu->getJumlahSesi($row->unique);
                                                     $lenght = count($waktu2);
                                                     $index +=1;
                                                     @endphp
@@ -217,7 +218,7 @@
                                                             @endif
                                                         </td>
                                                         <td scope="col">
-                                                            <span data-unique="{{ $row->unique }}" class="reschedule badge bg-primary" style="cursor: pointer;">Reschedule</span>
+                                                            <span data-unique="{{ $row->unique }}" data-sesi="{{ $jumlah_sesi }}" data-nominal="{{ $row->nominal / $jumlah_sesi }}" class="reschedule badge bg-primary" style="cursor: pointer;">Reschedule</span>
                                                         </td>
                                                     </tr>
                                                     @endforeach

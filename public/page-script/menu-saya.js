@@ -19,7 +19,12 @@ $(document).ready(function () {
     });
     $("#table-current-jadwal").on("click", ".reschedule", function () {
         let unique = $(this).data("unique");
+        let sesi = $(this).data("sesi");
+        let nominal = $(this).data("nominal");
         $("#current_unique").val(unique)
+        $("#current_sesi").val(sesi)
+        $("#current_nominal").val(nominal)
+        $("#new_nominal").val(nominal)
         let tanggal_tersedia = $("#tanggal_tersedia").val()
         let newTanggal = tanggal_tersedia.split('/')
         newTanggal.pop()
@@ -31,10 +36,34 @@ $(document).ready(function () {
 
     $("#modal-reschedule").on("click", "input[name='waktu2[]']", function () {
         let waktu = $("input[name='waktu2[]']:checked")
+        let sesi = $("#current_sesi").val()
+        let nominal = $("#current_nominal").val()
         if (waktu.length > 0) {
             $("#btn-reschedule").removeAttr("disabled")
+            $("#new_sesi").val(waktu.length)
+            if (waktu.length > sesi) {
+                $("#bukti-bayar").removeClass("d-none")
+                $("#bukti_bayar").attr("required", "true")
+                $("#new_nominal").val(parseInt(nominal * waktu.length))
+                $("#sisa-bayar").html(`<label for="">Sisa Bayar:&nbsp;</label><span>${new Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR",
+                    minimumFractionDigits: 0,
+                })
+                    .format(parseInt(nominal) * parseInt(waktu.length - sesi))
+                    .replace(/\./g, ",")}</span>`)
+            } else {
+                $("#bukti-bayar").addClass("d-none")
+                $("#bukti_bayar").removeAttr("required")
+                $("#new_nominal").val(nominal)
+                $("#sisa-bayar").html("")
+            }
         } else {
             $("#btn-reschedule").attr("disabled", "true")
+            $("#new_sesi").val(0)
+            $("#bukti-bayar").addClass("d-none")
+            $("#bukti_bayar").removeAttr("required")
+            $("#sisa-bayar").html("")
         }
     })
 

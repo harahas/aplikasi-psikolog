@@ -26,4 +26,10 @@ class JadwalTaken extends Model
             ->get();
         return $query;
     }
+
+    public function getJumlahSesi($unique_reservasi)
+    {
+        $query = JadwalTaken::where('unique_reservasi', $unique_reservasi)->count('id');
+        return $query;
+    }
 }
