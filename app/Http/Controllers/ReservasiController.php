@@ -131,6 +131,12 @@ class ReservasiController extends Controller
         return response()->json(['success' => 'Konsultasi Selesai']);
     }
 
+    public function kadaluarsa(Reservasi $reservasi)
+    {
+        Reservasi::where('unique', $reservasi->unique)->update(['status' => 4]);
+        return response()->json(['success' => 'Konsultasi Selesai']);
+    }
+
     public function reschedule(Request $request)
     {
         $data = [

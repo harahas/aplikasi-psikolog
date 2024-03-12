@@ -151,11 +151,11 @@ Route::get('/jadwal/{unique}', function ($unique) {
         return redirect('/');
     }
 });
-Route::get('/adminKlien', [KlienAdminController::class, 'index']);
-Route::get('/jadwalReservasiAdmin', [jadwalResevasiController::class, 'index']);
-Route::get('/settingJadwalAdmin', [settingJadwalAdminController::class, 'index']);
-Route::get('/settingPelayanAdmin', [settingPelayanAdminController::class, 'index']);
-Route::get('/settingPelayanLain', [SettingPelayananLainController::class, 'index']);
+Route::get('/adminKlien', [KlienAdminController::class, 'index'])->middleware('auth');
+Route::get('/jadwalReservasiAdmin', [jadwalResevasiController::class, 'index'])->middleware('auth');
+Route::get('/settingJadwalAdmin', [settingJadwalAdminController::class, 'index'])->middleware('auth');
+Route::get('/settingPelayanAdmin', [settingPelayanAdminController::class, 'index'])->middleware('auth');
+Route::get('/settingPelayanLain', [SettingPelayananLainController::class, 'index'])->middleware('auth');
 //simpan setting pelayanan
 Route::post('/simpanSettingPelayanan', [SettingPembayaranController::class, 'simpanSettingPelayanan']);
 Route::get('/datatableSettingPembayaran', [SettingPembayaranController::class, 'datatableSettingPembayaran']);
@@ -190,5 +190,6 @@ Route::post('/reschedule-jadwal', [ReservasiController::class, 'reschedule']);
 Route::get('/konfirmasiPemesanan/{reservasi:unique}', [ReservasiController::class, 'confirm'])->middleware('auth');
 // PESANAN SELESAI
 Route::get('/selesaiPemesanan/{reservasi:unique}', [ReservasiController::class, 'done'])->middleware('auth');
+Route::get('/selesaiKadaluarsa/{reservasi:unique}', [ReservasiController::class, 'kadaluarsa'])->middleware('auth');
 // DATATABLES
 Route::get('/dataTablesJadwal', [ReservasiController::class, 'dataTables']);
