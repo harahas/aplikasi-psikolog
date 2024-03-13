@@ -26,41 +26,8 @@
                     </li>
                     @endif
                     <li class="dropdown">
-                        <a href="!#">Tentang Kami</a>
-                        <ul class="dropdown-menu clearfix">
-                            <li><a target="_blank" href="service.html">Services</a></li>
-                            <li><a target="_blank" href="service-2.html">Service Page 2</a></li>
-                            <li class="dropdown">
-                                <a href="service-single.html">Services Details</a>
-                                <ul class="dropdown-menu clearfix">
-                                    <li><a target="_blank" href="service-single.html">Life Insurence</a></li>
-                                    <li><a target="_blank" href="service-single.html">Health Insurence</a></li>
-                                    <li><a target="_blank" href="service-single.html">Car Insurence</a></li>
-                                    <li><a target="_blank" href="service-single.html">Home Insurence</a></li>
-                                    <li><a target="_blank" href="service-single.html">Credit Insurence</a></li>
-                                    <li><a target="_blank" href="service-single.html">Transport Insurence</a>
-                                    </li>
-                                    <li><a target="_blank" href="service-single.html">Energy Insurence</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="!#">Testimonial</a>
-                                <ul class="dropdown-menu clearfix">
-                                    <li><a target="_blank" href="testimonial.html">Testimonial</a></li>
-                                    <li><a target="_blank" href="testimonial-carousel.html">Testimonial
-                                            Carousel</a></li>
+                        <a href="/tentangKami">Tentang Kami</a>
 
-                                </ul>
-                            </li>
-                            <li><a target="_blank" href="team.html">Team Page</a></li>
-                            <li><a target="_blank" href="team-single.html">Team Details</a></li>
-                            <li><a target="_blank" href="faq.html">FAQ Page</a></li>
-                            <li><a target="_blank" href="pricing.html">Pricing Page</a></li>
-                            <li><a target="_blank" href="contact.html">Contact Page</a></li>
-                            <li><a target="_blank" href="insurance-calculator.html">Insurence Calculator</a>
-                            </li>
-                            <li><a target="_blank" href="404.html">404</a></li>
-                        </ul>
                     </li>
                     <!-- <li class="dropdown">
                         <a class="" href="!#">Blog</a>

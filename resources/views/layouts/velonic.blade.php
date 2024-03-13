@@ -172,9 +172,9 @@
 
                     <li class="dropdown">
                         <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <span class="account-user-avatar">
+                            {{-- <span class="account-user-avatar">
                                 <img src="/assets2/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
-                            </span>
+                            </span> --}}
                             <span class="d-lg-block d-none">
                                 <h5 class="my-0 fw-normal">HamniRH <i class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
                             </span>
@@ -225,7 +225,7 @@
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Online School</a>
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Admin AK</a>
                                         </li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Master</a></li>
                                         <li class="breadcrumb-item active">{{ $title }}</li>

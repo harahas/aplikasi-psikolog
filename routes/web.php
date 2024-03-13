@@ -52,6 +52,10 @@ Route::get('/akhlaqul-karimah', function () {
 Route::get('/bukit-bintang', function () {
     return view('front-end.bukit-bintang');
 });
+// Tentang Kami
+Route::get('/tentangKami', function () {
+    return view('front-end.tentangKami');
+});
 //pelayanan
 Route::resource('/pelayanan', PelayananController::class)->except('store')->middleware('auth');
 //List Artikel

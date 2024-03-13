@@ -72,15 +72,15 @@
             <li class="side-nav-item">
                 <a href="/settingPelayanAdmin" class="side-nav-link">
                     <i class="mdi mdi-credit-card-settings"></i>
-                    <span> Pelayanan Konseling</span>
+                    <span> Pelayanan</span>
                 </a>
             </li>
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a href="/settingPelayanLain" class="side-nav-link">
                     <i class="mdi mdi-table-cog"></i>
                     <span> Pelayanan Lain</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages2" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
                     <i class="ri-pages-line"></i>
