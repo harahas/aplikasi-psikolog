@@ -304,7 +304,7 @@ if($kadaluarsa < $waktu_hari_ini){ $notifs[]=$row->unique; } }; @endphp
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Online School</a>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Akhlaqul Karimah</a>
                                             </li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Master</a></li>
                                             <li class="breadcrumb-item active">{{ $title }}</li>

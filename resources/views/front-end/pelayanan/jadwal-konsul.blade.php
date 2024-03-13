@@ -160,7 +160,7 @@
                                     <h3 id="total_bayar">Total</h3>
                                 </div>
                                 <div class="d-flex justify-content-between">
-                                    <h3>Pembayaran Melalui: (BRI) 446601018784531 - Gian Sonia</h3>
+                                    <h3>Pembayaran Melalui: (BRI) 44660101##### - Akhlaqul Karimah</h3>
                                 </div>
                                 <br><br><br><br>
                                 <h3>Upload Bukti Bayar</h3>

@@ -3,7 +3,7 @@
 <div class="row mb-2">
     <div class="col">
         <button id="tambah_jadwal" type="button" class="btn btn-primary me-md-1 d-flex align-items-center">
-            <i class="ri-check-double-line me-1"></i><span>Tambah Pelayanan</span>
+            <i class="ri-check-double-line me-1"></i><span>Tambah Jadwal</span>
         </button>
     </div>
 </div>

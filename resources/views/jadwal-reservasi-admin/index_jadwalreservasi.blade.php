@@ -15,7 +15,7 @@
                         <th>Tanggal Konseling</th>
                         <th>Nominal Transaksi</th>
                         <th>Status</th>
-                        <th>Bukti Transaksi</th>
+                        {{-- <th>Bukti Transaksi</th> --}}
                         <th>Action</th>
                     </tr>
                 </thead>
