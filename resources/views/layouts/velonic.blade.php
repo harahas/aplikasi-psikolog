@@ -160,27 +160,8 @@ if($kadaluarsa < $waktu_hari_ini){ $notifs[]=$row->unique; } }; @endphp
 
                     </div>
 
-<<<<<<< HEAD
-                    <li class="d-none d-sm-inline-block">
-                        <div class="nav-link" id="light-dark-mode">
-                            <i class="ri-moon-line fs-22"></i>
-                        </div>
-                    </li>
 
-                    <li class="dropdown">
-                        <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            {{-- <span class="account-user-avatar">
-                                <img src="/assets2/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
-                            </span> --}}
-                            <span class="d-lg-block d-none">
-                                <h5 class="my-0 fw-normal">HamniRH <i class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
-                            </span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
-                            <!-- item-->
-                            <div class=" dropdown-header noti-title">
-                                <h6 class="text-overflow m-0">Welcome !</h6>
-=======
+
                     <ul class="topbar-menu d-flex align-items-center gap-3">
                         <li class="dropdown d-lg-none">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -190,7 +171,7 @@ if($kadaluarsa < $waktu_hari_ini){ $notifs[]=$row->unique; } }; @endphp
                                 <form class="p-3">
                                     <input type="search" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
                                 </form>
->>>>>>> 9fe5d7e474cf9007356308655194b79d8091480c
+
                             </div>
                         </li>
                         <li class="dropdown notification-list">
@@ -320,336 +301,335 @@ if($kadaluarsa < $waktu_hari_ini){ $notifs[]=$row->unique; } }; @endphp
                     <!-- Start Content-->
                     <div class="container-fluid">
 
-<<<<<<< HEAD
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box">
-                                <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Admin AK</a>
-                                        </li>
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Master</a></li>
-                                        <li class="breadcrumb-item active">{{ $title }}</li>
-                                    </ol>
-=======
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Online School</a>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Admin AK</a>
                                             </li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Master</a></li>
                                             <li class="breadcrumb-item active">{{ $title }}</li>
                                         </ol>
-                                    </div>
-                                    <h4 class="page-title">{{ $title }}</h4>
->>>>>>> 9fe5d7e474cf9007356308655194b79d8091480c
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end page title -->
-                        <div id="spinner">
-                            <div class="card d-flex justify-conten-center align-items-center card-spinner d-none">
-                                <div class="spinner" style="position:relative;z-index: 101;"></div>
-                            </div>
-                        </div>
-                        @yield('container-velonic')
-                    </div> <!-- container -->
 
-                </div> <!-- content -->
+                                        <!-- start page title -->
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="page-title-box">
+                                                    <div class="page-title-right">
+                                                        <ol class="breadcrumb m-0">
+                                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Online School</a>
+                                                            </li>
+                                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Master</a></li>
+                                                            <li class="breadcrumb-item active">{{ $title }}</li>
+                                                        </ol>
+                                                    </div>
+                                                    <h4 class="page-title">{{ $title }}</h4>
 
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <script>
-                                    document.write(new Date().getFullYear())
-
-                                </script> © Akhlaqul Karimah <b>Lembaga Psikolog</b>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <!-- end Footer -->
-
-            </div>
-
-            <!-- ============================================================== -->
-            <!-- End Page content -->
-            <!-- ============================================================== -->
-
-        </div>
-        <!-- END wrapper -->
-
-        <!-- Theme Settings -->
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="theme-settings-offcanvas">
-            <div class="d-flex align-items-center bg-primary p-3 offcanvas-header">
-                <h5 class="text-white m-0">Theme Settings</h5>
-                <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-
-            <div class="offcanvas-body p-0">
-                <div data-simplebar class="h-100">
-                    <div class="p-3">
-                        <h5 class="mb-3 fs-16 fw-bold">Color Scheme</h5>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-light" value="light">
-                                    <label class="form-check-label" for="layout-color-light">
-                                        <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
-                                    </label>
-                                </div>
-                                <h5 class="font-14 text-center text-muted mt-2">Light</h5>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-dark" value="dark">
-                                    <label class="form-check-label" for="layout-color-dark">
-                                        <img src="/assets2/images/layouts/dark.png" alt="" class="img-fluid">
-                                    </label>
-                                </div>
-                                <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
-                            </div>
-                        </div>
-
-                        <div id="layout-width">
-                            <h5 class="my-3 fs-16 fw-bold">Layout Mode</h5>
-
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="form-check form-switch card-switch mb-1">
-                                        <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-fluid" value="fluid">
-                                        <label class="form-check-label" for="layout-mode-fluid">
-                                            <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
-                                        </label>
-                                    </div>
-                                    <h5 class="font-14 text-center text-muted mt-2">Fluid</h5>
-                                </div>
-
-                                <div class="col-4">
-                                    <div id="layout-boxed">
-                                        <div class="form-check form-switch card-switch mb-1">
-                                            <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-boxed" value="boxed">
-                                            <label class="form-check-label" for="layout-mode-boxed">
-                                                <img src="/assets2/images/layouts/boxed.png" alt="" class="img-fluid">
-                                            </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <h5 class="font-14 text-center text-muted mt-2">Boxed</h5>
+                                        <!-- end page title -->
+                                        <div id="spinner">
+                                            <div class="card d-flex justify-conten-center align-items-center card-spinner d-none">
+                                                <div class="spinner" style="position:relative;z-index: 101;"></div>
+                                            </div>
+                                        </div>
+                                        @yield('container-velonic')
+                                    </div> <!-- container -->
+
+                                </div> <!-- content -->
+
+                                <!-- Footer Start -->
+                                <footer class="footer">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-12 text-center">
+                                                <script>
+                                                    document.write(new Date().getFullYear())
+
+                                                </script> © Akhlaqul Karimah <b>Lembaga Psikolog</b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </footer>
+                                <!-- end Footer -->
+
+                            </div>
+
+                            <!-- ============================================================== -->
+                            <!-- End Page content -->
+                            <!-- ============================================================== -->
+
+                        </div>
+                        <!-- END wrapper -->
+
+                        <!-- Theme Settings -->
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="theme-settings-offcanvas">
+                            <div class="d-flex align-items-center bg-primary p-3 offcanvas-header">
+                                <h5 class="text-white m-0">Theme Settings</h5>
+                                <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+
+                            <div class="offcanvas-body p-0">
+                                <div data-simplebar class="h-100">
+                                    <div class="p-3">
+                                        <h5 class="mb-3 fs-16 fw-bold">Color Scheme</h5>
+
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="form-check form-switch card-switch mb-1">
+                                                    <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-light" value="light">
+                                                    <label class="form-check-label" for="layout-color-light">
+                                                        <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
+                                                    </label>
+                                                </div>
+                                                <h5 class="font-14 text-center text-muted mt-2">Light</h5>
+                                            </div>
+
+                                            <div class="col-4">
+                                                <div class="form-check form-switch card-switch mb-1">
+                                                    <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-dark" value="dark">
+                                                    <label class="form-check-label" for="layout-color-dark">
+                                                        <img src="/assets2/images/layouts/dark.png" alt="" class="img-fluid">
+                                                    </label>
+                                                </div>
+                                                <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
+                                            </div>
+                                        </div>
+
+                                        <div id="layout-width">
+                                            <h5 class="my-3 fs-16 fw-bold">Layout Mode</h5>
+
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-check form-switch card-switch mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-fluid" value="fluid">
+                                                        <label class="form-check-label" for="layout-mode-fluid">
+                                                            <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
+                                                        </label>
+                                                    </div>
+                                                    <h5 class="font-14 text-center text-muted mt-2">Fluid</h5>
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <div id="layout-boxed">
+                                                        <div class="form-check form-switch card-switch mb-1">
+                                                            <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-boxed" value="boxed">
+                                                            <label class="form-check-label" for="layout-mode-boxed">
+                                                                <img src="/assets2/images/layouts/boxed.png" alt="" class="img-fluid">
+                                                            </label>
+                                                        </div>
+                                                        <h5 class="font-14 text-center text-muted mt-2">Boxed</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h5 class="my-3 fs-16 fw-bold">Topbar Color</h5>
+
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <div class="form-check form-switch card-switch mb-1">
+                                                    <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-light" value="light">
+                                                    <label class="form-check-label" for="topbar-color-light">
+                                                        <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
+                                                    </label>
+                                                </div>
+                                                <h5 class="font-14 text-center text-muted mt-2">Light</h5>
+                                            </div>
+
+                                            <div class="col-4">
+                                                <div class="form-check form-switch card-switch mb-1">
+                                                    <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-dark" value="dark">
+                                                    <label class="form-check-label" for="topbar-color-dark">
+                                                        <img src="/assets2/images/layouts/topbar-dark.png" alt="" class="img-fluid">
+                                                    </label>
+                                                </div>
+                                                <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <h5 class="my-3 fs-16 fw-bold">Menu Color</h5>
+
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-check form-switch card-switch mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-light" value="light">
+                                                        <label class="form-check-label" for="leftbar-color-light">
+                                                            <img src="/assets2/images/layouts/sidebar-light.png" alt="" class="img-fluid">
+                                                        </label>
+                                                    </div>
+                                                    <h5 class="font-14 text-center text-muted mt-2">Light</h5>
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <div class="form-check form-switch card-switch mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-dark" value="dark">
+                                                        <label class="form-check-label" for="leftbar-color-dark">
+                                                            <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
+                                                        </label>
+                                                    </div>
+                                                    <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="sidebar-size">
+                                            <h5 class="my-3 fs-16 fw-bold">Sidebar Size</h5>
+
+                                            <div class="row">
+                                                <div class="col-4">
+                                                    <div class="form-check form-switch card-switch mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-default" value="default">
+                                                        <label class="form-check-label" for="leftbar-size-default">
+                                                            <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
+                                                        </label>
+                                                    </div>
+                                                    <h5 class="font-14 text-center text-muted mt-2">Default</h5>
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <div class="form-check form-switch card-switch mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-compact" value="compact">
+                                                        <label class="form-check-label" for="leftbar-size-compact">
+                                                            <img src="/assets2/images/layouts/compact.png" alt="" class="img-fluid">
+                                                        </label>
+                                                    </div>
+                                                    <h5 class="font-14 text-center text-muted mt-2">Compact</h5>
+                                                </div>
+
+                                                <div class="col-4">
+                                                    <div class="form-check form-switch card-switch mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-small" value="condensed">
+                                                        <label class="form-check-label" for="leftbar-size-small">
+                                                            <img src="/assets2/images/layouts/sm.png" alt="" class="img-fluid">
+                                                        </label>
+                                                    </div>
+                                                    <h5 class="font-14 text-center text-muted mt-2">Condensed</h5>
+                                                </div>
+
+
+                                                <div class="col-4">
+                                                    <div class="form-check form-switch card-switch mb-1">
+                                                        <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-full" value="full">
+                                                        <label class="form-check-label" for="leftbar-size-full">
+                                                            <img src="/assets2/images/layouts/full.png" alt="" class="img-fluid">
+                                                        </label>
+                                                    </div>
+                                                    <h5 class="font-14 text-center text-muted mt-2">Full Layout</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="layout-position">
+                                            <h5 class="my-3 fs-16 fw-bold">Layout Position</h5>
+
+                                            <div class="btn-group checkbox" role="group">
+                                                <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed">
+                                                <label class="btn btn-soft-primary w-sm" for="layout-position-fixed">Fixed</label>
+
+                                                <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
+                                                <label class="btn btn-soft-primary w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="offcanvas-footer border-top p-3 text-center">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="https://1.envato.market/velonic" target="_blank" role="button" class="btn btn-primary w-100">Buy Now</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <h5 class="my-3 fs-16 fw-bold">Topbar Color</h5>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-light" value="light">
-                                    <label class="form-check-label" for="topbar-color-light">
-                                        <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
-                                    </label>
-                                </div>
-                                <h5 class="font-14 text-center text-muted mt-2">Light</h5>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="form-check form-switch card-switch mb-1">
-                                    <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-dark" value="dark">
-                                    <label class="form-check-label" for="topbar-color-dark">
-                                        <img src="/assets2/images/layouts/topbar-dark.png" alt="" class="img-fluid">
-                                    </label>
-                                </div>
-                                <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h5 class="my-3 fs-16 fw-bold">Menu Color</h5>
-
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="form-check form-switch card-switch mb-1">
-                                        <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-light" value="light">
-                                        <label class="form-check-label" for="leftbar-color-light">
-                                            <img src="/assets2/images/layouts/sidebar-light.png" alt="" class="img-fluid">
-                                        </label>
-                                    </div>
-                                    <h5 class="font-14 text-center text-muted mt-2">Light</h5>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="form-check form-switch card-switch mb-1">
-                                        <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-dark" value="dark">
-                                        <label class="form-check-label" for="leftbar-color-dark">
-                                            <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
-                                        </label>
-                                    </div>
-                                    <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="sidebar-size">
-                            <h5 class="my-3 fs-16 fw-bold">Sidebar Size</h5>
-
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="form-check form-switch card-switch mb-1">
-                                        <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-default" value="default">
-                                        <label class="form-check-label" for="leftbar-size-default">
-                                            <img src="/assets2/images/layouts/light.png" alt="" class="img-fluid">
-                                        </label>
-                                    </div>
-                                    <h5 class="font-14 text-center text-muted mt-2">Default</h5>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="form-check form-switch card-switch mb-1">
-                                        <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-compact" value="compact">
-                                        <label class="form-check-label" for="leftbar-size-compact">
-                                            <img src="/assets2/images/layouts/compact.png" alt="" class="img-fluid">
-                                        </label>
-                                    </div>
-                                    <h5 class="font-14 text-center text-muted mt-2">Compact</h5>
-                                </div>
-
-                                <div class="col-4">
-                                    <div class="form-check form-switch card-switch mb-1">
-                                        <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-small" value="condensed">
-                                        <label class="form-check-label" for="leftbar-size-small">
-                                            <img src="/assets2/images/layouts/sm.png" alt="" class="img-fluid">
-                                        </label>
-                                    </div>
-                                    <h5 class="font-14 text-center text-muted mt-2">Condensed</h5>
-                                </div>
-
-
-                                <div class="col-4">
-                                    <div class="form-check form-switch card-switch mb-1">
-                                        <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-full" value="full">
-                                        <label class="form-check-label" for="leftbar-size-full">
-                                            <img src="/assets2/images/layouts/full.png" alt="" class="img-fluid">
-                                        </label>
-                                    </div>
-                                    <h5 class="font-14 text-center text-muted mt-2">Full Layout</h5>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="layout-position">
-                            <h5 class="my-3 fs-16 fw-bold">Layout Position</h5>
-
-                            <div class="btn-group checkbox" role="group">
-                                <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed">
-                                <label class="btn btn-soft-primary w-sm" for="layout-position-fixed">Fixed</label>
-
-                                <input type="radio" class="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable">
-                                <label class="btn btn-soft-primary w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
-                            </div>
-                        </div>
+                        @include('layouts.modal-ubah-password')
                     </div>
-                </div>
-            </div>
-            <div class="offcanvas-footer border-top p-3 text-center">
-                <div class="row">
-                    <div class="col-6">
-                        <button type="button" class="btn btn-light w-100" id="reset-layout">Reset</button>
-                    </div>
-                    <div class="col-6">
-                        <a href="https://1.envato.market/velonic" target="_blank" role="button" class="btn btn-primary w-100">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @include('layouts.modal-ubah-password')
+                    <script>
+                        $(document).ready(function() {
+                            $("#table-notif").on("click", "#btn-selesai", function() {
+                                let unique = $(this).data('unique');
+                                Swal.fire({
+                                    title: "Apakah Kamu Yakin?"
+                                    , text: "Kamu Menyelesaikan Reservasi!"
+                                    , icon: "warning"
+                                    , showCancelButton: true
+                                    , confirmButtonColor: "#3085d6"
+                                    , cancelButtonColor: "#d33"
+                                    , confirmButtonText: "Yes, Selesaikan!"
+                                , }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        $.ajax({
+                                            url: "/selesaiPemesanan/" + unique
+                                            , type: "GET"
+                                            , dataType: "json"
+                                            , success: function(response) {
+                                                document.location.reload();
+                                            }
+                                        , });
+                                    }
+                                });
+                            })
+                            $("#table-notif").on("click", "#btn-kadaluarsa", function() {
+                                let unique = $(this).data('unique');
+                                Swal.fire({
+                                    title: "Apakah Kamu Yakin?"
+                                    , text: "Reservasi Ini Akan Kadaluarsa!"
+                                    , icon: "warning"
+                                    , showCancelButton: true
+                                    , confirmButtonColor: "#3085d6"
+                                    , cancelButtonColor: "#d33"
+                                    , confirmButtonText: "Yes, Kadaluarsakan!"
+                                , }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        $.ajax({
+                                            url: "/selesaiKadaluarsa/" + unique
+                                            , type: "GET"
+                                            , dataType: "json"
+                                            , success: function(response) {
+                                                document.location.reload();
+                                            }
+                                        , });
+                                    }
+                                });
+                            })
+                        });
 
-        <script>
-            $(document).ready(function() {
-                $("#table-notif").on("click", "#btn-selesai", function() {
-                    let unique = $(this).data('unique');
-                    Swal.fire({
-                        title: "Apakah Kamu Yakin?"
-                        , text: "Kamu Menyelesaikan Reservasi!"
-                        , icon: "warning"
-                        , showCancelButton: true
-                        , confirmButtonColor: "#3085d6"
-                        , cancelButtonColor: "#d33"
-                        , confirmButtonText: "Yes, Selesaikan!"
-                    , }).then((result) => {
-                        if (result.isConfirmed) {
-                            $.ajax({
-                                url: "/selesaiPemesanan/" + unique
-                                , type: "GET"
-                                , dataType: "json"
-                                , success: function(response) {
-                                    document.location.reload();
-                                }
-                            , });
-                        }
-                    });
-                })
-                $("#table-notif").on("click", "#btn-kadaluarsa", function() {
-                    let unique = $(this).data('unique');
-                    Swal.fire({
-                        title: "Apakah Kamu Yakin?"
-                        , text: "Reservasi Ini Akan Kadaluarsa!"
-                        , icon: "warning"
-                        , showCancelButton: true
-                        , confirmButtonColor: "#3085d6"
-                        , cancelButtonColor: "#d33"
-                        , confirmButtonText: "Yes, Kadaluarsakan!"
-                    , }).then((result) => {
-                        if (result.isConfirmed) {
-                            $.ajax({
-                                url: "/selesaiKadaluarsa/" + unique
-                                , type: "GET"
-                                , dataType: "json"
-                                , success: function(response) {
-                                    document.location.reload();
-                                }
-                            , });
-                        }
-                    });
-                })
-            });
+                    </script>
+                    <script src="/page-script/ubah-password.js"></script>
 
-        </script>
-        <script src="/page-script/ubah-password.js"></script>
+                    <!-- Vendor js -->
+                    <script src="/assets2/js/vendor.min.js"></script>
 
-        <!-- Vendor js -->
-        <script src="/assets2/js/vendor.min.js"></script>
+                    <!-- Datatables js -->
+                    <script src="/assets2/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+                    <script src="/assets2/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
 
-        <!-- Datatables js -->
-        <script src="/assets2/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-        <script src="/assets2/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
+                    <!-- App js -->
+                    <script src="/assets2/js/app.min.js"></script>
 
-        <!-- App js -->
-        <script src="/assets2/js/app.min.js"></script>
+                    <!-- Bootstrap Wizard Form js -->
+                    <script src="/assets2/vendor/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
 
-        <!-- Bootstrap Wizard Form js -->
-        <script src="/assets2/vendor/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
-
-        <!-- Wizard Form Demo js -->
-        <script src="/assets2/js/pages/form-wizard.init.js"></script>
+                    <!-- Wizard Form Demo js -->
+                    <script src="/assets2/js/pages/form-wizard.init.js"></script>
 
 
 
