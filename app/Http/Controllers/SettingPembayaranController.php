@@ -18,12 +18,14 @@ class SettingPembayaranController extends Controller
         // rules validasi
         $rules = [
             'nama_pelayanan' => 'required',
+            'jenis_pelayanan' => 'required',
             'harga' => 'required',
             'keterangan' => 'required',
 
         ];
         $pesan = [
             'nama_pelayanan.required' => 'Nama tidak boleh kosong',
+            'jenis_pelayanan.required' => 'jenis tidak boleh kosong',
             'harga.required' => 'Harga tidak boleh kosong',
             'keterangan.required' => 'Keterangan tidak boleh kosong',
 
@@ -36,6 +38,7 @@ class SettingPembayaranController extends Controller
             $data = [
                 'unique' => Str::orderedUuid(),
                 'nama_pelayanan' => $request->nama_pelayanan,
+                'jenis_pelayanan' => $request->jenis_pelayanan,
                 'harga' => $request->harga,
                 'keterangan' => $request->keterangan,
 
@@ -72,6 +75,7 @@ class SettingPembayaranController extends Controller
         $rules = [
             'unique' => 'required',
             'nama_pelayanan' => 'required',
+            'jenis_pelayanan' => 'required',
             'harga' => 'required|numeric',
             'keterangan' => 'required',
         ];
@@ -79,6 +83,7 @@ class SettingPembayaranController extends Controller
         $messages = [
             'unique.required' => 'Silahkan Memilih Data yang Akan Diupdate',
             'nama_pelayanan.required' => 'Nama Pelayanan tidak boleh kosong',
+            'jenis_pelayanan.required' => 'Jenis Pelayanan tidak boleh kosong',
             'harga.required' => 'Harga tidak boleh kosong',
             'harga.numeric' => 'Harga harus berupa angka',
             'keterangan.required' => 'Keterangan tidak boleh kosong',
@@ -97,6 +102,7 @@ class SettingPembayaranController extends Controller
 
             $data = [
                 'nama_pelayanan' => $request->input('nama_pelayanan'),
+                'jenis_pelayanan' => $request->input('jenis_pelayanan'),
                 'harga' => $request->input('harga'),
                 'keterangan' => $request->input('keterangan'),
                 // tambahkan kolom lainnya sesuai kebutuhan

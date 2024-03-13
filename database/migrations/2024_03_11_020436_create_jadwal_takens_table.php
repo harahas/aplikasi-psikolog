@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSettingPembayaransTable extends Migration
+class CreateJadwalTakensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateSettingPembayaransTable extends Migration
      */
     public function up()
     {
-        Schema::create('setting_pembayarans', function (Blueprint $table) {
+        Schema::create('jadwal_takens', function (Blueprint $table) {
             $table->id();
             $table->uuid('unique')->unique();
-            $table->string('nama_pelayanan');
-            $table->string('jenis_pelayanan');
-            $table->string('harga');
-            $table->string('keterangan');
+            $table->string('unique_reservasi');
+            $table->string('unique_setting_jadwal');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateSettingPembayaransTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('setting_pembayarans');
+        Schema::dropIfExists('jadwal_takens');
     }
 }

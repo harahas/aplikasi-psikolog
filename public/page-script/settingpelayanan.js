@@ -32,6 +32,9 @@ $(document).ready(function () {
                 data: "nama_pelayanan",
             },
             {
+                data: "jenis_pelayanan",
+            },
+            {
                 data: "harga",
             },
             {
@@ -78,6 +81,7 @@ $(document).ready(function () {
                     $("#title-modal").html('');
                     $("#btn-action").html('');
                     $("#nama_pelayanan").val('');
+                    $("#jenis_pelayanan").val('');
                     $("#harga").val('');
                     $("#keterangan").val('');
                     table.ajax.reload()
@@ -97,6 +101,7 @@ $(document).ready(function () {
             success: function (response) {
                 $("#unique").val(response.pelayanan.unique);
                 $("#nama_pelayanan").val(response.pelayanan.nama_pelayanan);
+                $("#jenis_pelayanan").val(response.pelayanan.jenis_pelayanan);
                 $("#harga").val(response.pelayanan.harga);
                 $("#keterangan").val(response.pelayanan.keterangan);
                 $("#title-modal").html("Edit Pelayanan");
@@ -126,6 +131,7 @@ $(document).ready(function () {
                     table.ajax.reload();
                     $("#unique").val("");
                     $("#nama_pelayanan").val("");
+                    $("#jenis_pelayanan").val("");
                     $("#harga").val("");
                     $("#keterangan").val("");
                     $("#modal-pelayanan").modal("hide");

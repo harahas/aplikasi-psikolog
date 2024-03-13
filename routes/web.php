@@ -2,22 +2,26 @@
 
 use App\Models\Klien;
 use App\Models\Artikel;
+use App\Models\Reservasi;
 use Illuminate\Http\Request;
+use App\Models\SettingJadwal;
 use App\Models\SettingPembayaran;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\MenuUserController;
 use App\Http\Controllers\PelayananController;
+use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\KlienAdminController;
+use App\Http\Controllers\SettingJadwalController;
 use App\Http\Controllers\jadwalResevasiController;
 use App\Http\Controllers\SettingPembayaranController;
 use App\Http\Controllers\settingJadwalAdminController;
-use App\Http\Controllers\SettingJadwalController;
 use App\Http\Controllers\settingPelayanAdminController;
 use App\Http\Controllers\SettingPelayananLainController;
-use App\Models\SettingJadwal;
+use App\Models\JadwalTaken;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,7 +102,25 @@ Route::get('/datatablesArtikel', [ArtikelController::class, 'dataTables']);
 Route::get('/profilUser', function () {
     if (session('klien')) {
         $data = [
-            'klien' => Klien::where('unique', session('klien')->unique)->first()
+            'klien' => Klien::where('unique', session('klien')->unique)->first(),
+            'reservasi_0' => DB::table('reservasis as a')
+                ->join('klien as b', 'a.unique_klien', '=', 'b.unique')
+                ->join('setting_pembayarans as c', 'a.unique_setting_bayar', '=', 'c.unique')
+                ->select('a.*', 'b.nama', 'b.no_hp', 'c.nama_pelayanan')
+                ->where('a.unique_klien', session('klien')->unique)
+                ->where('a.status', 0)
+                ->orWhere('a.status', 1)
+                ->get(),
+            'reservasi_3' => DB::table('reservasis as a')
+                ->join('klien as b', 'a.unique_klien', '=', 'b.unique')
+                ->join('setting_pembayarans as c', 'a.unique_setting_bayar', '=', 'c.unique')
+                ->select('a.*', 'b.nama', 'b.no_hp', 'c.nama_pelayanan')
+                ->where('a.unique_klien', session('klien')->unique)
+                ->where('a.status', 3)
+                ->orWhere('a.status', 4)
+                ->get(),
+            'waktu' => new JadwalTaken(),
+            'setting_jadwal' => SettingJadwal::where('status', 0)->get(),
         ];
         return view('front-end.profil', $data);
     } else {
@@ -114,7 +136,9 @@ Route::get('/service', function () {
 });
 Route::get('/serviceLain', function () {
     $data = [
-        'setting' => SettingPembayaran::all()
+        'setting' => SettingPembayaran::all(),
+        'pelayanan_lain' => SettingPembayaran::where('jenis_pelayanan', 'lainnya')->get()
+
     ];
     return view('front-end.pelayanan.pelayanan-lain', $data);
 });
@@ -122,18 +146,20 @@ Route::get('/jadwal/{unique}', function ($unique) {
     if (session('klien')) {
         $data = [
             'klien' => Klien::where('unique', session('klien')->unique)->first(),
-            'data_pembayaran' => SettingPembayaran::where('unique', $unique)->first()
+            'data_pembayaran' => SettingPembayaran::where('unique', $unique)->first(),
+            'reservasi' => new Reservasi(),
+            'setting_jadwal' => SettingJadwal::where('status', 0)->get(),
         ];
         return view('front-end.pelayanan.jadwal-konsul', $data);
     } else {
         return redirect('/');
     }
 });
-Route::get('/adminKlien', [KlienAdminController::class, 'index']);
-Route::get('/jadwalReservasiAdmin', [jadwalResevasiController::class, 'index']);
-Route::get('/settingJadwalAdmin', [settingJadwalAdminController::class, 'index']);
-Route::get('/settingPelayanAdmin', [settingPelayanAdminController::class, 'index']);
-Route::get('/settingPelayanLain', [SettingPelayananLainController::class, 'index']);
+Route::get('/adminKlien', [KlienAdminController::class, 'index'])->middleware('auth');
+Route::get('/jadwalReservasiAdmin', [jadwalResevasiController::class, 'index'])->middleware('auth');
+Route::get('/settingJadwalAdmin', [settingJadwalAdminController::class, 'index'])->middleware('auth');
+Route::get('/settingPelayanAdmin', [settingPelayanAdminController::class, 'index'])->middleware('auth');
+Route::get('/settingPelayanLain', [SettingPelayananLainController::class, 'index'])->middleware('auth');
 //simpan setting pelayanan
 Route::post('/simpanSettingPelayanan', [SettingPembayaranController::class, 'simpanSettingPelayanan']);
 Route::get('/datatableSettingPembayaran', [SettingPembayaranController::class, 'datatableSettingPembayaran']);
@@ -159,3 +185,20 @@ Route::post('/deleteJadwal/{unique}', [SettingJadwalController::class, 'deleteJa
 
 // atur jadwal
 Route::get('/getWaktu', [SettingJadwalController::class, 'getWaktu']);
+//CEK VALIDASI KONSUL
+Route::get('/cekValidasiKonsul', [SettingJadwalController::class, 'cekValidasiKonsul']);
+// SIMPAN RESERVASI
+Route::post('/storeReservasi', [ReservasiController::class, 'store']);
+Route::post('/reschedule-jadwal', [ReservasiController::class, 'reschedule']);
+// PESANAN DI KONFIRMASI
+Route::get('/konfirmasiPemesanan/{reservasi:unique}', [ReservasiController::class, 'confirm'])->middleware('auth');
+// PESANAN SELESAI
+Route::get('/selesaiPemesanan/{reservasi:unique}', [ReservasiController::class, 'done'])->middleware('auth');
+Route::get('/selesaiKadaluarsa/{reservasi:unique}', [ReservasiController::class, 'kadaluarsa'])->middleware('auth');
+// DATATABLES
+Route::get('/dataTablesJadwal', [ReservasiController::class, 'dataTables']);
+
+// UBAH SANDI
+Route::post('/changePassword', [AuthController::class, 'change_password'])->middleware('auth');
+// UBAH KLIEN
+Route::post('/ubahPasswordKlien', [KlienAdminController::class, 'change_password_klien']);

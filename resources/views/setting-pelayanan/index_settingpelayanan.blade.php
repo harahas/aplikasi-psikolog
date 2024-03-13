@@ -21,6 +21,7 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama Pelayanan</th>
+                        <th>Jenis Pelayanan</th>
                         <th>Harga Persesi/Range</th>
                         <th>Keterangan</th>
                         <th>Action</th>

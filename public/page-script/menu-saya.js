@@ -17,6 +17,83 @@ $(document).ready(function () {
             }
         });
     });
+    $("#table-current-jadwal").on("click", ".reschedule", function () {
+        let unique = $(this).data("unique");
+        let sesi = $(this).data("sesi");
+        let nominal = $(this).data("nominal");
+        $("#current_unique").val(unique)
+        $("#current_sesi").val(sesi)
+        $("#current_nominal").val(nominal * sesi)
+        $("#new_nominal").val(nominal * sesi)
+        let tanggal_tersedia = $("#tanggal_tersedia").val()
+        let newTanggal = tanggal_tersedia.split('/')
+        newTanggal.pop()
+        flatpickr("#new_tanggal", {
+            enable: newTanggal
+        });
+        $("#modal-reschedule").modal('show');
+    })
+
+    $("#modal-reschedule").on("click", "input[name='waktu2[]']", function () {
+        let waktu = $("input[name='waktu2[]']:checked")
+        let sesi = $("#current_sesi").val()
+        let nominal = $("#current_nominal").val()
+        if (waktu.length > 0) {
+            $("#btn-reschedule").removeAttr("disabled")
+            $("#new_sesi").val(waktu.length)
+            if (waktu.length > sesi) {
+                $("#bukti-bayar").removeClass("d-none")
+                $("#bukti_bayar").attr("required", "true")
+                $("#new_nominal").val(parseInt(nominal * waktu.length))
+                $("#sisa-bayar").html(`<label for="">Sisa Bayar:&nbsp;</label><span>${new Intl.NumberFormat("id-ID", {
+                    style: "currency",
+                    currency: "IDR",
+                    minimumFractionDigits: 0,
+                })
+                    .format(parseInt(nominal) * parseInt(waktu.length - sesi))
+                    .replace(/\./g, ",")}</span>`)
+            } else {
+                $("#bukti-bayar").addClass("d-none")
+                $("#bukti_bayar").removeAttr("required")
+                $("#new_nominal").val(nominal)
+                $("#sisa-bayar").html("")
+            }
+        } else {
+            $("#btn-reschedule").attr("disabled", "true")
+            $("#new_sesi").val(0)
+            $("#bukti-bayar").addClass("d-none")
+            $("#bukti_bayar").removeAttr("required")
+            $("#sisa-bayar").html("")
+        }
+    })
+
+    $("#new_tanggal").on("change", function () {
+        $("#btn-reschedule").attr("disabled", "true")
+        let waktu = $("#waktu")
+        let tanggal = $(this).val()
+        $.ajax({
+            data: { tanggal: tanggal },
+            url: "/getWaktu",
+            type: "GET",
+            dataType: 'json',
+            success: function (response) {
+                let jam = `
+
+                    `
+                if (response.waktu.length > 0) {
+
+                    response.waktu.forEach(function (a) {
+                        jam += `<label class="btn">
+                            <input type="checkbox" value="${a.unique}" name="waktu2[]" id="waktu2">&nbsp;${a.jam_awal} - ${a.jam_akhir}
+                        </label><br>`
+                    })
+                } else {
+                    jam += `<span class="text-danger">Tidak Ada Jadwal Untuk Konseling, Silahkan pilih tanggal lain!</span>`
+                }
+                waktu.html(jam)
+            }
+        });
+    })
     //Hendler Error
     function displayErrors(errors) {
         // menghapus class 'is-invalid' dan pesan error sebelumnya

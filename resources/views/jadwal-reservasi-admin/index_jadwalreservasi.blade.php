@@ -11,7 +11,12 @@
                         <th>No.</th>
                         <th>Nama Klien</th>
                         <th>No Handphone</th>
+<<<<<<< HEAD
                         <th>Nama Pelayanan</th>
+=======
+                        <th>Jenis Konseling</th>
+                        <th>Tanggal Konseling</th>
+>>>>>>> 9fe5d7e474cf9007356308655194b79d8091480c
                         <th>Nominal Transaksi</th>
                         <th>Status</th>
                         <th>Bukti Transaksi</th>
@@ -19,6 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
                     <tr>
                         <td>1</td>
                         <td>Hamni Rahma Hasibuan</td>
@@ -48,6 +54,9 @@
                             </button>
                         </td>
                     </tr>
+=======
+                <tbody>
+>>>>>>> 9fe5d7e474cf9007356308655194b79d8091480c
                 </tbody>
             </table>
         </div>
@@ -55,4 +64,6 @@
 
     </div>
 </div>
+@include('jadwal-reservasi-admin.modal-bukti-bayar')
+<script src="/page-script/jadwal_reservasi.js"></script>
 @endsection

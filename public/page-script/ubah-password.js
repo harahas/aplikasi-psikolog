@@ -1,93 +1,65 @@
 $(document).ready(function () {
-    // ATUR JADWAL USER
-    //KETIKA TANGGAL BERUBAH
-    $("#tanggal").on("change", function () {
-        let waktu = $("#waktu")
-        let tanggal = $(this).val()
+    $("#ubah-password").on("click", function () {
+        $("#modal-ubah-password").modal("show")
+    })
+})
+$("#eye").on("click", function () {
+    let i = $(this).children().eq(0);
+    let input = $(this).parent().children().eq(0);
+    let type = input.attr("type");
+    i.toggleClass("ri-eye-line");
+    i.toggleClass("ri-eye-off-line");
+    i.toggleClass("text-danger");
+    if (type == "text") {
+        input.attr("type", "password");
+    } else if (type == "password") {
+        input.attr("type", "text");
+    }
+})
+$("#eye2").on("click", function () {
+    let i = $(this).children().eq(0);
+    let input = $(this).parent().children().eq(0);
+    let type = input.attr("type");
+    i.toggleClass("ri-eye-line");
+    i.toggleClass("ri-eye-off-line");
+    i.toggleClass("text-danger");
+    if (type == "text") {
+        input.attr("type", "password");
+    } else if (type == "password") {
+        input.attr("type", "text");
+    }
+})
+$(".btn-close-password").on("click", function () {
+    $("#new_password").val("")
+    $("#confirm_password").val("")
+})
+$("#btn-change").on("click", function () {
+    let formdata = $("form[id='form-ubah-password']").serializeArray();
+    let data = {}
+    $(formdata).each(function (index, obj) {
+        data[obj.name] = obj.value;
+    });
+    let form = $("form[id='form-ubah-password']").serialize();
+    if (data.new_password != data.confirm_password) {
+        Swal.fire("Warning!", "Konfirmasi Password Tidak Sesuai!", "warning");
+    } else {
         $.ajax({
-            data: { tanggal: tanggal },
-            url: "/getWaktu",
-            type: "GET",
+            data: form,
+            url: "/changePassword",
+            type: "POST",
             dataType: 'json',
             success: function (response) {
-                let jam = `
-
-                    `
-                if (response.waktu.length > 0) {
-
-                    response.waktu.forEach(function (a) {
-                        jam += `<label class="btn">
-                            <input type="checkbox" value="${a.unique}" name="waktu2[]" id="waktu2">&nbsp;${a.jam_awal} - ${a.jam_akhir}
-                        </label><br>`
-                    })
+                if (response.errors) {
+                    displayErrors(response.errors)
                 } else {
-                    jam += `<span class="text-danger">Tidak Ada Jadwal Untuk Konseling, Silahkan pilih tanggal lain!</span>`
+                    $("#new_password").val("")
+                    $("#confirm_password").val("")
+                    $("#modal-ubah-password").modal("hide")
+                    Swal.fire("Success!", response.success, "success");
                 }
-                waktu.html(jam)
             }
         });
-    })
-    $("#btn-next1").on("click", function () {
-        if ($("input[name='waktu2[]']").prop('checked') == false) {
-            Swal.fire("Warning!", "Silahkan pilih waktu konsultasi terlebih dahulu!", "warning");
-            $("#pills-contact-tab").attr("disabled", "true");
-        } else {
-            $.ajax({
-                data: $("form[id='form-update-profil']").serialize(),
-                url: "/cekValidasiKonsul",
-                type: "GET",
-                dataType: 'json',
-                success: function (response) {
-                    if (response.errors) {
-                        $("#pills-contact-tab").attr("disabled", "true");
-                        displayErrors(response.errors);
-                    } else {
-                        $("#pills-contact").addClass("show active");
-                        $("#pills-contact-tab").addClass("active");
-                        $("#pills-profile").removeClass("show active");
-                        $("#pills-profile-tab").removeClass("active");
-                        $("#pills-contact-tab").removeAttr("disabled");
-                    }
-                }
-            });
-        }
-    })
-    $("#waktu").on("click", "[name='waktu2[]']", function () {
-        let waktu = $("input[name='waktu2[]']:checked")
-        let harga = parseInt($("#harga-sesi").val())
-        let jumlah_sesi = $("#jumlah_sesi")
-        let sesi = $("input[name='sesi']")
-        if (waktu.length > 0) {
-            $("#harga").val(
-                new Intl.NumberFormat("id-ID", {
-                    style: "currency",
-                    currency: "IDR",
-                    minimumFractionDigits: 0,
-                })
-                    .format(harga * waktu.length)
-                    .replace(/\./g, ",")
-            )
-            jumlah_sesi.html(waktu.length)
-            sesi.val(waktu.length)
-            $("#total_bayar").html(
-                new Intl.NumberFormat("id-ID", {
-                    style: "currency",
-                    currency: "IDR",
-                    minimumFractionDigits: 0,
-                })
-                    .format(harga * waktu.length)
-                    .replace(/\./g, ",")
-            )
-        } else {
-            $("#harga").val(harga)
-        }
-    })
-    let tanggal_tersedia = $("#tanggal-tersedia").val()
-    let newTanggal = tanggal_tersedia.split('/')
-    newTanggal.pop()
-    flatpickr("#tanggal", {
-        enable: newTanggal
-    });
+    }
     //Hendler Error
     function displayErrors(errors) {
         // menghapus class 'is-invalid' dan pesan error sebelumnya
@@ -124,7 +96,7 @@ $(document).ready(function () {
 
             if (inputElement.length > 0) {
                 inputElement.addClass("is-invalid");
-                inputElement.after(feedbackElement);
+                inputElement.next().after(feedbackElement);
             }
 
             if (selectElement.length > 0) {
@@ -169,4 +141,4 @@ $(document).ready(function () {
             });
         });
     }
-});
+})

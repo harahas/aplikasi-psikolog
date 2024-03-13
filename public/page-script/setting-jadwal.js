@@ -39,6 +39,17 @@ $(document).ready(function () {
             },
             {
                 data: "status",
+                render: function (data, type, row, meta) {
+                    if (data == 1) {
+                        return type === "display"
+                            ? '<button class="badge bg-secondary border-0">Reserved</button>'
+                            : data;
+                    } else {
+                        return type === "display"
+                            ? '<button class="badge bg-primary border-0">Availeble</button>'
+                            : data;
+                    }
+                },
             },
 
             {
@@ -180,6 +191,8 @@ $(document).ready(function () {
             }
         });
     });
+
+
 
 
     //Hendler Error

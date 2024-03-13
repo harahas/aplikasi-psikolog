@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\SettingPelayananLain;
+use App\Models\SettingPembayaran;
 use Yajra\DataTables\Facades\DataTables;
 
 class SettingPelayananLainController extends Controller
@@ -12,7 +13,8 @@ class SettingPelayananLainController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'Setting Pelayanan Lain'
+            'title' => 'Setting Pelayanan Lain',
+
         ];
         return view('setting-pelayanan-lain.index_settingpelayananlain', $data);
     }

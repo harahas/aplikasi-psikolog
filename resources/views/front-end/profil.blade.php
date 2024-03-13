@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/style2.css">
+    <link rel="stylesheet" href="/css/flatpickr.min.css">
     <script src="/page-script/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="/css/sweetalert2.min.css">
     <script src="/page-script/sweetalert2.all.min.js"></script>
@@ -172,8 +173,15 @@
                                 <div class="card text-start">
                                     <div class="card-body">
                                         <h4 class="card-title">Tabel Jadwal Mendatang</h4>
+                                        @php
+                                        $tanggal = '';
+                                        foreach($setting_jadwal as $row){
+                                        $tanggal .= $row->tanggal .'/';
+                                        }
+                                        @endphp
+                                        <input type="hidden" value="{{ $tanggal }}" id="tanggal_tersedia">
                                         <div class="table-responsive">
-                                            <table class="table caption-top">
+                                            <table class="table caption-top" id="table-current-jadwal">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">No</th>
@@ -182,18 +190,38 @@
                                                         <th scope="col">Waktu Konseling</th>
                                                         <th scope="col">Jumlah Bayar</th>
                                                         <th scope="col">Status</th>
+                                                        <th scope="col">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @foreach($reservasi_0 as $index => $row)
+                                                    @php
+                                                    $waktu2 = $waktu->getWaktu($row->unique);
+                                                    $jumlah_sesi = $waktu->getJumlahSesi($row->unique);
+                                                    $lenght = count($waktu2);
+                                                    $index +=1;
+                                                    @endphp
                                                     <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>27 Februari 2024</td>
-                                                        <td>Konsultan Keluarga Online</td>
-                                                        <td>09.00 - 10.00</td>
-                                                        <td>Rp 300.000</td>
-                                                        <td>Dipesan</td>
+                                                        <td scope="col">{{ $index++ }}</td>
+                                                        <td scope="col">{{ $row->tanggal }}</td>
+                                                        <td scope="col">{{ $row->nama_pelayanan }}</td>
+                                                        <td scope="col">
+                                                            @foreach($waktu2 as $value)
+                                                            ({{ $value->jam_awal }} - {{ $value->jam_akhir }})
+                                                            @endforeach</td>
+                                                        <td scope="col">Rp. {{ number_format($row->nominal, 0, '.', ',') }}</td>
+                                                        <td scope="col">
+                                                            @if($row->status == 0)
+                                                            <span class="badge bg-danger">Menunggu</span>
+                                                            @elseif($row->status == 1)
+                                                            <span class="badge bg-info">Di Konfirmasi</span>
+                                                            @endif
+                                                        </td>
+                                                        <td scope="col">
+                                                            <span data-unique="{{ $row->unique }}" data-sesi="{{ $jumlah_sesi }}" data-nominal="{{ $row->nominal / $jumlah_sesi }}" class="reschedule badge bg-primary" style="cursor: pointer;">Reschedule</span>
+                                                        </td>
                                                     </tr>
-
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>
@@ -216,15 +244,30 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach($reservasi_3 as $index => $row)
+                                                @php
+                                                $waktu2 = $waktu->getWaktu($row->unique);
+                                                $lenght = count($waktu2);
+                                                $index +=1;
+                                                @endphp
                                                 <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>27 Februari 2024</td>
-                                                    <td>Konsultan Keluarga Online</td>
-                                                    <td>09.00 - 10.00</td>
-                                                    <td>Rp 300.000</td>
-                                                    <td>Selesai</td>
+                                                    <td scope="col">{{ $index++ }}</td>
+                                                    <td scope="col">{{ $row->tanggal }}</td>
+                                                    <td scope="col">{{ $row->nama_pelayanan }}</td>
+                                                    <td scope="col">
+                                                        @foreach($waktu2 as $value)
+                                                        ({{ $value->jam_awal }} - {{ $value->jam_akhir }})
+                                                        @endforeach</td>
+                                                    <td scope="col">Rp. {{ number_format($row->nominal, 0, '.', ',') }}</td>
+                                                    <td>
+                                                        @if($row->status == 3)
+                                                        <span class="badge bg-success">Selesai</span>
+                                                        @elseif($row->status == 4)
+                                                        <span class="badge bg-secondary">Kadaluarsa</span>
+                                                        @endif
+                                                    </td>
                                                 </tr>
-
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -279,6 +322,7 @@
     <!-- Start of Footer section
 	============================================= -->
     @include('front-end.modal-login')
+    @include('front-end.modal-jadwal-saya')
     <footer id="in-footer" class="in-footer-section" data-background="/assets/img/bg/footerr.png">
         <div class="container">
             <div class="in-footer-widget-wrapper">
@@ -401,6 +445,7 @@
     <script src="/assets/js/jquery.magnific-popup.min.js"></script>
     <script src="/assets/js/jquery.nice-select.min.js"></script>
     <script src="/assets/js/script.js"></script>
+    <script src="/page-script/flatpickr.js"></script>
     <script src="/page-script/login.js"></script>
     <script src="/page-script/menu-saya.js"></script>
 </body>

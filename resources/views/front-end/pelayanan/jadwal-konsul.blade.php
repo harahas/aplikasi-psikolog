@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
+    <link rel="stylesheet" href="/css/flatpickr.min.css">
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="/assets2/images/favicon.ico">
@@ -82,216 +83,98 @@
             <div class="card-body">
                 <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" text-color="white"><i class="
-                            mdi mdi-account-heart"></i> Isi Data Diri</button>
+                        <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="mdi mdi-calendar-clock"></i> Atur Jadwal</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="mdi mdi-calendar-clock"></i> Atur Jadwal</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="mdi mdi-credit-card-check"></i> Pembayaran</button>
+                        <button class="nav-link" id="pills-contact-tab" disabled="true" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="mdi mdi-credit-card-check"></i> Pembayaran</button>
                     </li>
                 </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                        <form action="javascript:;" id="form-update-profil">
-                            <input type="hidden" name="unique" value="{{ $klien->unique }}">
+                <form action="/storeReservasi" method="POST" enctype="multipart/form-data" id="form-update-profil">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade justify-content-center show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <input type="hidden" name="unique_klien" value="{{ $klien->unique }}">
+                            <input type="hidden" name="unique_setting_bayar" value="{{ $data_pembayaran->unique }}">
+                            <input type="hidden" name="nominal" value="{{ $data_pembayaran->harga }}">
+                            @php
+                            $tanggal = '';
+                            foreach($setting_jadwal as $row){
+                            $tanggal .= $row->tanggal .'/';
+                            }
+                            @endphp
+                            <input type="hidden" value="{{ $tanggal }}" id="tanggal-tersedia">
+                            <input type="hidden" name="sesi">
                             @csrf
-                            <div class="row sm-2" style="overflow-x: scroll">
-                                <ul class="list-group">
-                                    <li class="list-group-item">
-                                        <div class="col-sm-4 label"><strong>Nama Lengkap:</strong></div>
-                                        <div class="col-sm-12 value" id="namaLengkap">
-                                            <input type="text" class="form-control" name="nama" value="{{  $klien->nama }}">
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="col-sm-4 label"><strong>No HP:</strong></div>
-                                        <input type="text" name="no_hp" class="form-control" value="{{ $klien->no_hp }}">
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="col-sm-4 label"><strong>Tanggal Lahir:</strong></div>
-                                        <input type="text" name="tgl_lahir" class="form-control" value="{{ $klien->tgl_lahir }}">
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="col-sm-4 label"><strong>Jenis Kelamin:</strong></div>
-                                        <select class="form-select" name="jenis_kelamin" aria-label="Default select example">
-                                            <option value="laki_laki" {{ $klien->jenis_kelamin == 'laki_laki' ? 'selected':'' }}>Laki-laki</option>
-                                            <option value="perempuan" {{ $klien->jenis_kelamin == 'perempuan' ? 'selected':'' }}>Perempuan</option>
-                                        </select>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="col-sm-4 label"><strong>Pendidikan Terakhir:</strong></div>
-                                        <select class="form-select" aria-label="Default select example" name="pendidikan_terakhir">
-                                            <option disabled value="">Pendidikan Terakhir</option>
-                                            <option value="sd" {{ $klien->pendidikan_terakhir == 'sd' ? 'selected':'' }}>SD</option>
-                                            <option value="smp" {{ $klien->pendidikan_terakhir == 'smp' ? 'selected':'' }}>SMP</option>
-                                            <option value="sma" {{ $klien->pendidikan_terakhir == 'sma' ? 'selected':'' }}>SMA</option>
-                                            <option value="D1" {{ $klien->pendidikan_terakhir == 'D1' ? 'selected':'' }}>D1</option>
-                                            <option value="D2" {{ $klien->pendidikan_terakhir == 'D2' ? 'selected':'' }}>D2</option>
-                                            <option value="S1" {{ $klien->pendidikan_terakhir == 'S1' ? 'selected':'' }}>S1/D4</option>
-                                            <option value="S2" {{ $klien->pendidikan_terakhir == 'S2' ? 'selected':'' }}>S2</option>
-                                            <option value="S3" {{ $klien->pendidikan_terakhir == 'S3' ? 'selected':'' }}>S3</option>
-                                        </select>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="col-sm-4 label"><strong>Pekerjaan:</strong></div>
-                                        <select class="form-select" aria-label="Default select example" name="pekerjaan">
-                                            <option disabled value="">Pilih Pekerjaan</option>
-                                            <option value="belum_bekerja" {{ $klien->pekerjaan == 'belum_bekerja' ? 'selected' : '' }}>Belum Bekerja</option>
-                                            <option value="pelajar" {{ $klien->pekerjaan == 'pelajar' ? 'selected' : '' }}>Pelajar</option>
-                                            <option value="mahasiswa" {{ $klien->pekerjaan == 'mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>
-                                            <option value="irt" {{ $klien->pekerjaan == 'irt' ? 'selected' : '' }}>Ibu Rumah Tangga</option>
-                                            <option value="wiraswasta" {{ $klien->pekerjaan == 'wiraswasta' ? 'selected' : '' }}>Wiraswasta</option>
-                                            <option value="penyedia" {{ $klien->pekerjaan == 'penyedia' ? 'selected' : '' }}>Penyedia Jasa (Guru/Dokter/Lawyer/Peneliti/Lainnya)</option>
-                                            <option value="freelance" {{ $klien->pekerjaan == 'freelance' ? 'selected' : '' }}>Freelance</option>
-                                            <option value="karyawan" {{ $klien->pekerjaan == 'karyawan' ? 'selected' : '' }}>Karyawan Swasta</option>
-                                            <option value="pns" {{ $klien->pekerjaan == 'pns' ? 'selected' : '' }}>Pegawai Negeri Sipil</option>
-                                            <option value="bumn" {{ $klien->pekerjaan == 'bumn' ? 'selected' : '' }}>BUMN</option>
-                                        </select>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="col-sm-4 label"><strong>Status:</strong></div>
-                                        <select class="form-select" aria-label="Default select example" name="status">
-                                            <option disabled value="">Status</option>
-                                            <option value="belum_menikah" {{ $klien->status == 'belum_menikah' ? 'selected' : '' }}>Belum Menikah</option>
-                                            <option value="menikah" {{ $klien->status == 'menikah' ? 'selected' : '' }}>Menikah</option>
-                                            <option value="cerai_mati" {{ $klien->status == 'cerai_mati' ? 'selected' : '' }}>Cerai Mati</option>
-                                            <option value="cerai_hidup" {{ $klien->status == 'cerai_hidup' ? 'selected' : '' }}>Cerai Hidup</option>
-                                        </select>
-                                    </li>
-
-                                    <li class="list-group-item">
-                                        <div class="col-sm-4 label"><strong>Agama:</strong></div>
-                                        <select class="form-select" aria-label="Default select example" name="agama">
-                                            <option disabled value="">Pilih Agama</option>
-                                            <option value="islam" {{ $klien->agama == 'islam' ? 'selected' : '' }}>Islam</option>
-                                            <option value="kristen" {{ $klien->agama == 'kristen' ? 'selected' : '' }}>Kristen</option>
-                                            <option value="katolik" {{ $klien->agama == 'katolik' ? 'selected' : '' }}>Katolik</option>
-                                            <option value="hindu" {{ $klien->agama == 'hindu' ? 'selected' : '' }}>Hindu</option>
-                                            <option value="budha" {{ $klien->agama == 'budha' ? 'selected' : '' }}>Budha</option>
-                                            <option value="khonghucu" {{ $klien->agama == 'khonghucu' ? 'selected' : '' }}>Khonghucu</option>
-                                        </select>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <div class="mt-3">
-                                <button type="button" id="" class="btn btn-primary">Selanjutnya</button>
-                                <br>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="tab-pane fade justify-content-center" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <ul class="list-group">
-                                    <div class="container mt-5">
-                                        <form id="konselingForm">
-                                            <div class="form-group" id="alamatContainer" style="display: none;">
-                                                <label for="alamat">Alamat:</label>
-                                                <input type="text" class="form-control" id="alamat" name="alamat" value="Jalan A" readonly>
-                                            </div>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <ul class="list-group">
+                                        <div class="container mt-5">
                                             <div class="form-group">
                                                 <div class="form-group">
                                                     <label for="tanggal">Pilih Tanggal:</label>
-                                                    <input type="date" id="tanggal" name="tanggal" class="form-control">
+                                                    <input type="text" id="tanggal" name="tanggal" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label>Waktu:</label>
-                                                <div data-toggle="buttons" id="waktu">
-
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Pilih Waktu:</label>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="timeSlot1">
-                                                        <label class="form-check-label" for="timeSlot1">08.00 - 09.00</label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="timeSlot2">
-                                                        <label class="form-check-label" for="timeSlot2">09.00 - 10.00</label>
-                                                    </div>
-                                                    <!-- Tambahkan waktu pilihan lainnya sesuai kebutuhan -->
-                                                </div>
+                                                <div data-toggle="buttons" id="waktu"></div>
                                             </div>
-
-
                                             <div class="form-group">
-                                                <label for="deskripsiMasalah">Deskripsi Masalah:</label>
-                                                <textarea class="form-control" id="deskripsiMasalah" name="deskripsiMasalah" rows="4" required></textarea>
+                                                <label for="deskripsi">Deskripsi Masalah:</label>
+                                                <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" required></textarea>
                                             </div>
-
                                             <div class="form-group">
-                                                <label for="harapanSetelahKonseling">Harapan Setelah Konseling:</label>
-                                                <textarea class="form-control" id="harapanSetelahKonseling" name="harapanSetelahKonseling" rows="4" required></textarea>
+                                                <label for="harapan">Harapan Setelah Konseling:</label>
+                                                <textarea class="form-control" id="harapan" name="harapan" rows="4" required></textarea>
                                             </div>
-
                                             <div class="form-group">
                                                 <label for="harga">Harga:</label>
-                                                <input type="text" class="form-control" id="harga" name="harga" value="{{ $data_pembayaran->harga }}" readonly>
+                                                <input type="text" class="form-control" id="harga" name="harga" value="Rp. {{ number_format($data_pembayaran->harga,0, ',','.') }}" readonly>
                                             </div>
                                             <br>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </form>
+                                            <button type="button" id="btn-next1" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </ul> <!-- Tambahkan Bootstrap JS dan jQuery (diperlukan oleh Bootstrap) -->
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="card-body">
+
                                     </div>
-
-                                </ul> <!-- Tambahkan Bootstrap JS dan jQuery (diperlukan oleh Bootstrap) -->
-
-
-                            </div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="card-body">
-
                                 </div>
                             </div>
                         </div>
-
-                    </div>
-                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                        <div class="container mt-5">
-                            <form id="detailPembayaranForm">
-                                <div class="form-group">
-                                    <label for="kategoriLayanan">Kategori Layanan:</label>
-                                    <input type="text" class="form-control" id="kategoriLayanan" name="kategoriLayanan" value="Konseling Individu" readonly>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                            <div class="container mt-5" style="padding: 20px">
+                                <h2>Checkout</h2>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <h3>{{ $data_pembayaran->nama_pelayanan }}</h3>
+                                    <h3>{{ $reservasi->rupiah($data_pembayaran->harga) }}</h3>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="jumlahSesi">Jumlah Sesi:</label>
-                                    <input type="number" class="form-control" id="jumlahSesi" name="jumlahSesi" value="1" readonly>
+                                <div class="d-flex justify-content-between">
+                                    <h3>Jumlah Sesi</h3>
+                                    <h3 id="jumlah_sesi">1</h3>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="tanggal">Tanggal:</label>
-                                    <input type="text" class="form-control" id="tanggal" name="tanggal" value="2024-03-01" readonly>
+                                <hr>
+                                <div class="d-flex justify-content-between">
+                                    <h3>Total</h3>
+                                    <h3 id="total_bayar">Total</h3>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="waktu">Waktu:</label>
-                                    <input type="text" class="form-control" id="waktu" name="waktu" value="08.00 - 09.00" readonly>
+                                <div class="d-flex justify-content-between">
+                                    <h3>Pembayaran Melalui: (BRI) 446601018784531 - Gian Sonia</h3>
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="pembayaran">Pembayaran:</label>
-                                    <input type="text" class="form-control" id="pembayaran" name="pembayaran" value="Rp 300.000" readonly>
+                                <br><br><br><br>
+                                <h3>Upload Bukti Bayar</h3>
+                                <hr>
+                                <div class="d-flex justify-content-center">
+                                    <input type="file" class="form-control" name="bukti_bayar" required>
                                 </div>
-
-                                <div class="form-group">
-                                    <br>
-                                    <button type="button" class="btn btn-primary">Kembali</button>
-                                    <button type="button" class="btn btn-success">Bayar</button>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary mt-4">Reservasi</button>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-
+                </form>
                 {{-- Card menu --}}
                 <br>
                 <br>
@@ -447,6 +330,8 @@
 <script src="/assets/js/jquery.nice-select.min.js"></script>
 <script src="/assets/js/script.js"></script>
 <script src="/page-script/login.js"></script>
+<script src="/page-script/flatpickr.js"></script>
+
 <script>
     $(document).ready(function() {
         $("#jumlahSesi").on('keyup', function() {

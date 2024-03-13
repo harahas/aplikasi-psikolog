@@ -1,5 +1,12 @@
 @extends('front-end.main')
 @section('container')
+@if(session()->has('success'))
+<input type="hidden" id="alert" value="{{ session('success') }}">
+<script>
+    Swal.fire("Good Job!", $("#alert").val(), "success");
+
+</script>
+@endif
 <section id="in-slider-2" class="in-slider-section-2">
     <rs-module-wrap id="rev_slider_14_1_wrapper" data-alias="insurance_home_2" data-source="gallery" style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
         <rs-module id="rev_slider_14_1" style="" data-version="6.5.16">
