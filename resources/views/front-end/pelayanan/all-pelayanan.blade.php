@@ -219,7 +219,7 @@
                 <div class="row justify-content-center">
                     @foreach ($setting as $settings)
 
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-6  col-md-6 mt-5">
                         <div class="in-price-inner-items text-center">
                             <div class="pricing-title-price-area headline">
                                 <h2>{{ $settings->nama_pelayanan }}</h2>

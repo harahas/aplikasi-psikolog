@@ -3,7 +3,6 @@
 <div class="card">
     <div class="card-header"></div>
     <div class="card-body">
-
         <div class="table-responsive">
             <table class="table table-striped" id="table-konsultasi">
                 <h4>Tabel Jadwal Reservasi</h4>
@@ -24,6 +23,8 @@
                 </tbody>
             </table>
         </div>
+
+
     </div>
 </div>
 @include('jadwal-reservasi-admin.modal-bukti-bayar')

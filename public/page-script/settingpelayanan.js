@@ -137,9 +137,9 @@ $(document).ready(function () {
                     $("#modal-pelayanan").modal("hide");
                     Swal.fire("Success!", response.success, "success");
                 }
-            },
-            error: function (error) {
-                console.error("Error:", error);
+                // },
+                // error: function (error) {
+                //     console.error("Error:", error);
             }
         });
 

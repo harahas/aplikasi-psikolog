@@ -36,26 +36,26 @@
             </li>
 
             <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
+                {{-- <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
                     <i class="ri-pages-line"></i>
                     <span> Master </span>
                     <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="sidebarPages">
+                </a> --}}
+                {{-- <div class="collapse" id="sidebarPages">
                     <ul class="side-nav-second-level">
                         <li>
                             <a href="/pelayanan">Pelayanan</a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
 
             </li>
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a href="/adminKlien" class="side-nav-link">
                     <i class=" ri-user-2-line"></i>
                     <span> Klien </span>
                 </a>
-            </li>
+            </li> --}}
             <li class="side-nav-item">
                 <a href="/jadwalReservasiAdmin" class="side-nav-link">
                     <i class="ri-calendar-todo-fill"></i>
@@ -72,16 +72,16 @@
             <li class="side-nav-item">
                 <a href="/settingPelayanAdmin" class="side-nav-link">
                     <i class="mdi mdi-credit-card-settings"></i>
-                    <span> Pelayanan Konseling</span>
+                    <span> Pelayanan</span>
                 </a>
             </li>
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a href="/settingPelayanLain" class="side-nav-link">
                     <i class="mdi mdi-table-cog"></i>
                     <span> Pelayanan Lain</span>
                 </a>
-            </li>
-            <li class="side-nav-item">
+            </li> --}}
+            {{-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarPages2" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
                     <i class="ri-pages-line"></i>
                     <span> Artikel </span>
@@ -94,7 +94,7 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
 
         </ul>
         <!--- End Sidemenu -->

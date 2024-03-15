@@ -34,10 +34,11 @@
                     <!--
 
                         -->
-                    <rs-layer id="slider-14-slide-29-layer-3" class="rev-btn" data-type="button" data-bsh="c:#461d7d;v:5px,4px,3px,1px;b:20px,17px,12px,7px;" data-rsp_ch="on" data-xy="xo:15px,13px,9px,4px;y:m;yo:257px,224px,170px,114px;" data-text="w:normal;s:16,14,14,14;l:60,52,40,40;fw:500;" data-dim="minh:0px,none,none,none;" data-padding="r:35,31,24,15;l:35,31,24,15;" data-border="bor:5px,5px,5px,5px;" data-frame_0="x:175%;o:1;" data-frame_0_mask="u:t;x:-100%;" data-frame_1="e:power3.out;st:700;sp:2000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;" data-frame_hover="bgc:linear-gradient(50deg, #fffff 10%,rgb(20, 20, 20) 100%);bor:5px,5px,5px,5px;e:power1.inOut;bri:120%;" style="z-index:8;background:linear-gradient(90deg, #045F4E 0%,rgb(46, 46, 46) 100% 100%);font-family:'DM Sans';">
-                        Get Started Now <br />
-
+                    <rs-layer id="slider-14-slide-29-layer-3" class="rev-btn" data-type="button" data-bsh="c:#461d7d;v:5px,4px,3px,1px;b:20px,17px,12px,7px;" data-rsp_ch="on" data-xy="xo:15px,13px,9px,4px;y:m;yo:257px,224px,170px,114px;" data-text="w:normal;s:16,14,14,14;l:60,52,40,40;fw:500;" data-dim="minh:0px,none,none,none;" data-padding="r:35,31,24,15;l:35,31,24,15;" data-border="bor:5px,5px,5px,5px;" data-frame_0="x:175%;o:1;" data-frame_0_mask="u:t;x:-100%;" data-frame_1="e:power3.out;st:700;sp:2000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;" data-frame_hover="bgc:linear-gradient(50deg, #fffff 10%,rgb(20, 20, 20) 100%);bor:5px,5px,5px,5px;e:power1.inOut;bri:120%;" style="z-index:8;background:linear-gradient(90deg, #045F4E 0%,rgb(46, 46, 46) 100% 100%);font-family:'DM Sans';" data-url="/service">
+                        <a href="/service">Get Started Now</a>
+                        <br />
                     </rs-layer>
+
                     <!--
 
                         -->
@@ -81,7 +82,8 @@
 
                         -->
                     <rs-layer id="slider-14-slide-30-layer-3" class="rev-btn" data-type="button" data-bsh="c:#461d7d;v:5px,4px,3px,1px;b:20px,17px,12px,7px;" data-rsp_ch="on" data-xy="xo:15px,13px,9px,4px;y:m;yo:257px,224px,170px,114px;" data-text="w:normal;s:16,14,14,14;l:60,52,40,40;fw:500;" data-dim="minh:0px,none,none,none;" data-padding="r:35,31,24,15;l:35,31,24,15;" data-border="bor:5px,5px,5px,5px;" data-frame_0="x:175%;o:1;" data-frame_0_mask="u:t;x:-100%;" data-frame_1="e:power3.out;st:700;sp:2000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;" data-frame_hover="bgc:linear-gradient(50deg, #fffff 10%,rgb(20, 20, 20) 100%);bor:5px,5px,5px,5px;e:power1.inOut;bri:120%;" style="z-index:8;background:linear-gradient(90deg, #045F4E 0%,rgb(46, 46, 46) 100% 100%);font-family:'DM Sans';">
-                        Get Started Now <br />
+                        <a href="/service">Get Started Now</a>
+                        <br />
 
                     </rs-layer>
                     <!--
@@ -128,7 +130,8 @@
 
                         -->
                     <rs-layer id="slider-14-slide-31-layer-3" class="rev-btn" data-type="button" data-bsh="c:#461d7d;v:5px,4px,3px,1px;b:20px,17px,12px,7px;" data-rsp_ch="on" data-xy="xo:15px,13px,9px,4px;y:m;yo:257px,224px,170px,114px;" data-text="w:normal;s:16,14,14,14;l:60,52,40,40;fw:500;" data-dim="minh:0px,none,none,none;" data-padding="r:35,31,24,15;l:35,31,24,15;" data-border="bor:5px,5px,5px,5px;" data-frame_0="x:175%;o:1;" data-frame_0_mask="u:t;x:-100%;" data-frame_1="e:power3.out;st:700;sp:2000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;" data-frame_hover="bgc:linear-gradient(50deg, #fffff 10%,rgb(20, 20, 20) 100%);bor:5px,5px,5px,5px;e:power1.inOut;bri:120%;" style="z-index:8;background:linear-gradient(90deg, #045F4E 0%,rgb(46, 46, 46) 100% 100%);font-family:'DM Sans';">
-                        Get Started Now <br />
+                        <a href="/service">Get Started Now</a>
+                        <br>
 
                     </rs-layer>
                     <!--
@@ -304,7 +307,7 @@
                                     </h3>
                                     <br>
                                     <div class="in-btn-2 position-relative  wow fadeInUp" data-wow-delay="700ms" data-wow-duration="1000ms">
-                                        <a href="about.html">Get Started Now</a>
+                                        <a href="/service">Get Started Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -344,8 +347,8 @@
                             <img src="assets/img/portfolio/1.png" alt="">
                         </div>
                         <div class="inner-text headline position-absolute">
-                            <span class="port-category"><a href="#">Layanan Konseling</a></span>
-                            <h3><a href="portfolio-single.html">Melayani Konseling Individu, Pasangan dan
+                            <span class="port-category"><a>Layanan Konseling</a></span>
+                            <h3><a>Melayani Konseling Individu, Pasangan dan
                                     Keluarga</a></h3>
                             <div class="more-btn position-absolute">
                                 <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
@@ -359,8 +362,8 @@
                             <img src="assets/img/portfolio/2.png" alt="">
                         </div>
                         <div class="inner-text headline position-absolute">
-                            <span class="port-category"><a href="#">Parenting</a></span>
-                            <h3><a href="portfolio-single.html">Melayani Seminar Parenting</a></h3>
+                            <span class="port-category"><a>Parenting</a></span>
+                            <h3><a>Melayani Seminar Parenting</a></h3>
                             <div class="more-btn position-absolute">
                                 <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
                             </div>
@@ -373,8 +376,8 @@
                             <img src="assets/img/portfolio/3.png" alt="">
                         </div>
                         <div class="inner-text headline position-absolute">
-                            <span class="port-category"><a href="#">Psikoedukasi</a></span>
-                            <h3><a href="portfolio-single.html">Melayani Psikoedukasi ke berbagai sekolah</a></h3>
+                            <span class="port-category"><a>Psikoedukasi</a></span>
+                            <h3><a>Melayani Psikoedukasi ke berbagai sekolah</a></h3>
                             <div class="more-btn position-absolute">
                                 <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
                             </div>
@@ -387,8 +390,8 @@
                             <img src="assets/img/portfolio/4.png" alt="">
                         </div>
                         <div class="inner-text headline position-absolute">
-                            <span class="port-category"><a href="#">Psikotest</a></span>
-                            <h3><a href="portfolio-single.html">Melayani Berbagai Macam Psikotes Untuk Sekolah,
+                            <span class="port-category"><a>Psikotest</a></span>
+                            <h3><a>Melayani Berbagai Macam Psikotes Untuk Sekolah,
                                     Lembaga dan Perusahaan</a></h3>
                             <div class="more-btn position-absolute">
                                 <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
@@ -402,8 +405,8 @@
                             <img src="assets/img/portfolio/5.png" alt="">
                         </div>
                         <div class="inner-text headline position-absolute">
-                            <span class="port-category"><a href="#">Terapi Anak Berkebutuhan Khusus</a></span>
-                            <h3><a href="portfolio-single.html">Terapi Untuk Anak Bekebutuhan Khusus di Sekolah
+                            <span class="port-category"><a>Terapi Anak Berkebutuhan Khusus</a></span>
+                            <h3><a>Terapi Untuk Anak Bekebutuhan Khusus di Sekolah
                                     Inklusi
                                     Bukit Bintang</a></h3>
                             <div class="more-btn position-absolute">
@@ -418,9 +421,9 @@
                             <img src="assets/img/portfolio/6.png" alt="">
                         </div>
                         <div class="inner-text headline position-absolute">
-                            <span class="port-category"><a href="#">Mahagoni Outbond and Camp
+                            <span class="port-category"><a>Mahagoni Outbond and Camp
                                     Tasikmalaya </a></span>
-                            <h3><a href="portfolio-single.html">Outbond alam yang menyenangkan</a></h3>
+                            <h3><a>Outbond alam yang menyenangkan</a></h3>
                             <div class="more-btn position-absolute">
                                 <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
                             </div>
@@ -686,7 +689,7 @@
 
 <!-- Start of Testimonial Team section
 ============================================= -->
-<section id="in-testimonial-team" class="in-testimonial-team-section">
+{{-- <section id="in-testimonial-team" class="in-testimonial-team-section">
     <div class="container">
         <div class="in-testimonial-team-content">
             <div class="row">
@@ -838,7 +841,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- End of Testimonial Team section
 ============================================= -->
 
