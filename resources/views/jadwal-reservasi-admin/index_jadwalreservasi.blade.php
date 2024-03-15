@@ -11,11 +11,11 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama Klien</th>
-                        <th>No Handphone</th>
                         <th>Jenis Konseling</th>
                         <th>Tanggal Konseling</th>
                         <th>Nominal Transaksi</th>
                         <th>Status</th>
+                        <th>Masalah dan Harapan</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -27,5 +27,6 @@
     </div>
 </div>
 @include('jadwal-reservasi-admin.modal-bukti-bayar')
+@include('jadwal-reservasi-admin.modal-hope')
 <script src="/page-script/jadwal_reservasi.js"></script>
 @endsection

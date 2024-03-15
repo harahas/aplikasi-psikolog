@@ -52,6 +52,7 @@ class ReservasiController extends Controller
             ->get();
         foreach ($query as $row) {
             $row->nominal = $reservasi->rupiah($row->nominal);
+            $row->hope = [$row->deskripsi, $row->harapan];
         }
         return DataTables::of($query)->addColumn('action', function ($row) {
             $phone = str_split($row->no_hp);
