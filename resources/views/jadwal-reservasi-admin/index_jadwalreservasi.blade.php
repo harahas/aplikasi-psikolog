@@ -23,8 +23,6 @@
                 </tbody>
             </table>
         </div>
-
-
     </div>
 </div>
 @include('jadwal-reservasi-admin.modal-bukti-bayar')
