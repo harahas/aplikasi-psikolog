@@ -17,6 +17,7 @@ use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\KlienAdminController;
 use App\Http\Controllers\SettingJadwalController;
 use App\Http\Controllers\jadwalResevasiController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\SettingPembayaranController;
 use App\Http\Controllers\settingJadwalAdminController;
 use App\Http\Controllers\settingPelayanAdminController;
@@ -202,3 +203,7 @@ Route::get('/dataTablesJadwal', [ReservasiController::class, 'dataTables']);
 Route::post('/changePassword', [AuthController::class, 'change_password'])->middleware('auth');
 // UBAH KLIEN
 Route::post('/ubahPasswordKlien', [KlienAdminController::class, 'change_password_klien']);
+
+// CETAK LAPORAN
+Route::get('/laporan', [LaporanController::class, 'index']);
+Route::get('/cetak_laporan', [LaporanController::class, 'cetak_konseling']);

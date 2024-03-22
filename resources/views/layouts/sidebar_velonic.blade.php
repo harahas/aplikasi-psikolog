@@ -75,6 +75,12 @@
                     <span> Pelayanan</span>
                 </a>
             </li>
+            <li class="side-nav-item">
+                <a href="/laporan" class="side-nav-link">
+                    <i class="mdi mdi-credit-card-settings"></i>
+                    <span> Laporan</span>
+                </a>
+            </li>
             {{-- <li class="side-nav-item">
                 <a href="/settingPelayanLain" class="side-nav-link">
                     <i class="mdi mdi-table-cog"></i>
