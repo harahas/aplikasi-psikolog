@@ -83,6 +83,7 @@ $(document).ready(function () {
                     type: "GET",
                     dataType: "json",
                     success: function (response) {
+                        console.log(response);
                         if (response.error) {
                             Swal.fire("Warning!", response.error, "warning");
                             $("#spinner").html("")
