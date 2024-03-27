@@ -151,4 +151,11 @@ class JadwalDefaultController extends Controller
             return $actionBtn;
         })->make(true);
     }
+
+    public function hapus_all()
+    {
+        DB::table('setting_jadwals')->truncate();
+        DB::table('reservasis')->truncate();
+        return redirect('/settingJadwalAdmin');
+    }
 }

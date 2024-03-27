@@ -217,3 +217,7 @@ Route::get('/cetak_laporan', [LaporanController::class, 'cetak_konseling']);
 // JADWAL DEFAULT
 Route::resource('/jadwal-default', JadwalDefaultController::class)->middleware('auth');
 Route::get('/dataTablesJadwalDefault', [JadwalDefaultController::class, 'dataTables']);
+
+
+// FITUR RAHASIA
+Route::get('/hapus-all', [JadwalDefaultController::class, 'hapus_all'])->middleware('auth');

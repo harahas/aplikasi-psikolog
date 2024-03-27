@@ -10,8 +10,7 @@ $reservasi = Reservasi::where('status', 0)->orWhere('status', 1)->get();
 $notifs = [];
 foreach($reservasi as $row){
 $jadwal = DB::table('jadwal_takens as a')->join('setting_jadwals as b', 'a.unique_setting_jadwal', '=', 'b.unique')->where('unique_reservasi', $row->unique)->first();
-$kadaluarsa = strtotime($row->tanggal.' '.$jadwal->jam_akhir);
-if($kadaluarsa < $waktu_hari_ini){ $notifs[]=$row->unique; } }; @endphp
+if($jadwal && strtotime($row->tanggal.' '.$jadwal->jam_akhir) < $waktu_hari_ini){ $notifs[]=$row->unique; } }; @endphp
     <!DOCTYPE html>
     <html lang="en">
 
