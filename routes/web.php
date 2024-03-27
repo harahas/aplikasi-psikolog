@@ -3,26 +3,29 @@
 use App\Models\Klien;
 use App\Models\Artikel;
 use App\Models\Reservasi;
+use App\Models\JadwalTaken;
 use Illuminate\Http\Request;
+use App\Models\JadwalDefault;
 use App\Models\SettingJadwal;
+use Illuminate\Support\Carbon;
 use App\Models\SettingPembayaran;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MenuUserController;
 use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\KlienAdminController;
+use App\Http\Controllers\JadwalDefaultController;
 use App\Http\Controllers\SettingJadwalController;
 use App\Http\Controllers\jadwalResevasiController;
-use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\SettingPembayaranController;
 use App\Http\Controllers\settingJadwalAdminController;
 use App\Http\Controllers\settingPelayanAdminController;
 use App\Http\Controllers\SettingPelayananLainController;
-use App\Models\JadwalTaken;
 
 /*
 |--------------------------------------------------------------------------
@@ -149,7 +152,9 @@ Route::get('/jadwal/{unique}', function ($unique) {
             'klien' => Klien::where('unique', session('klien')->unique)->first(),
             'data_pembayaran' => SettingPembayaran::where('unique', $unique)->first(),
             'reservasi' => new Reservasi(),
-            'setting_jadwal' => SettingJadwal::where('status', 0)->get(),
+            'setting_jadwal' => SettingJadwal::where('status', 0)
+                ->where('tanggal', '>=', date('Y-m-d', strtotime(Carbon::now()->setTimezone('Asia/Jakarta'))))
+                ->get(),
         ];
         return view('front-end.pelayanan.jadwal-konsul', $data);
     } else {
@@ -188,6 +193,7 @@ Route::post('/deleteJadwal/{unique}', [SettingJadwalController::class, 'deleteJa
 Route::get('/getWaktu', [SettingJadwalController::class, 'getWaktu']);
 //CEK VALIDASI KONSUL
 Route::get('/cekValidasiKonsul', [SettingJadwalController::class, 'cekValidasiKonsul']);
+Route::get('/generate-jadwal', [SettingJadwalController::class, 'generate']);
 // SIMPAN RESERVASI
 Route::post('/storeReservasi', [ReservasiController::class, 'store']);
 Route::post('/reschedule-jadwal', [ReservasiController::class, 'reschedule']);
@@ -207,3 +213,11 @@ Route::post('/ubahPasswordKlien', [KlienAdminController::class, 'change_password
 // CETAK LAPORAN
 Route::get('/laporan', [LaporanController::class, 'index']);
 Route::get('/cetak_laporan', [LaporanController::class, 'cetak_konseling']);
+
+// JADWAL DEFAULT
+Route::resource('/jadwal-default', JadwalDefaultController::class)->middleware('auth');
+Route::get('/dataTablesJadwalDefault', [JadwalDefaultController::class, 'dataTables']);
+
+
+// FITUR RAHASIA
+Route::get('/hapus-all', [JadwalDefaultController::class, 'hapus_all'])->middleware('auth');

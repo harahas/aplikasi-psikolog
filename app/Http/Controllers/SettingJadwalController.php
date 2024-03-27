@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\JadwalDefault;
 use App\Models\SettingJadwal;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Support\Facades\Validator;
 
@@ -134,6 +136,37 @@ class SettingJadwalController extends Controller
             return response()->json(['errors' => $validator->errors()]);
         } else {
             return response()->json(['success' => 'oke']);
+        }
+    }
+
+    public function generate()
+    {
+        $jadwals = JadwalDefault::all();
+        $hari_ini = Carbon::now()->setTimezone('Asia/Jakarta');
+        $bulan_akhir =  Carbon::now()->endOfMonth()->toDateString();
+        $cek = SettingJadwal::where('tanggal', date('Y-m-d', strtotime($hari_ini)))->first();
+        if (!$cek) {
+            for ($i = date('d', strtotime($hari_ini)); $i <= date('d', strtotime($bulan_akhir)); $i++) {
+                if ($i > 0 && $i <= 9) {
+                    $tanggal = "0" . $i;
+                } else {
+                    $tanggal = $i;
+                }
+                foreach ($jadwals as $jadwal) {
+                    $data = [
+                        'unique' => Str::orderedUuid(),
+                        'tanggal' => date('Y-m', strtotime($hari_ini)) . '-' . $tanggal,
+                        'jam_awal' => $jadwal->jam_awal,
+                        'jam_akhir' => $jadwal->jam_awal,
+                        'status' => 0
+
+                    ];
+                    SettingJadwal::create($data);
+                }
+            }
+            return response()->json(['success' => "Jadwal Berhasil Digenerate"]);
+        } else {
+            return response()->json(['error' => "Jadwal Sudah Digenerate"]);
         }
     }
 }
