@@ -157,7 +157,7 @@ class SettingJadwalController extends Controller
                         'unique' => Str::orderedUuid(),
                         'tanggal' => date('Y-m', strtotime($hari_ini)) . '-' . $tanggal,
                         'jam_awal' => $jadwal->jam_awal,
-                        'jam_akhir' => $jadwal->jam_awal,
+                        'jam_akhir' => $jadwal->jam_akhir,
                         'status' => 0
 
                     ];

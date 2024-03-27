@@ -64,12 +64,12 @@ class LaporanController extends Controller
         $pdf->SetFillColor(9, 132, 227);
         $pdf->SetTextColor(255);
         $pdf->SetDrawColor(0, 0, 0);
-        $pdf->Cell(8, 7, 'No', 1, '0', 'C', true);
-        $pdf->Cell(59, 7, 'Nama Klien', 1, '0', 'C', true);
-        $pdf->Cell(40, 7, 'Jenis Konseling', 1, '0', 'C', true);
-        $pdf->Cell(29, 7, 'Waktu Konseling', 1, '0', 'C', true);
-        $pdf->Cell(29, 7, 'Nominal Koseling', 1, '0', 'C', true);
-        $pdf->Cell(27, 7, 'Tanggal Konseling', 1, '0', 'C', true);
+        $pdf->Cell(8, 10, 'No', 1, '0', 'C', true);
+        $pdf->Cell(30, 10, 'Nama Klien', 1, '0', 'C', true);
+        $pdf->Cell(40, 10, 'Jenis Konseling', 1, '0', 'C', true);
+        $pdf->Cell(60, 10, 'Waktu Konseling', 1, '0', 'C', true);
+        $pdf->Cell(29, 10, 'Nominal Koseling', 1, '0', 'C', true);
+        $pdf->Cell(27, 10, 'Tanggal Konseling', 1, '0', 'C', true);
         $pdf->Ln();
 
         $query = DB::table('reservasis as a')
@@ -89,12 +89,12 @@ class LaporanController extends Controller
             foreach ($jadwal as $row2) {
                 $waktu .= "($row2->jam_awal - $row2->jam_akhir) ";
             }
-            $pdf->Cell(8, 7, $index + 1, 1, '0', 'C', true);
-            $pdf->Cell(59, 7, $row->nama, 1, '0', 'C', true);
-            $pdf->Cell(40, 7, $row->nama_pelayanan, 1, '0', 'C', true);
-            $pdf->Cell(29, 7, $waktu, 1, '0', 'C', true);
-            $pdf->Cell(29, 7, $row->nominal, 1, '0', 'C', true);
-            $pdf->Cell(27, 7, $row->tanggal, 1, '0', 'C', true);
+            $pdf->Cell(8, 10, $index + 1, 1, '0', 'C', true);
+            $pdf->Cell(30, 10, $row->nama, 1, '0', 'C', true);
+            $pdf->Cell(40, 10, $row->nama_pelayanan, 1, '0', 'C', true);
+            $pdf->Cell(60, 10, $waktu, 1, '0', 'C', true);
+            $pdf->Cell(29, 10, 'Rp ' . number_format($row->nominal, 0, ',', '.'), 1, '0', 'C', true);
+            $pdf->Cell(27, 10, $row->tanggal, 1, '0', 'C', true);
             $pdf->Ln();
         }
 
