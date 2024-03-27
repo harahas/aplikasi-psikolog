@@ -64,6 +64,12 @@
             </li>
             <li class="side-nav-title">Setting</li>
             <li class="side-nav-item">
+                <a href="/jadwal-default" class="side-nav-link">
+                    <i class="mdi mdi-calendar-account"></i>
+                    <span> Jadwal Default</span>
+                </a>
+            </li>
+            <li class="side-nav-item">
                 <a href="/settingJadwalAdmin" class="side-nav-link">
                     <i class="mdi mdi-calendar-account"></i>
                     <span> Jadwal Psikolog</span>
