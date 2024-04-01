@@ -29,7 +29,7 @@
             <li class="side-nav-title">Main</li>
 
             <li class="side-nav-item">
-                <a href="/" class="side-nav-link">
+                <a href="/dashboardAdmin" class="side-nav-link">
                     <i class="ri-dashboard-3-line"></i>
                     <span> Dashboard </span>
                 </a>
@@ -77,7 +77,7 @@
             </li>
             <li class="side-nav-item">
                 <a href="/settingPelayanAdmin" class="side-nav-link">
-                    <i class="mdi mdi-credit-card-settings"></i>
+                    <i class=" ri-service-line"></i>
                     <span> Pelayanan</span>
                 </a>
             </li>

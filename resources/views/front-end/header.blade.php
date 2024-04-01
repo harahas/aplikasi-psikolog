@@ -30,25 +30,7 @@
 
                     </li>
 
-                    <!-- <li class="dropdown">
-                        <a class="" href="!#">Blog</a>
-                        <ul class="dropdown-menu clearfix">
-                            <li><a target="_blank" href="blog-list.html">News </a></li>
-                            <li><a target="_blank" href="blog-grid.html">News Grid</a></li>
-                            <li><a target="_blank" href="blog-list-2.html">News List</a></li>
-                            <li><a target="_blank" href="blog-slider.html">News Slider</a></li>
-                            <li><a target="_blank" href="blog-single.html">News Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="" href="!#">Portfolio</a>
-                        <ul class="dropdown-menu clearfix">
-                            <li><a target="_blank" href="portfolio-slide.html">Portfolio Slide </a></li>
-                            <li><a target="_blank" href="portfolio-grid.html">Portfolio Grid</a></li>
-                            <li><a target="_blank" href="portfolio-masonry.html">Porfolio Masonry</a></li>
-                            <li><a target="_blank" href="portfolio-single.html">Portfolio Details</a></li>
-                        </ul>
-                    </li> -->
+
                     @if (session('klien'))
                     <li class="dropdown" style="float: right">
                         <a href="#">Hai, {{ session('klien')->nama }}</a>

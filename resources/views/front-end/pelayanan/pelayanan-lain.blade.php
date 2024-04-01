@@ -86,7 +86,8 @@
                                 <h2>
                                     <strong>
 
-                                        <p> <sup>Rp</sup>{{ $lainnya->harga }}</p>
+                                        <p><sup>Rp</sup>{{ number_format($lainnya->harga, 0, ',', '.') }}</p>
+
                                     </strong>
                                 </h2>
                                 <br>
@@ -109,6 +110,7 @@
             </div>
         </div>
     </section>
+
     <!-- End of Service section
 	============================================= -->
 

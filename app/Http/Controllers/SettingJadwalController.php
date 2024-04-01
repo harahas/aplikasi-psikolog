@@ -152,16 +152,21 @@ class SettingJadwalController extends Controller
                 } else {
                     $tanggal = $i;
                 }
-                foreach ($jadwals as $jadwal) {
-                    $data = [
-                        'unique' => Str::orderedUuid(),
-                        'tanggal' => date('Y-m', strtotime($hari_ini)) . '-' . $tanggal,
-                        'jam_awal' => $jadwal->jam_awal,
-                        'jam_akhir' => $jadwal->jam_akhir,
-                        'status' => 0
+                $cek_tanggal = date('Y-m', strtotime($hari_ini)) . '-' . $tanggal;
+                if (date('l', strtotime($cek_tanggal)) == 'Sunday') {
+                    continue;
+                } else {
+                    foreach ($jadwals as $jadwal) {
+                        $data = [
+                            'unique' => Str::orderedUuid(),
+                            'tanggal' => date('Y-m', strtotime($hari_ini)) . '-' . $tanggal,
+                            'jam_awal' => $jadwal->jam_awal,
+                            'jam_akhir' => $jadwal->jam_akhir,
+                            'status' => 0
 
-                    ];
-                    SettingJadwal::create($data);
+                        ];
+                        SettingJadwal::create($data);
+                    }
                 }
             }
             return response()->json(['success' => "Jadwal Berhasil Digenerate"]);

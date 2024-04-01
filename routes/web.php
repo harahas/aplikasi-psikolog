@@ -16,6 +16,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\MenuUserController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelayananController;
 use App\Http\Controllers\ReservasiController;
 use App\Http\Controllers\KlienAdminController;
@@ -41,6 +42,10 @@ use App\Http\Controllers\SettingPelayananLainController;
 //jika ada request url /login dengan method GET maka request tersebut akan ditangani oleh authcontroller  method index
 Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
 Route::get('/home', [PelayananController::class, 'index'])->middleware('auth');
+
+// Untuk Dashboard
+
+Route::get('/dashboardAdmin', [DashboardController::class, 'index'])->middleware('auth');
 //jika ada request url /auth dengan method post maka request tersebut akan ditangani oleh authcontroller  method authenticate
 Route::post('/auth', [AuthController::class, 'authenticate']);
 Route::post('/register', [AuthController::class, 'register']);
@@ -134,7 +139,7 @@ Route::get('/profilUser', function () {
 Route::POST('/updateProfil', [AuthController::class, 'updateProfil']);
 Route::get('/service', function () {
     $data = [
-        'setting' => SettingPembayaran::all()
+        'setting' => SettingPembayaran::where('jenis_pelayanan', 'konseling')->get()
     ];
     return view('front-end.pelayanan.all-pelayanan', $data);
 });

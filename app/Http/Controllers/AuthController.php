@@ -36,7 +36,7 @@ class AuthController extends Controller
         //kalau username dan password terdaftar maka session akan di regenerate dan halaman akan dialihkan ke halaman base url (/)
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/pelayanan');
+            return redirect()->intended('/dashboardAdmin');
         }
         //kalau username atau password tidak terdaftar di database maka laravel akan mengembalkan halaman ke halaman semula sambil mengirimkan pesan session error.
         return back()->with('error', 'Username atau Password Salah');

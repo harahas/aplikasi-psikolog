@@ -250,9 +250,9 @@ if($jadwal && strtotime($row->tanggal.' '.$jadwal->jam_akhir) < $waktu_hari_ini)
 
                         <li class="dropdown">
                             <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <span class="account-user-avatar">
+                                {{-- <span class="account-user-avatar">
                                     <img src="/assets2/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
-                                </span>
+                                </span> --}}
                                 <span class="d-lg-block d-none">
                                     <h5 class="my-0 fw-normal">HamniRH <i class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
                                 </span>

@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Models\JadwalTaken;
 
 class LaporanController extends Controller
+
 {
     public function index()
     {
