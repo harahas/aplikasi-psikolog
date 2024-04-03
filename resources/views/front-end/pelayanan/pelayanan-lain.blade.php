@@ -100,7 +100,7 @@
                                     <i class="flaticon-home-insurance"></i>
                                 </div>
                                 <div class="inner-btn">
-                                    <a class="d-flex align-items-center justify-content-center" href="https://web.whatsapp.com/send?phone=6285860568027&text=Saya%20ingin%20bertanya%20tentang%20seminar%20parenting" target="_blank"><i class="fab fa-whatsapp whatsapp-icon" style="font-size: 30px;"></i></a>
+                                    <a class="d-flex align-items-center justify-content-center" href="https://web.whatsapp.com/send?phone=6285860568027&text=Saya%20ingin%20bertanya%20tentang%20" target="_blank"><i class="fab fa-whatsapp whatsapp-icon" style="font-size: 30px;"></i></a>
                                 </div>
                             </div>
                         </div>

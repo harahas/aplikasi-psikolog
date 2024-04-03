@@ -64,6 +64,8 @@
 
     </style>
 
+    </style>
+
     <div id="preloader"></div>
     <div class="up">
         <a href="#" class="scrollup text-center"><i class="fas fa-chevron-up"></i></a>
@@ -176,8 +178,21 @@
                     </div>
                 </form>
                 {{-- Card menu --}}
-                <br>
-                <br>
+                <div class="container mt-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ketentuan Layanan Konseling</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">- Paket hanya dapat digunakan oleh 1 pengguna</li>
+                                <li class="list-group-item">- Paket yang sudah terlewat dari waktu yang telah ditentukan masih dapat digunakan dengan S&K yang berlaku</li>
+                                <li class="list-group-item">- Paket yang sudah terlewat dari waktu yang sudah dipilih oleh klien dan klien meminta pengembalian uang maka dibolehkan namun dengan S&K yang berlaku</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <a class="d-flex align-items-center " href="https://web.whatsapp.com/send?phone=6285860568027&text=Saya%20ingin%20bertanya%20tentang%20" target="_blank">Untuk informasi lebih lanjut silahkan hubungi admin kami! &nbsp;<i class="fab fa-whatsapp whatsapp-icon" style="font-size: 30px;"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- end container -->
@@ -254,7 +269,7 @@
                                         <i class="fal fa-phone-plus"></i>
                                     </div>
                                     <div class="inner-text">
-                                        Sen – Sel: 08.00 – 16.00,
+                                        Sen – Sab: 08.00 – 16.00,
                                         Minggu : Tutup
                                     </div>
                                 </div>

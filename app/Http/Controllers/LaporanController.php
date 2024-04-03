@@ -51,19 +51,42 @@ class LaporanController extends Controller
         $periode = "$year-$bulanan";
         $pdf = new FPDF();
         $pdf->AddPage('P', 'A4');
+
+        $pdf->SetFillColor(34, 100, 34); // hijau tua (RGB)
+        $pdf->Rect(0, 0, 8, 297, 'F');
+        $imagePath = public_path('assets2/images/logosaya.png');
+        $pdf->Image($imagePath, 145, 10, 60);
+        // Teks di bawah logo
+        $pdf->SetFont('Arial', '', 10);
+        $pdf->SetXY(10, 20); // atur posisi X dan Y
+        $pdf->Cell(0, 10, 'Jln. Sukamulya, Tasikmalaya.', 0, 0.5, 'R');
+        // $pdf->SetX(120);
+        // $pdf->Cell(0, 10, '085-850-558-027', 0, 1, 'R');
+        // $pdf->SetX(170);
+        // $pdf->Cell(0, 10, 'Jawa Barat, Indonesia', 0, 1.5, 'R');
+        $pdf->Ln(0); // spasi antara teks dan header tabel
         //Header
         $pdf->SetFont('Arial', 'B', 13);
         $pdf->Cell(30);
-        $pdf->Cell(140, 5, 'LAPORAN KONSELING', 0, 1, 'C');
+        $pdf->SetXY(10, 15);
+        $pdf->Cell(140, 5, 'LAPORAN RESERVASI', 0, 1, 'L');
         $pdf->Ln();
+        $pdf->SetFont('Arial', 'B', 10);
+        $pdf->SetXY(10, 20);
+        $pdf->Cell(140, 5, 'Laporan Reservasi Konseling', 0, 1, 'L');
+        $pdf->SetLineWidth(1);
+        $pdf->Line(10, 36, 200, 36);
+        $pdf->SetLineWidth(0);
+        $pdf->Line(10, 37, 200, 37);
+        $pdf->Ln(15);
         $pdf->SetFont('Arial', '', 11);
         $pdf->Cell(8, 5, 'Laporan Bulan: ' . $namaBulan . " $year", 0, 1, 'L');
         $pdf->Ln();
 
         //Membuat kolom judul tabel
         $pdf->SetFont('Arial', '', '8');
-        $pdf->SetFillColor(9, 132, 227);
-        $pdf->SetTextColor(255);
+        $pdf->SetFillColor(255);
+        $pdf->SetTextColor(0);
         $pdf->SetDrawColor(0, 0, 0);
         $pdf->Cell(8, 10, 'No', 1, '0', 'C', true);
         $pdf->Cell(30, 10, 'Nama Klien', 1, '0', 'C', true);
