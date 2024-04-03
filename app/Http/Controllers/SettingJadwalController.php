@@ -147,7 +147,8 @@ class SettingJadwalController extends Controller
         $cek = SettingJadwal::where('tanggal', date('Y-m-d', strtotime($hari_ini)))->first();
         if (!$cek) {
             for ($i = date('d', strtotime($hari_ini)); $i <= date('d', strtotime($bulan_akhir)); $i++) {
-                if ($i > 0 && $i <= 9) {
+                $pecah = str_split((string)$i);
+                if ($i > 0 && $i <= 9 && $pecah[0] != 0) {
                     $tanggal = "0" . $i;
                 } else {
                     $tanggal = $i;
