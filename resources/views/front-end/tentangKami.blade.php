@@ -73,7 +73,7 @@
                                         </h3>
                                         <br>
                                         <div class="in-btn-2 position-relative  wow fadeInUp" data-wow-delay="700ms" data-wow-duration="1000ms">
-                                            <a href="about.html">Jadwalkan Sekarang</a>
+                                            <a href="/service">Jadwalkan Sekarang</a>
                                         </div>
                                     </div>
                                 </div>

@@ -351,7 +351,7 @@
                             <h3><a>Melayani Konseling Individu, Pasangan dan
                                     Keluarga</a></h3>
                             <div class="more-btn position-absolute">
-                                <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
+                                <a class="d-flex justify-content-center align-items-center" href="/service"><i class="fal fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -365,7 +365,7 @@
                             <span class="port-category"><a>Parenting</a></span>
                             <h3><a>Melayani Seminar Parenting</a></h3>
                             <div class="more-btn position-absolute">
-                                <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
+                                <a class="d-flex justify-content-center align-items-center" href="/service"><i class="fal fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -379,7 +379,7 @@
                             <span class="port-category"><a>Psikoedukasi</a></span>
                             <h3><a>Melayani Psikoedukasi ke berbagai sekolah</a></h3>
                             <div class="more-btn position-absolute">
-                                <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
+                                <a class="d-flex justify-content-center align-items-center" href="/service"><i class="fal fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -394,7 +394,7 @@
                             <h3><a>Melayani Berbagai Macam Psikotes Untuk Sekolah,
                                     Lembaga dan Perusahaan</a></h3>
                             <div class="more-btn position-absolute">
-                                <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
+                                <a class="d-flex justify-content-center align-items-center" href="/service"><i class="fal fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -410,7 +410,7 @@
                                     Inklusi
                                     Bukit Bintang</a></h3>
                             <div class="more-btn position-absolute">
-                                <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
+                                <a class="d-flex justify-content-center align-items-center" href="/service"><i class="fal fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -425,7 +425,7 @@
                                     Tasikmalaya </a></span>
                             <h3><a>Outbond alam yang menyenangkan</a></h3>
                             <div class="more-btn position-absolute">
-                                <a class="d-flex justify-content-center align-items-center" href="portfolio-single.html"><i class="fal fa-long-arrow-right"></i></a>
+                                <a class="d-flex justify-content-center align-items-center" href="/service"><i class="fal fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -461,7 +461,7 @@
                             Perubahan Positif.
                         </div>
                         <div class="in-btn-2 position-relative wow fadeInUp" data-wow-delay="600ms" data-wow-duration="1000ms">
-                            <a href="contact.html">Get Started Now</a>
+                            <a href="/service">Get Started Now</a>
                         </div>
                     </div>
                 </div>
