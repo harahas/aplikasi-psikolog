@@ -52,7 +52,17 @@ class ReservasiController extends Controller
             ->get();
         foreach ($query as $row) {
             $row->nominal = $reservasi->rupiah($row->nominal);
-            $row->hope = [$row->deskripsi, $row->harapan];
+            $jadwals = DB::table('jadwal_takens as a')
+            ->join('setting_jadwals as b', 'a.unique_setting_jadwal', '=', 'b.unique')
+            ->where('a.unique_reservasi', $row->unique)
+            ->select('b.jam_awal', 'b.jam_akhir')
+            ->get();
+            $row->daftar_waktu = '';
+            foreach($jadwals as $jadwal)
+            {
+                $row->daftar_waktu .= "($jadwal->jam_awal - $jadwal->jam_akhir) "
+            }
+            $row->hope = [$row->deskripsi, $row->harapan, $row->daftar_waktu];
         }
         return DataTables::of($query)->addColumn('action', function ($row) {
             $phone = str_split($row->no_hp);

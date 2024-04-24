@@ -66,7 +66,7 @@ $(document).ready(function () {
                 data: "hope",
                 render: function (data, type, row, meta) {
                     return type === "display"
-                        ? `<button class="badge bg-success border-0" title="Lihat Harapan dan Deskripsi" id="view-hope" data-deskripsi="${data[0]}" data-harapan="${data[1]}"><i class="ri-eye-line"></i></button>`
+                        ? `<button class="badge bg-success border-0" title="Lihat Harapan dan Deskripsi" id="view-hope" data-deskripsi="${data[0]}" data-harapan="${data[1]}" data-waktu="${data[2]}"><i class="ri-eye-line"></i></button>`
                         : data;
                 }
             },
@@ -149,8 +149,10 @@ $(document).ready(function () {
     $("#table-konsultasi").on("click", "#view-hope", function () {
         let harapan = $(this).data("harapan");
         let deskripsi = $(this).data("deskripsi");
+        let waktu = $(this).data("waktu");
         $("#card-harapan").html(harapan)
         $("#card-deskripsi").html(deskripsi)
+        $("#card-waktu").html(waktu)
         $("#modal-hope").modal("show");
     })
 })

@@ -22,6 +22,14 @@
                         <div id="card-harapan"></div>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Waktu</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="card-waktu"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
