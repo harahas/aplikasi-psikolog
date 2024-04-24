@@ -60,7 +60,7 @@ class ReservasiController extends Controller
             $row->daftar_waktu = '';
             foreach($jadwals as $jadwal)
             {
-                $row->daftar_waktu .= "($jadwal->jam_awal - $jadwal->jam_akhir) "
+                $row->daftar_waktu .= "($jadwal->jam_awal - $jadwal->jam_akhir) ";
             }
             $row->hope = [$row->deskripsi, $row->harapan, $row->daftar_waktu];
         }
