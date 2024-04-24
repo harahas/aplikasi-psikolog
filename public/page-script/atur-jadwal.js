@@ -28,7 +28,8 @@ $(document).ready(function () {
         });
     })
     $("#btn-next1").on("click", function () {
-        if ($("input[name='waktu2[]']").prop('checked') == false) {
+        let waktu = $("input[name='waktu2[]']:checked")
+        if (waktu.length < 1) {
             Swal.fire("Warning!", "Silahkan pilih waktu konsultasi terlebih dahulu!", "warning");
             $("#pills-contact-tab").attr("disabled", "true");
         } else {
