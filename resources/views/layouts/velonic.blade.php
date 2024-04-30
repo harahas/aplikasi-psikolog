@@ -31,6 +31,7 @@ if($jadwal && strtotime($row->tanggal.' '.$jadwal->jam_akhir) < $waktu_hari_ini)
         <link href="/assets2/vendor/datatables.net-fixedheader-bs5/css/fixedHeader.bootstrap5.min.css" rel="stylesheet" type="text/css" />
         <link href="/assets2/vendor/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" type="text/css" />
         <link href="/assets2/vendor/datatables.net-select-bs5/css/select.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+        <link href="/assets2/vendor/select2/css/select2.min.css" rel="stylesheet" type="text/css">
 
         {{-- TRIX --}}
         <link rel="stylesheet" href="/css/trix.css">
@@ -589,6 +590,16 @@ if($jadwal && strtotime($row->tanggal.' '.$jadwal->jam_akhir) < $waktu_hari_ini)
 
         <!-- Vendor js -->
         <script src="/assets2/js/vendor.min.js"></script>
+        <script src="/page-script/select2.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".select2").select2({
+                    placeholder: "Pilih Nama Klien"
+                    , allowClear: true
+                })
+            });
+
+        </script>
 
         <!-- Datatables js -->
         <script src="/assets2/vendor/datatables.net/js/jquery.dataTables.min.js"></script>

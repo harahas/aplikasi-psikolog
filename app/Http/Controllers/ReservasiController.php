@@ -45,21 +45,29 @@ class ReservasiController extends Controller
     public function dataTables(Request $request)
     {
         $reservasi = new Reservasi();
-        $query = DB::table('reservasis as a')
-            ->join('klien as b', 'a.unique_klien', '=', 'b.unique')
-            ->join('setting_pembayarans as c', 'a.unique_setting_bayar', '=', 'c.unique')
-            ->select('a.*', 'b.nama', 'b.no_hp', 'c.nama_pelayanan')
-            ->get();
+        if ($request->id) {
+            $query = DB::table('reservasis as a')
+                ->join('klien as b', 'a.unique_klien', '=', 'b.unique')
+                ->join('setting_pembayarans as c', 'a.unique_setting_bayar', '=', 'c.unique')
+                ->select('a.*', 'b.nama', 'b.no_hp', 'c.nama_pelayanan')
+                ->where('b.unique', $request->id)
+                ->get();
+        } else {
+            $query = DB::table('reservasis as a')
+                ->join('klien as b', 'a.unique_klien', '=', 'b.unique')
+                ->join('setting_pembayarans as c', 'a.unique_setting_bayar', '=', 'c.unique')
+                ->select('a.*', 'b.nama', 'b.no_hp', 'c.nama_pelayanan')
+                ->get();
+        }
         foreach ($query as $row) {
             $row->nominal = $reservasi->rupiah($row->nominal);
             $jadwals = DB::table('jadwal_takens as a')
-            ->join('setting_jadwals as b', 'a.unique_setting_jadwal', '=', 'b.unique')
-            ->where('a.unique_reservasi', $row->unique)
-            ->select('b.jam_awal', 'b.jam_akhir')
-            ->get();
+                ->join('setting_jadwals as b', 'a.unique_setting_jadwal', '=', 'b.unique')
+                ->where('a.unique_reservasi', $row->unique)
+                ->select('b.jam_awal', 'b.jam_akhir')
+                ->get();
             $row->daftar_waktu = '';
-            foreach($jadwals as $jadwal)
-            {
+            foreach ($jadwals as $jadwal) {
                 $row->daftar_waktu .= "($jadwal->jam_awal - $jadwal->jam_akhir) ";
             }
             $row->hope = [$row->deskripsi, $row->harapan, $row->daftar_waktu];

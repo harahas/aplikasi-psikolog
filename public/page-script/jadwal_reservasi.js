@@ -13,7 +13,14 @@ $(document).ready(function () {
         },
         autoWidth: false,
         serverSide: true,
-        ajax: "/dataTablesJadwal",
+        ajax: {
+            url: "/dataTablesJadwal",
+            type: "GET",
+            data: function (d) {
+                d.id = $("#klien").val();
+            }
+        },
+        searching: false,
         columns: [
             {
                 data: null,
@@ -88,6 +95,12 @@ $(document).ready(function () {
             },
         ],
     });
+
+    $("#klien").on("change", function () {
+        table.ajax.reload()
+    })
+
+
     $("#table-konsultasi").on("click", ".button-konfirmasi", function () {
         let unique = $(this).data("unique");
         Swal.fire({

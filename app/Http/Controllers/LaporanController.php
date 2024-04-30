@@ -50,12 +50,12 @@ class LaporanController extends Controller
         $year = date('Y', strtotime(Carbon::now()));
         $periode = "$year-$bulanan";
         $pdf = new FPDF();
-        $pdf->AddPage('P', 'A4');
+        $pdf->AddPage('L', 'A4');
 
         $pdf->SetFillColor(34, 100, 34); // hijau tua (RGB)
         $pdf->Rect(0, 0, 8, 297, 'F');
         $imagePath = public_path('assets2/images/logosaya.png');
-        $pdf->Image($imagePath, 145, 10, 60);
+        $pdf->Image($imagePath, 229, 10, 60);
         // Teks di bawah logo
         $pdf->SetFont('Arial', '', 10);
         $pdf->SetXY(10, 20); // atur posisi X dan Y
@@ -75,25 +75,26 @@ class LaporanController extends Controller
         $pdf->SetXY(10, 20);
         $pdf->Cell(140, 5, 'Laporan Reservasi Konseling', 0, 1, 'L');
         $pdf->SetLineWidth(1);
-        $pdf->Line(10, 36, 200, 36);
+        $pdf->Line(10, 36, 285, 36);
         $pdf->SetLineWidth(0);
-        $pdf->Line(10, 37, 200, 37);
+        $pdf->Line(10, 37, 285, 37);
         $pdf->Ln(15);
         $pdf->SetFont('Arial', '', 11);
         $pdf->Cell(8, 5, 'Laporan Bulan: ' . $namaBulan . " $year", 0, 1, 'L');
         $pdf->Ln();
 
         //Membuat kolom judul tabel
-        $pdf->SetFont('Arial', '', '8');
+        $pdf->SetFont('Arial', '', '10');
         $pdf->SetFillColor(255);
         $pdf->SetTextColor(0);
         $pdf->SetDrawColor(0, 0, 0);
         $pdf->Cell(8, 10, 'No', 1, '0', 'C', true);
-        $pdf->Cell(30, 10, 'Nama Klien', 1, '0', 'C', true);
-        $pdf->Cell(40, 10, 'Jenis Konseling', 1, '0', 'C', true);
-        $pdf->Cell(60, 10, 'Waktu Konseling', 1, '0', 'C', true);
-        $pdf->Cell(29, 10, 'Nominal Koseling', 1, '0', 'C', true);
-        $pdf->Cell(27, 10, 'Tanggal Konseling', 1, '0', 'C', true);
+        $pdf->Cell(40, 10, 'Nama Klien', 1, '0', 'C', true);
+        $pdf->Cell(50, 10, 'Jenis Konseling', 1, '0', 'C', true);
+        $pdf->Cell(70, 10, 'Waktu Konseling', 1, '0', 'C', true);
+        $pdf->Cell(39, 10, 'Nominal Koseling', 1, '0', 'C', true);
+        $pdf->Cell(37, 10, 'Tanggal Konseling', 1, '0', 'C', true);
+        $pdf->Cell(32, 10, 'status', 1, '0', 'C', true);
         $pdf->Ln();
 
         $query = DB::table('reservasis as a')
@@ -107,6 +108,15 @@ class LaporanController extends Controller
         $pdf->SetFillColor(255);
         $pdf->SetTextColor(0);
         foreach ($query as $index =>  $row) {
+            if ($row->status = 0) {
+                $status = 'Belum dikonfimasi';
+            } else if ($row->status = 1) {
+                $status = 'Dikonfimasi';
+            } else if ($row->status = 3) {
+                $status = 'Selesai';
+            } else if ($row->status = 4) {
+                $status = 'Kadaluarsa';
+            }
             $jadwals = new JadwalTaken();
             $jadwal = $jadwals->getWaktu($row->unique);
             $waktu = '';
@@ -114,11 +124,12 @@ class LaporanController extends Controller
                 $waktu .= "($row2->jam_awal - $row2->jam_akhir) ";
             }
             $pdf->Cell(8, 10, $index + 1, 1, '0', 'C', true);
-            $pdf->Cell(30, 10, $row->nama, 1, '0', 'C', true);
-            $pdf->Cell(40, 10, $row->nama_pelayanan, 1, '0', 'C', true);
-            $pdf->Cell(60, 10, $waktu, 1, '0', 'C', true);
-            $pdf->Cell(29, 10, 'Rp ' . number_format($row->nominal, 0, ',', '.'), 1, '0', 'C', true);
-            $pdf->Cell(27, 10, $row->tanggal, 1, '0', 'C', true);
+            $pdf->Cell(40, 10, $row->nama, 1, '0', 'C', true);
+            $pdf->Cell(50, 10, $row->nama_pelayanan, 1, '0', 'C', true);
+            $pdf->Cell(70, 10, $waktu, 1, '0', 'C', true);
+            $pdf->Cell(39, 10, 'Rp ' . number_format($row->nominal, 0, ',', '.'), 1, '0', 'C', true);
+            $pdf->Cell(37, 10, $row->tanggal, 1, '0', 'C', true);
+            $pdf->Cell(32, 10, $status, 1, '0', 'C', true);
             $pdf->Ln();
         }
 
