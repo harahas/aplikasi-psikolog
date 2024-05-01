@@ -65,7 +65,7 @@ $(document).ready(function () {
         ],
     });
 
-    //HAPUS DATA
+    //Ganerate
     $("#generate_jadwal").on("click", function () {
         Swal.fire({
             title: "Apakah Kamu Yakin?",

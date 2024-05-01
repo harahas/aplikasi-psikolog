@@ -108,13 +108,13 @@ class LaporanController extends Controller
         $pdf->SetFillColor(255);
         $pdf->SetTextColor(0);
         foreach ($query as $index =>  $row) {
-            if ($row->status = 0) {
+            if ($row->status == 0) {
                 $status = 'Belum dikonfimasi';
-            } else if ($row->status = 1) {
+            } else if ($row->status == 1) {
                 $status = 'Dikonfimasi';
-            } else if ($row->status = 3) {
+            } else if ($row->status == 3) {
                 $status = 'Selesai';
-            } else if ($row->status = 4) {
+            } else if ($row->status == 4) {
                 $status = 'Kadaluarsa';
             }
             $jadwals = new JadwalTaken();
