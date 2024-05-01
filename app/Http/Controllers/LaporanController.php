@@ -94,7 +94,7 @@ class LaporanController extends Controller
         $pdf->Cell(70, 10, 'Waktu Konseling', 1, '0', 'C', true);
         $pdf->Cell(39, 10, 'Nominal Koseling', 1, '0', 'C', true);
         $pdf->Cell(37, 10, 'Tanggal Konseling', 1, '0', 'C', true);
-        $pdf->Cell(32, 10, 'status', 1, '0', 'C', true);
+        $pdf->Cell(32, 10, 'Status', 1, '0', 'C', true);
         $pdf->Ln();
 
         $query = DB::table('reservasis as a')
