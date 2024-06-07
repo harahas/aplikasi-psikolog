@@ -189,7 +189,7 @@
                             </ul>
                         </div>
                         <div class="card-footer text-muted">
-                            <a class="d-flex align-items-center " href="https://web.whatsapp.com/send?phone=6285860568027&text=Saya%20ingin%20bertanya%20tentang%20" target="_blank">Untuk informasi lebih lanjut silahkan hubungi admin kami! &nbsp;<i class="fab fa-whatsapp whatsapp-icon" style="font-size: 30px;"></i></a>
+                            <a class="d-flex align-items-center " href="https://web.whatsapp.com/send?phone=6282240279951&text=Saya%20ingin%20bertanya%20tentang%20" target="_blank">Untuk informasi lebih lanjut silahkan hubungi admin kami! &nbsp;<i class="fab fa-whatsapp whatsapp-icon" style="font-size: 30px;"></i></a>
                         </div>
                     </div>
                 </div>
