@@ -266,7 +266,7 @@
                 <div class="col-lg-3  wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1000ms">
                     <div class="in-section-title-2 headline  wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
                         <div class="sub-title text-uppercase">
-                            Psikolog
+                            Konselor
                         </div>
                     </div>
                     <div class="in-about-img-2" data-tilt data-tilt-max="5">
@@ -279,11 +279,11 @@
                             <div class="in-section-title-2 headline  wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
                                 <h2>Dewi Widiastuti, M.Psi</h2>
                             </div>
-                            <p>R. Dewi Widiastuti, M.Psi adalah seorang psikolog berpengalaman yang mengkhususkan
+                            <p>R. Dewi Widiastuti, M.Psi adalah seorang konselor berpengalaman yang mengkhususkan
                                 diri
                                 sebagai konsultan keluarga dan terapis anak berkebutuhan khusus. Beliau juga
                                 memiliki
-                                peran sebagai Konsultan Pendidikan Sekolah Inklusi Bukit Bintang dan Konsultan
+                                peran sebagai konselor Pendidikan Sekolah Inklusi Bukit Bintang dan konselor
                                 Pendidikan. Memiliki wawasan dan panduan praktis kepada orangtua dalam mendidik
                                 anak.
                                 Dengan latar belakang profesional dan pengalaman yang luas, beliau berkomitmen untuk
@@ -302,7 +302,7 @@
                                     <p>Berpengalaman Selama: </p>
                                     <h3>
                                         <h3>±</h3>
-                                        <h3><span class="counter">15</span></h3>
+                                        <h3><span class="counter">19</span></h3>
                                         <h3>Tahun</h3>
                                     </h3>
                                     <br>
@@ -1019,4 +1019,49 @@
         </div>
     </div>
 </section> --}}
+<!-- Start of Sponsor section
+	============================================= -->
+{{-- <section id="in-sponsor" class="in-sponsor-section-2">
+    <div class="container">
+        <div class="in-sponsor-slider">
+            <div class="in-sponsor-item">
+                <div class="inner-img">
+                    <img src="assets/img/sponsor/spn1.png" alt="">
+                </div>
+            </div>
+            <div class="in-sponsor-item">
+                <div class="inner-img">
+                    <img src="assets/img/sponsor/spn2.png" alt="">
+                </div>
+            </div>
+            <div class="in-sponsor-item">
+                <div class="inner-img">
+                    <img src="assets/img/sponsor/spn3.png" alt="">
+                </div>
+            </div>
+            <div class="in-sponsor-item">
+                <div class="inner-img">
+                    <img src="assets/img/sponsor/spn4.png" alt="">
+                </div>
+            </div>
+            <div class="in-sponsor-item">
+                <div class="inner-img">
+                    <img src="assets/img/sponsor/spn5.png" alt="">
+                </div>
+            </div>
+            <div class="in-sponsor-item">
+                <div class="inner-img">
+                    <img src="assets/img/sponsor/spn1.png" alt="">
+                </div>
+            </div>
+            <div class="in-sponsor-item">
+                <div class="inner-img">
+                    <img src="assets/img/sponsor/spn2.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section> --}}
+<!-- End of Sponsor section
+	============================================= -->
 @endsection

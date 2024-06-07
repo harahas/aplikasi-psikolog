@@ -82,8 +82,8 @@
                                             <i class="fal fa-envelope-open-text"></i>
                                         </div>
                                         <div class="inner-text">
-                                            akhlaqulkarimah@gmail.com
-                                            085-860-568-027
+                                            konsultankeluarga.akhlaqulkarim@gmail.com
+                                            0822-4027-9951
                                         </div>
                                     </div>
                                     <div class="info-item d-flex align-items-center">
@@ -91,7 +91,7 @@
                                             <i class="fal fa-phone-plus"></i>
                                         </div>
                                         <div class="inner-text">
-                                            Sen – Sel: 08.00 – 16.00,
+                                            Sen – Sab: 08.00 – 16.00,
                                             Minggu : Tutup
                                         </div>
                                     </div>
@@ -139,6 +139,7 @@
             </div>
         </div>
     </footer>
+
     <!-- End of Footer section
 	============================================= -->
     @if(session('klien'))

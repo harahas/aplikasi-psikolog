@@ -222,6 +222,16 @@ Route::get('/cetak_laporan', [LaporanController::class, 'cetak_konseling']);
 // JADWAL DEFAULT
 Route::resource('/jadwal-default', JadwalDefaultController::class)->middleware('auth');
 Route::get('/dataTablesJadwalDefault', [JadwalDefaultController::class, 'dataTables']);
+// TOur Team
+Route::get('/ourTeam', function () {
+    return view('front-end.ourteam');
+});
+Route::get('/areaTasik', function () {
+    return view('front-end.areaTasik');
+});
+Route::get('/dokumentasi', function () {
+    return view('front-end.dokumentasi');
+});
 
 
 // FITUR RAHASIA

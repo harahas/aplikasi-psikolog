@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-3 col-sm-6">
+    {{-- <div class="col-xl-3 col-sm-6">
         <div class="card widget-flat text-bg-secondary">
             <div class="card-body">
                 <div class="float-end">
@@ -41,9 +41,9 @@
                 <hr>
                 <h5>Rp {{ number_format($nominalMasuk, 0, ',', '.') }} </h5>
 
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div> --}}
 </div>
 
 

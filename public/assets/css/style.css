@@ -8631,7 +8631,8 @@ select:visited {
   position: absolute;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
-  background: linear-gradient(130deg, rgb(1, 94, 234) 0%, rgb(0, 192, 250) 100%);
+  /* background: linear-gradient(130deg, rgb(1, 94, 234) 0%, rgb(0, 192, 250) 100%); */
+  background: #062C17;
 }
 .in-team-feed-item .inner-text h3 {
   font-size: 22px;
