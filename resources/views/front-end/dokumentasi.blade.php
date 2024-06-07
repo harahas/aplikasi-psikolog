@@ -48,7 +48,7 @@
                         <h3><a href="#">Kegiatan Psikotes</a></h3>
                     </div>
                     <div class="inner-img">
-                        <img src="assets/img/portfolio/doktasik12.jpg" alt="">
+                        <img src="assets/img/portfolio/doktasik8.jpg" alt="">
                     </div>
                     <div class="inner-icon position-absolute d-flex justify-content-center align-items-center">
                         <i class="flaticon-business-and-finance"></i>

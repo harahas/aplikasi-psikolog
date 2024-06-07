@@ -277,7 +277,7 @@
                     <div class="in-about-text-wrapper-8">
                         <div class="in-about-text-area-1 wow fadeInUp text-justify" data-wow-delay="500ms" data-wow-duration="1000ms">
                             <div class="in-section-title-2 headline  wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1000ms">
-                                <h2>Dewi Widiastuti, M.Psi</h2>
+                                <h2>R. Dewi Widiastuti, M.Psi</h2>
                             </div>
                             <p>R. Dewi Widiastuti, M.Psi adalah seorang konselor berpengalaman yang mengkhususkan
                                 diri

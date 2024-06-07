@@ -229,6 +229,24 @@ Route::get('/ourTeam', function () {
 Route::get('/areaTasik', function () {
     return view('front-end.areaTasik');
 });
+Route::get('/areaCiamis', function () {
+    return view('front-end.areaCiamis');
+});
+Route::get('/areaGarut', function () {
+    return view('front-end.areaGarut');
+});
+Route::get('/areaPangandaran', function () {
+    return view('front-end.areaPangandaran');
+});
+Route::get('/areaBanjar', function () {
+    return view('front-end.areaBanjar');
+});
+Route::get('/areaBandung', function () {
+    return view('front-end.areaBandung');
+});
+Route::get('/areaMajalengka', function () {
+    return view('front-end.areaMajalengka');
+});
 Route::get('/dokumentasi', function () {
     return view('front-end.dokumentasi');
 });

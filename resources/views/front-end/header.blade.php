@@ -35,6 +35,7 @@
                                     <li><a href="/areaPangandaran">Area Pangandaran</a></li>
                                     <li><a href="/areaMajalengka">Area Majalengka</a></li>
                                     <li><a href="/areaBanjar">Area Banjar</a></li>
+                                    <li><a href="/areaBandung">Area Bandung</a></li>
                                 </ul>
                             </li>
                             <li><a href="/dokumentasi">Dokumentasi</a></li>
@@ -172,6 +173,7 @@
                                         <li><a href="/areaPangandaran">Area Pangandaran</a></li>
                                         <li><a href="/areaMajalengka">Area Majalengka</a></li>
                                         <li><a href="/areaBanjar">Area Banjar</a></li>
+                                        <li><a href="/areaBandung">Area Bandung</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="/dokumentasi">Dokumentasi</a></li>
